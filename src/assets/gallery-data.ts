@@ -1,8 +1,8 @@
 export const ballInCageGallery = [
-  "../public/ball-in-cage.jpg",
-  "../public/ball-in-cage-1.jpg",
-  "../public/ball-in-cage-2.jpg",
-  "../public/ball-in-cage-3.jpg",
+  "public/ball-in-cage.jpg",
+  "public/ball-in-cage-1.jpg",
+  "public/ball-in-cage-2.jpg",
+  "public/ball-in-cage-3.jpg",
 ];
 
 export const bedHeadboardGallery = [
@@ -130,8 +130,8 @@ export const hardwoodEarringsGallery = [
 ];
 
 export const heartShapedVineMountGallery = [
-  "../public/heartShaped-vine-mount-1.jpg",
-  "../public/heartShaped-vine-mount-2.jpg",
+  "public/heartShaped-vine-mount-1.jpg",
+  "public/heartShaped-vine-mount-2.jpg",
   "../public/heartShaped-vine-mount-3.jpg",
   "../public/heartShaped-vine-mount-4.jpg",
   "../public/heartShaped-vine-mount-5.jpg",

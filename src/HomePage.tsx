@@ -1,5 +1,6 @@
 import { MapApi } from "./MapApi";
 import { useBuild } from "./Provider";
+import CLoveSittingDown from "../public/CloveSittingDown.jpg";
 
 export const HomePage = () => {
   const { activeComponent } = useBuild();
@@ -9,11 +10,7 @@ export const HomePage = () => {
     isHomePageSelected && (
       <>
         <div className="flex-center-with-map">
-          <img
-            className="homePage-Image"
-            src="public/c-love-sitting-down.jpg"
-            alt=""
-          ></img>
+          <img className="homePage-Image" src={CLoveSittingDown} alt=""></img>
           <div className="about-me-text">
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do

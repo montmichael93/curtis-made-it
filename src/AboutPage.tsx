@@ -1,5 +1,6 @@
 import { MapApi } from "./MapApi";
 import { useBuild } from "./Provider";
+import aboutMePageImage from "../public/CLoveOnTopOfDogHouse.jpg";
 
 export const AboutPage = () => {
   const { activeComponent } = useBuild();
@@ -9,11 +10,7 @@ export const AboutPage = () => {
     isAboutPageSelected && (
       <>
         <div className="flex-center-with-map">
-          <img
-            className="homePage-Image"
-            src="src/assets/c-love-on-top-of-dog-house.jpg"
-            alt=""
-          ></img>
+          <img className="homePage-Image" src={aboutMePageImage} alt=""></img>
 
           <div className="about-me-text">
             <p>
