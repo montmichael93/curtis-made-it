@@ -1,4 +1,4 @@
-import { buildInfo } from "../public/types";
+import { buildInfo } from "../assets/types";
 import {
   ballInCageGallery,
   bedHeadboardGallery,

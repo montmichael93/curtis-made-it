@@ -6,8 +6,8 @@ import {
   useContext,
   useState,
 } from "react";
-import { buildData } from "../public/buildData";
-import { ActiveComponent, buildInfo } from "../public/types";
+import { buildData } from "../src/assets/buildData";
+import { ActiveComponent, buildInfo } from "../src/assets/types";
 
 type TypeBuildsProvider = {
   buildData: buildInfo[];

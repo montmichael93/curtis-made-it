@@ -11,7 +11,7 @@ export const HomePage = () => {
         <div className="flex-center-with-map">
           <img
             className="homePage-Image"
-            src="src/assets/c-love-sitting-down.jpg"
+            src="public/c-love-sitting-down.jpg"
             alt=""
           ></img>
           <div className="about-me-text">

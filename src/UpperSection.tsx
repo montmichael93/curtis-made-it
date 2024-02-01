@@ -6,7 +6,7 @@ export const UpperSection = () => {
   return (
     <>
       <section id="main-section">
-        <img className="temp-brand" src="src/assets/temp-brand.png" />
+        <img className="temp-brand" src="public/temp-brand.png" />
         <h1>Welcome to my Channel</h1>
         <div className="container-header">
           <div className="selectors">
