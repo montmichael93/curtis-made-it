@@ -1,0 +1,110 @@
+@media (max-width: 391px) {
+  #root {
+    width: 123%;
+  }
+  #main-section {
+    font-size: 0.5rem;
+  }
+  .homePage-Image {
+    width: 20rem;
+  }
+  .container-header {
+    font-size: 0.75rem;
+  }
+  .youtube {
+    width: 24rem;
+    transform: translateX(1.5rem);
+  }
+
+  .build-image {
+    width: 20rem;
+  }
+
+  .full-build-image {
+    width: 24rem;
+    transform: translateX(1.55rem);
+  }
+
+  .message-form {
+    width: 99%;
+  }
+
+  .gallery-buttons {
+    gap: 7rem;
+    transform: translateX(1.6rem);
+  }
+  .close-that-button {
+    transform: translate(0rem, 1rem);
+  }
+  .about-me-text {
+    width: 95%;
+    transform: translateX(10px);
+  }
+  .build-name {
+    font-size: 2rem;
+  }
+  .build-card {
+    width: 22rem;
+  }
+  .map-api {
+    width: 20rem;
+    height: 20rem;
+  }
+}
+
+@media (min-width: 392px) and (max-width: 767px) {
+  #root {
+    width: 111%;
+  }
+  #main-section {
+    font-size: 0.5rem;
+  }
+
+  .homePage-Image {
+    width: 25rem;
+  }
+  .youtube {
+    width: 26rem;
+    transform: translateX(1.5rem);
+  }
+
+  .build-image {
+    width: 24rem;
+  }
+
+  .full-build-image {
+    width: 26rem;
+    transform: translateX(1.6rem);
+  }
+
+  .gallery-buttons {
+    transform: translateX(1.58rem);
+  }
+
+  .container-header {
+    font-size: 0.75rem;
+  }
+
+  .close-that-button {
+    transform: translate(0rem, 1rem);
+  }
+  .about-me-text {
+    width: 95%;
+    transform: translateX(10px);
+  }
+  .build-name {
+    font-size: 2rem;
+  }
+  .build-card {
+    width: 25rem;
+  }
+
+  .message-form {
+    width: 99%;
+  }
+
+  .map-api {
+    width: 20rem;
+    height: 20rem;
+  }
+}

@@ -1,0 +1,168 @@
+#root {
+  width: 100%;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.build-image {
+  width: 15rem;
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 5rem;
+}
+
+.build-card {
+  margin: 10px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  width: 18.75rem;
+}
+
+#main-section {
+  border: 2px solid black;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+}
+
+.container-header {
+  color: black;
+  width: 100%;
+  background-color: white;
+  font-size: 1.25;
+}
+
+.container-header > * {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.selectors {
+  display: flex;
+  justify-content: space-between;
+}
+
+.homePage-Image {
+  width: 50rem;
+}
+
+.message-form {
+  width: 100%;
+  height: 50rem;
+}
+
+.map-canvas {
+  width: 100%;
+  height: 100%;
+}
+
+.full-Build-Info {
+  background-color: darkblue;
+}
+
+.close-that-button {
+  float: right;
+}
+
+.build-flex-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.gallery-buttons {
+  display: flex;
+  gap: 14rem;
+}
+
+.build-name {
+  color: black;
+}
+
+.youtube {
+  display: block;
+  width: 35rem;
+  height: 19.688rem;
+}
+
+.about-me-text {
+  text-align: left;
+}
+
+.map-api {
+  height: 35rem;
+  width: 35rem;
+}
+
+.flex-center-with-map {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.temp-brand {
+  width: 5rem;
+}
+
+.footer {
+  background-color: black;
+  width: -webkit-fill-available;
+}
+
+.build-description {
+  transform: translate(1rem, 0rem);
+}
+
+.full-build-image {
+  width: 30rem;
+}
+
+/* 
+
+* {
+  outline: 1px solid #f00 !important;
+} 
+
+*/
