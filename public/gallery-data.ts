@@ -227,10 +227,10 @@ export const giantJengaGallery = [
   GiantJengaFive,
 ];
 
-import hardWoodEarrings from "./hardWoodEarringsOne.jpg";
-import hardWoodEarringsOne from "./hardWoodEarringsTwo.jpg";
-import hardWoodEarringsTwo from "./hardWoodEarringsThree.jpg";
-import hardWoodEarringsThree from "./hardWoodEarringsFour.jpg";
+import hardWoodEarrings from "./hardwoodEarringsOne.jpg";
+import hardWoodEarringsOne from "./hardwoodEarringsTwo.jpg";
+import hardWoodEarringsTwo from "./hardwoodEarringsThree.jpg";
+import hardWoodEarringsThree from "./hardwoodEarringsFour.jpg";
 
 export const hardwoodEarringsGallery = [
   hardWoodEarrings,
