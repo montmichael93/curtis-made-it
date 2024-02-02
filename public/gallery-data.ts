@@ -213,10 +213,10 @@ export const floatingWineHoldersGallery = [
 
 import GiantJenga from "./giantJenga.jpg";
 import GiantJengaOne from "./giantJengaOne.jpg";
-import GiantJengaTwo from "./giantJenga2.jpg";
-import GiantJengaThree from "./giantJenga3.jpg";
-import GiantJengaFour from "./giantJenga4.jpg";
-import GiantJengaFive from "./giantJenga5.jpg";
+import GiantJengaTwo from "./giantJengaTwo.jpg";
+import GiantJengaThree from "./giantJengaThree.jpg";
+import GiantJengaFour from "./giantJengaFour.jpg";
+import GiantJengaFive from "./giantJengaFive.jpg";
 
 export const giantJengaGallery = [
   GiantJenga,
@@ -227,10 +227,10 @@ export const giantJengaGallery = [
   GiantJengaFive,
 ];
 
-import hardWoodEarrings from "./hardWoodEarrings1.jpg";
-import hardWoodEarringsOne from "./hardWoodEarrings2.jpg";
-import hardWoodEarringsTwo from "./hardWoodEarrings3.jpg";
-import hardWoodEarringsThree from "./hardWoodEarrings4.jpg";
+import hardWoodEarrings from "./hardWoodEarringsOne.jpg";
+import hardWoodEarringsOne from "./hardWoodEarringsTwo.jpg";
+import hardWoodEarringsTwo from "./hardWoodEarringsThree.jpg";
+import hardWoodEarringsThree from "./hardWoodEarringsFour.jpg";
 
 export const hardwoodEarringsGallery = [
   hardWoodEarrings,
