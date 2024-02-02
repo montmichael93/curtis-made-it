@@ -213,7 +213,7 @@ export const floatingWineHoldersGallery = [
 
 import GiantJenga from "./giantJenga.jpg";
 import GiantJengaOne from "./giantJengaOne.jpg";
-import GiantJengaTwo from "./giantJengaTwo.jpg";
+import GiantJengaTwo from "./giantJenga2.jpg";
 import GiantJengaThree from "./giantJengaThree.jpg";
 import GiantJengaFour from "./giantJengaFour.jpg";
 import GiantJengaFive from "./giantJengaFive.jpg";
