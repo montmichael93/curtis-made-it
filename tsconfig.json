@@ -20,6 +20,6 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src", "public/gallery-data.ts"],
+  "include": ["src", "public/gallery-data.tsx"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
