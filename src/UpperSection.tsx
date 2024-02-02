@@ -1,12 +1,12 @@
 import { useBuild } from "./Provider";
-
+import tempBrand from "../public/tempBrand.png";
 export const UpperSection = () => {
   const { activeComponent, setActiveComponent } = useBuild();
 
   return (
     <>
       <section id="main-section">
-        <img className="temp-brand" src="public/temp-brand.png" />
+        <img className="temp-brand" src={tempBrand} />
         <h1>Welcome to my Channel</h1>
         <div className="container-header">
           <div className="selectors">
