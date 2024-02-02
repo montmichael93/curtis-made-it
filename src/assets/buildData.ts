@@ -22,7 +22,7 @@ import {
   tensegrityModelGallery,
   vortexWaterFountainGallery,
   workBenchGallery,
-} from "./gallery-data";
+} from "../../public/gallery-data";
 
 import {
   ballInCageDescription,
