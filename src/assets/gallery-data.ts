@@ -1,7 +1,7 @@
-import ballInCage from "public/ballInCage.jpg";
-import ballInCageOne from "public/ballInCageOne.jpg";
-import ballInCageTwo from "public/ballInCageTwo.jpg";
-import ballInCageThree from "public/ballInCageThree.jpg";
+import ballInCage from "../public/ballInCage.jpg";
+import ballInCageOne from "../public/ballInCageOne.jpg";
+import ballInCageTwo from "../public/ballInCageTwo.jpg";
+import ballInCageThree from "../public/ballInCageThree.jpg";
 
 export const ballInCageGallery = [
   ballInCage,
@@ -10,11 +10,11 @@ export const ballInCageGallery = [
   ballInCageThree,
 ];
 
-import bedHeadBoardOne from "public/bedHeadBoardOne.jpg";
-import bedHeadBoardTwo from "public/bedHeadBoardTwo.jpg";
-import bedHeadBoardThree from "public/bedHeadBoardThree.jpg";
-import bedHeadBoardFour from "public/bedHeadBoardFour.jpg";
-import bedHeadBoardFive from "public/bedHeadBoardFive.jpg";
+import bedHeadBoardOne from "../public/bedHeadBoardOne.jpg";
+import bedHeadBoardTwo from "../public/bedHeadBoardTwo.jpg";
+import bedHeadBoardThree from "../public/bedHeadBoardThree.jpg";
+import bedHeadBoardFour from "../public/bedHeadBoardFour.jpg";
+import bedHeadBoardFive from "../public/bedHeadBoardFive.jpg";
 
 export const bedHeadboardGallery = [
   bedHeadBoardOne,
@@ -105,7 +105,7 @@ import deckRebuildOne from "public/deckRebuildOne.jpg";
 import deckRebuildTwo from "public/deckRebuildTwo.jpg";
 import deckRebuildThree from "public/deckRebuildThree.jpg";
 import deckRebuildFour from "public/deckRebuildFour.jpg";
-import deckRebuildFive from ".public/deckRebuildFive.jpg";
+import deckRebuildFive from "public/deckRebuildFive.jpg";
 import deckRebuildSix from "public/deckRebuildSix.jpg";
 import deckRebuildSeven from "public/deckRebuildSeven.jpg";
 import deckRebuildEight from "public/deckRebuildEight.jpg";
