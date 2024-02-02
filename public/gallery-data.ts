@@ -135,9 +135,9 @@ export const deckRebuildGallery = [
   deckRebuildFifteen,
 ];
 
-import deskTopXmasTreeOne from "./deskTopXmasTreeOne.jpg";
-import deskTopXmasTreeTwo from "./deskTopXmasTreeTwo.jpg";
-import deskTopXmasTreeThree from "./deskTopXmasTreeThree.jpg";
+import deskTopXmasTreeOne from "./desktopXmasTreeOne.jpg";
+import deskTopXmasTreeTwo from "./desktopXmasTreeTwo.jpg";
+import deskTopXmasTreeThree from "./desktopXmasTreeThree.jpg";
 
 export const desktopChristmasTreesGallery = [
   deskTopXmasTreeOne,
