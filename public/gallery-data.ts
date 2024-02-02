@@ -343,17 +343,17 @@ import soapSaversThree from "./soapSaversThree.jpg";
 
 export const soapSaversGallery = [soapSavers, soapSaversTwo, soapSaversThree];
 
-import squirrelpicnictable from "./squirrelpicnictable.jpg";
-import squirrelpicnictableOne from "./squirrelpicnictableOne.jpg";
-import squirrelpicnictableTwo from "./squirrelpicnictableTwo.jpg";
-import squirrelpicnictableThree from "./squirrelpicnictableThree.jpg";
-import squirrelpicnictableFour from "./squirrelpicnictableFour.jpg";
-import squirrelpicnictableFive from "./squirrelpicnictableFive.jpg";
-import squirrelpicnictableSix from "./squirrelpicnictableSix.jpg";
-import squirrelpicnictableSeven from "./squirrelpicnictableSeven.jpg";
-import squirrelpicnictableEight from "./squirrelpicnictableEight.jpg";
-import squirrelpicnictableNine from "./squirrelpicnictableNine.jpg";
-import squirrelpicnictableTen from "./squirrelpicnictableTen.jpg";
+import squirrelpicnictable from "./SquirrelPicnicTable.jpg";
+import squirrelpicnictableOne from "./SquirrelPicnicTableOne.jpg";
+import squirrelpicnictableTwo from "./SquirrelPicnicTableTwo.jpg";
+import squirrelpicnictableThree from "./SquirrelPicnicTableThree.jpg";
+import squirrelpicnictableFour from "./SquirrelPicnicTableFour.jpg";
+import squirrelpicnictableFive from "./SquirrelPicnicTableFive.jpg";
+import squirrelpicnictableSix from "./SquirrelPicnicTableSix.jpg";
+import squirrelpicnictableSeven from "./SquirrelPicnicTableSeven.jpg";
+import squirrelpicnictableEight from "./SquirrelPicnicTableEight.jpg";
+import squirrelpicnictableNine from "./SquirrelPicnicTableNine.jpg";
+import squirrelpicnictableTen from "./SquirrelPicnicTableTen.jpg";
 
 export const squirrelPicnicTableGallery = [
   squirrelpicnictable,
@@ -392,10 +392,10 @@ export const tensegrityModelGallery = [
 import vortexWaterFountain from "./vortexWaterFountain.jpg";
 export const vortexWaterFountainGallery = [vortexWaterFountain];
 
-import workBench from "./workbench.jpg";
-import workBenchOne from "./workbenchOne.jpg";
-import workBenchTwo from "./workbenchTwo.jpg";
-import workBenchThree from "./workbenchThree.jpg";
+import workBench from "./workBench.jpg";
+import workBenchOne from "./workBenchOne.jpg";
+import workBenchTwo from "./workBenchTwo.jpg";
+import workBenchThree from "./workBenchThree.jpg";
 
 export const workBenchGallery = [
   workBench,
