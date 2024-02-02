@@ -210,7 +210,7 @@ export const floatingWineHoldersGallery = [
   floatingWineHoldersSeven,
   floatingWineHoldersEight,
 ];
-//last mistake
+
 import GiantJenga from "./giantJenga.jpg";
 import GiantJengaOne from "./giantJengaOne.jpg";
 import GiantJengaTwo from "./giantJengaTwo.jpg";
