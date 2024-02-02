@@ -10,11 +10,11 @@ export const ballInCageGallery = [
   ballInCageThree,
 ];
 
-import bedHeadBoardOne from "./bedHeadBoardOne.jpg";
-import bedHeadBoardTwo from "./bedHeadBoardTwo.jpg";
-import bedHeadBoardThree from "./bedHeadBoardThree.jpg";
-import bedHeadBoardFour from "./bedHeadBoardFour.jpg";
-import bedHeadBoardFive from "./bedHeadBoardFive.jpg";
+import bedHeadBoardOne from "./bedheadboardOne.jpg";
+import bedHeadBoardTwo from "./bedheadboardTwo.jpg";
+import bedHeadBoardThree from "./bedheadboardThree.jpg";
+import bedHeadBoardFour from "./bedheadboardFour.jpg";
+import bedHeadBoardFive from "./bedheadboardFive.jpg";
 
 export const bedHeadboardGallery = [
   bedHeadBoardOne,
@@ -24,20 +24,20 @@ export const bedHeadboardGallery = [
   bedHeadBoardFive,
 ];
 
-import birdHouse from "./BirdHouse.jpg";
-import birdHouseOne from "./BirdHouseOne.jpg";
-import birdHouseTwo from "./BirdHouseTwo.jpg";
-import birdHouseThree from "./BirdHouseThree.jpg";
+import birdHouse from "./birdHouse.jpg";
+import birdHouseOne from "./birdHouseOne.jpg";
+import birdHouseTwo from "./birdHouseTwo.jpg";
+import birdHouseThree from "./birdHouseThree.jpg";
 import birdHouseFour from "./birdHouseFour.jpg";
-import birdHouseFive from "./BirdHouseFive.jpg";
-import birdHouseSix from "./BirdHouseSix.jpg";
-import birdHouseSeven from "./BirdHouseSeven.jpg";
-import birdHouseEight from "./BirdHouseEight.jpg";
-import birdHouseNine from "./BirdHouseNine.jpg";
-import birdHouseTen from "./BirdHouseTen.jpg";
-import birdHouseEleven from "./BirdHouseEleven.jpg";
+import birdHouseFive from "./birdHouseFive.jpg";
+import birdHouseSix from "./birdHouseSix.jpg";
+import birdHouseSeven from "./birdHouseSeven.jpg";
+import birdHouseEight from "./birdHouseEight.jpg";
+import birdHouseNine from "./birdHouseNine.jpg";
+import birdHouseTen from "./birdHouseTen.jpg";
+import birdHouseEleven from "./birdHouseEleven.jpg";
 import birdHouseTwelve from "./birdHouseTwelve.jpg";
-import birdHouseThirteen from "./BirdHouseThirteen.jpg";
+import birdHouseThirteen from "./birdHouseThirteen.jpg";
 
 export const birdHouseGallery = [
   birdHouse,
