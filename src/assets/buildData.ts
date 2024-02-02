@@ -22,7 +22,7 @@ import {
   tensegrityModelGallery,
   vortexWaterFountainGallery,
   workBenchGallery,
-} from "../../public/gallery-data";
+} from "../../public/gallery-data.ts";
 
 import {
   ballInCageDescription,
@@ -47,7 +47,7 @@ import {
   tensegrityModelDescription,
   vortexWaterFountainDescription,
   workBenchDescription,
-} from "./description-data";
+} from "./description-data.ts";
 
 export const buildData: buildInfo[] = [
   {

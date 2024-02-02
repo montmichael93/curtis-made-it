@@ -1,3 +1,4 @@
+/*
 import ballInCage from "./ballInCage.jpg";
 import ballInCageOne from "./ballInCageOne.jpg";
 import ballInCageTwo from "./ballInCageTwo.jpg";
@@ -403,3 +404,4 @@ export const workBenchGallery = [
   workBenchTwo,
   workBenchThree,
 ];
+*/
