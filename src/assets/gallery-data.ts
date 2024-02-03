@@ -1,7 +1,7 @@
-import ballInCage from "../public/ballInCage.jpg";
-import ballInCageOne from "../public/ballInCageOne.jpg";
-import ballInCageTwo from "../public/ballInCageTwo.jpg";
-import ballInCageThree from "../public/ballInCageThree.jpg";
+import ballInCage from "/public/ballInCage.jpg";
+import ballInCageOne from "/public/ballInCageOne.jpg";
+import ballInCageTwo from "/public/ballInCageTwo.jpg";
+import ballInCageThree from "/public/ballInCageThree.jpg";
 
 export const ballInCageGallery = [
   ballInCage,
@@ -10,11 +10,12 @@ export const ballInCageGallery = [
   ballInCageThree,
 ];
 
-import bedHeadBoardOne from "../public/bedheadboardOne.jpg";
-import bedHeadBoardTwo from "../public/bedheadboardTwo.jpg";
-import bedHeadBoardThree from "../public/bedheadboardThree.jpg";
-import bedHeadBoardFour from "../public/bedheadboardFour.jpg";
-import bedHeadBoardFive from "../public/bedheadboardFive.jpg";
+import bedHeadBoardOne from "/public/bedheadboardOne.jpg";
+import bedHeadBoardTwo from "/public/bedheadboardTwo.jpg";
+import bedHeadBoardThree from "/public/bedheadboardThree.jpg";
+import bedHeadBoardFour from "/public/bedheadboardFour.jpg";
+import bedHeadBoardFive from "/public/bedheadboardFive.jpg";
+
 export const bedHeadboardGallery = [
   bedHeadBoardOne,
   bedHeadBoardTwo,
@@ -23,20 +24,20 @@ export const bedHeadboardGallery = [
   bedHeadBoardFive,
 ];
 
-import birdHouse from "../public/birdHouse.jpg";
-import birdHouseOne from "../public/birdHouseOne.jpg";
-import birdHouseTwo from "../public/birdHouseTwo.jpg";
-import birdHouseThree from "../public/birdHouseThree.jpg";
-import birdHouseFour from "../public/birdHouseFour.jpg";
-import birdHouseFive from "../public/birdHouseFive.jpg";
-import birdHouseSix from "../public/birdHouseSix.jpg";
-import birdHouseSeven from "../public/birdHouseSeven.jpg";
-import birdHouseEight from "../public/birdHouseEight.jpg";
-import birdHouseNine from "../public/birdHouseNine.jpg";
-import birdHouseTen from "../public/birdHouseTen.jpg";
-import birdHouseEleven from "../public/birdHouseEleven.jpg";
-import birdHouseTwelve from "../public/birdHouseTwelve.jpg";
-import birdHouseThirteen from "../public/birdHouseThirteen.jpg";
+import birdHouse from "/public/birdHouse.jpg";
+import birdHouseOne from "/public/birdHouseOne.jpg";
+import birdHouseTwo from "/public/birdHouseTwo.jpg";
+import birdHouseThree from "/public/birdHouseThree.jpg";
+import birdHouseFour from "/public/birdHouseFour.jpg";
+import birdHouseFive from "/public/birdHouseFive.jpg";
+import birdHouseSix from "/public/birdHouseSix.jpg";
+import birdHouseSeven from "/public/birdHouseSeven.jpg";
+import birdHouseEight from "/public/birdHouseEight.jpg";
+import birdHouseNine from "/public/birdHouseNine.jpg";
+import birdHouseTen from "/public/birdHouseTen.jpg";
+import birdHouseEleven from "/public/birdHouseEleven.jpg";
+import birdHouseTwelve from "/public/birdHouseTwelve.jpg";
+import birdHouseThirteen from "/public/birdHouseThirteen.jpg";
 
 export const birdHouseGallery = [
   birdHouse,
@@ -56,18 +57,18 @@ export const birdHouseGallery = [
   birdHouseThirteen,
 ];
 
-import chaosCuttingBoard from "../public/chaosCuttingBoard.jpg";
-import chaosCuttingBoardOne from "../public/chaosCuttingBoardOne.jpg";
-import chaosCuttingBoardTwo from "../public/chaosCuttingBoardTwo.jpg";
-import chaosCuttingBoardThree from "../public/chaosCuttingBoardThree.jpg";
-import chaosCuttingBoardFour from "../public/chaosCuttingBoardFour.jpg";
-import chaosCuttingBoardFive from "../public/chaosCuttingBoardFive.jpg";
-import chaosCuttingBoardSix from "../public/chaosCuttingBoardSix.jpg";
-import chaosCuttingBoardSeven from "../public/chaosCuttingBoardSeven.jpg";
-import chaosCuttingBoardEight from "../public/chaosCuttingBoardEight.jpg";
-import chaosCuttingBoardNine from "../public/chaosCuttingBoardNine.jpg";
-import chaosCuttingBoardTen from "../public/chaosCuttingBoardTen.jpg";
-import chaosCuttingBoardEleven from "../public/chaosCuttingBoardEleven.jpg";
+import chaosCuttingBoard from "/public/chaosCuttingBoard.jpg";
+import chaosCuttingBoardOne from "/public/chaosCuttingBoardOne.jpg";
+import chaosCuttingBoardTwo from "/public/chaosCuttingBoardTwo.jpg";
+import chaosCuttingBoardThree from "/public/chaosCuttingBoardThree.jpg";
+import chaosCuttingBoardFour from "/public/chaosCuttingBoardFour.jpg";
+import chaosCuttingBoardFive from "/public/chaosCuttingBoardFive.jpg";
+import chaosCuttingBoardSix from "/public/chaosCuttingBoardSix.jpg";
+import chaosCuttingBoardSeven from "/public/chaosCuttingBoardSeven.jpg";
+import chaosCuttingBoardEight from "/public/chaosCuttingBoardEight.jpg";
+import chaosCuttingBoardNine from "/public/chaosCuttingBoardNine.jpg";
+import chaosCuttingBoardTen from "/public/chaosCuttingBoardTen.jpg";
+import chaosCuttingBoardEleven from "/public/chaosCuttingBoardEleven.jpg";
 
 export const chaosCuttingBoardGallery = [
   chaosCuttingBoard,
@@ -84,12 +85,12 @@ export const chaosCuttingBoardGallery = [
   chaosCuttingBoardEleven,
 ];
 
-import cornhole from "../public/cornHole.jpg";
-import cornholeOne from "../public/cornHoleOne.jpg";
-import cornholeTwo from "../public/cornHoleTwo.jpg";
-import cornholeThree from "../public/cornHoleThree.jpg";
-import cornholeFour from "../public/cornHoleFour.jpg";
-import cornholeFive from "../public/cornHoleFive.jpg";
+import cornhole from "/public/cornHole.jpg";
+import cornholeOne from "/public/cornHoleOne.jpg";
+import cornholeTwo from "/public/cornHoleTwo.jpg";
+import cornholeThree from "/public/cornHoleThree.jpg";
+import cornholeFour from "/public/cornHoleFour.jpg";
+import cornholeFive from "/public/cornHoleFive.jpg";
 
 export const cornHoleLawnGameGallery = [
   cornhole,
@@ -100,21 +101,21 @@ export const cornHoleLawnGameGallery = [
   cornholeFive,
 ];
 
-import deckRebuildOne from "../public/deckRebuildOne.jpg";
-import deckRebuildTwo from "../public/deckRebuildTwo.jpg";
-import deckRebuildThree from "../public/deckRebuildThree.jpg";
-import deckRebuildFour from "../public/deckRebuildFour.jpg";
-import deckRebuildFive from "../public/deckRebuildFive.jpg";
-import deckRebuildSix from "../public/deckRebuildSix.jpg";
-import deckRebuildSeven from "../public/deckRebuildSeven.jpg";
-import deckRebuildEight from "../public/deckRebuildEight.jpg";
-import deckRebuildNine from "../public/deckRebuildNine.jpg";
-import deckRebuildTen from "../public/deckRebuildTen.jpg";
-import deckRebuildEleven from "../public/deckRebuildEleven.jpg";
-import deckRebuildTwelve from "../public/deckRebuildTwelve.jpg";
-import deckRebuildThirteen from "../public/deckRebuildThirteen.jpg";
-import deckRebuildFourteen from "../public/deckRebuildFourteen.jpg";
-import deckRebuildFifteen from "../public/deckRebuildFifteen.jpg";
+import deckRebuildOne from "/public/deckRebuildOne.jpg";
+import deckRebuildTwo from "/public/deckRebuildTwo.jpg";
+import deckRebuildThree from "/public/deckRebuildThree.jpg";
+import deckRebuildFour from "/public/deckRebuildFour.jpg";
+import deckRebuildFive from "/public/deckRebuildFive.jpg";
+import deckRebuildSix from "/public/deckRebuildSix.jpg";
+import deckRebuildSeven from "/public/deckRebuildSeven.jpg";
+import deckRebuildEight from "/public/deckRebuildEight.jpg";
+import deckRebuildNine from "/public/deckRebuildNine.jpg";
+import deckRebuildTen from "/public/deckRebuildTen.jpg";
+import deckRebuildEleven from "/public/deckRebuildEleven.jpg";
+import deckRebuildTwelve from "/public/deckRebuildTwelve.jpg";
+import deckRebuildThirteen from "/public/deckRebuildThirteen.jpg";
+import deckRebuildFourteen from "/public/deckRebuildFourteen.jpg";
+import deckRebuildFifteen from "/public/deckRebuildFifteen.jpg";
 
 export const deckRebuildGallery = [
   deckRebuildOne,
@@ -134,9 +135,9 @@ export const deckRebuildGallery = [
   deckRebuildFifteen,
 ];
 
-import deskTopXmasTreeOne from "../public/desktopXmasTreeOne.jpg";
-import deskTopXmasTreeTwo from "../public/desktopXmasTreeTwo.jpg";
-import deskTopXmasTreeThree from "../public/desktopXmasTreeThree.jpg";
+import deskTopXmasTreeOne from "/public/desktopXmasTreeOne.jpg";
+import deskTopXmasTreeTwo from "/public/desktopXmasTreeTwo.jpg";
+import deskTopXmasTreeThree from "/public/desktopXmasTreeThree.jpg";
 
 export const desktopChristmasTreesGallery = [
   deskTopXmasTreeOne,
@@ -144,10 +145,10 @@ export const desktopChristmasTreesGallery = [
   deskTopXmasTreeThree,
 ];
 
-import dogHouse from "../public/dogHouse.jpg";
-import dogHouseOne from "../public/dogHouseOne.jpg";
-import dogHouseTwo from "../public/dogHouseTwo.jpg";
-import dogHouseThree from "../public/dogHouseThree.jpg";
+import dogHouse from "/public/dogHouse.jpg";
+import dogHouseOne from "/public/dogHouseOne.jpg";
+import dogHouseTwo from "/public/dogHouseTwo.jpg";
+import dogHouseThree from "/public/dogHouseThree.jpg";
 
 export const dogHouseGallery = [
   dogHouse,
@@ -156,20 +157,20 @@ export const dogHouseGallery = [
   dogHouseThree,
 ];
 
-import floatingBedframeOne from "../public/FBFOne.jpg";
-import floatingBedframeTwo from "../public/FBFTwo.jpg";
-import floatingBedframeThree from "../public/FBFThree.jpg";
-import floatingBedframeFour from "../public/FBFFour.jpg";
-import floatingBedframeFive from "../public/FBFFive.jpg";
-import floatingBedframeSix from "../public/FBFSix.jpg";
-import floatingBedframeSeven from "../public/FBFSeven.jpg";
-import floatingBedframeEight from "../public/FBFEight.jpg";
-import floatingBedframeNine from "../public/FBFNine.jpg";
-import floatingBedframeTen from "../public/FBFTen.jpg";
-import floatingBedframeEleven from "../public/FBFEleven.jpg";
-import floatingBedframeTwelve from "../public/FBFTwelve.jpg";
-import floatingBedframeThirteen from "../public/FBFThirteen.jpg";
-import floatingBedframeFourteen from "../public/FBFFourteen.jpg";
+import floatingBedframeOne from "/public/FBFOne.jpg";
+import floatingBedframeTwo from "/public/FBFTwo.jpg";
+import floatingBedframeThree from "/public/FBFThree.jpg";
+import floatingBedframeFour from "/public/FBFFour.jpg";
+import floatingBedframeFive from "/public/FBFFive.jpg";
+import floatingBedframeSix from "/public/FBFSix.jpg";
+import floatingBedframeSeven from "/public/FBFSeven.jpg";
+import floatingBedframeEight from "/public/FBFEight.jpg";
+import floatingBedframeNine from "/public/FBFNine.jpg";
+import floatingBedframeTen from "/public/FBFTen.jpg";
+import floatingBedframeEleven from "/public/FBFEleven.jpg";
+import floatingBedframeTwelve from "/public/FBFTwelve.jpg";
+import floatingBedframeThirteen from "/public/FBFThirteen.jpg";
+import floatingBedframeFourteen from "/public/FBFFourteen.jpg";
 
 export const floatingBedFrameGallery = [
   floatingBedframeOne,
@@ -188,15 +189,15 @@ export const floatingBedFrameGallery = [
   floatingBedframeFourteen,
 ];
 
-import floatingWineHolders from "../public/floatingWineHolders.png";
-import floatingWineHoldersOne from "../public/floatingWineHoldersOne.jpg";
-import floatingWineHoldersTwo from "../public/floatingWineHoldersTwo.jpg";
-import floatingWineHoldersThree from "../public/floatingWineHoldersThree.jpg";
-import floatingWineHoldersFour from "../public/floatingWineHoldersFour.jpg";
-import floatingWineHoldersFive from "../public/floatingWineHoldersFive.jpg";
-import floatingWineHoldersSix from "../public/floatingWineHoldersSix.jpg";
-import floatingWineHoldersSeven from "../public/floatingWineHoldersSeven.jpg";
-import floatingWineHoldersEight from "../public/floatingWineHoldersEight.jpg";
+import floatingWineHolders from "/public/floatingWineHolders.png";
+import floatingWineHoldersOne from "/public/floatingWineHoldersOne.jpg";
+import floatingWineHoldersTwo from "/public/floatingWineHoldersTwo.jpg";
+import floatingWineHoldersThree from "/public/floatingWineHoldersThree.jpg";
+import floatingWineHoldersFour from "/public/floatingWineHoldersFour.jpg";
+import floatingWineHoldersFive from "/public/floatingWineHoldersFive.jpg";
+import floatingWineHoldersSix from "/public/floatingWineHoldersSix.jpg";
+import floatingWineHoldersSeven from "/public/floatingWineHoldersSeven.jpg";
+import floatingWineHoldersEight from "/public/floatingWineHoldersEight.jpg";
 
 export const floatingWineHoldersGallery = [
   floatingWineHolders,
@@ -210,12 +211,12 @@ export const floatingWineHoldersGallery = [
   floatingWineHoldersEight,
 ];
 
-import GiantJenga from "../public/giantJenga.jpg";
-import GiantJengaOne from "../public/giantJengaOne.jpg";
-import GiantJengaTwo from "../public/giantJengaTwo.jpg";
-import GiantJengaThree from "../public/giantJengaThree.jpg";
-import GiantJengaFour from "../public/giantJengaFour.jpg";
-import GiantJengaFive from "../public/giantJengaFive.jpg";
+import GiantJenga from "/public/giantJenga.jpg";
+import GiantJengaOne from "/public/giantJengaOne.jpg";
+import GiantJengaTwo from "/public/giantJengaTwo.jpg";
+import GiantJengaThree from "/public/giantJengaThree.jpg";
+import GiantJengaFour from "/public/giantJengaFour.jpg";
+import GiantJengaFive from "/public/giantJengaFive.jpg";
 
 export const giantJengaGallery = [
   GiantJenga,
@@ -226,10 +227,10 @@ export const giantJengaGallery = [
   GiantJengaFive,
 ];
 
-import hardWoodEarrings from "../public/hardwoodEarringsOne.jpg";
-import hardWoodEarringsOne from "../public/hardwoodEarringsTwo.jpg";
-import hardWoodEarringsTwo from "../public/hardwoodEarringsThree.jpg";
-import hardWoodEarringsThree from "../public/hardwoodEarringsFour.jpg";
+import hardWoodEarrings from "/public/hardwoodEarringsOne.jpg";
+import hardWoodEarringsOne from "/public/hardwoodEarringsTwo.jpg";
+import hardWoodEarringsTwo from "/public/hardwoodEarringsThree.jpg";
+import hardWoodEarringsThree from "/public/hardwoodEarringsFour.jpg";
 
 export const hardwoodEarringsGallery = [
   hardWoodEarrings,
@@ -238,16 +239,16 @@ export const hardwoodEarringsGallery = [
   hardWoodEarringsThree,
 ];
 
-import heartShapedVineMountOne from "../public/heartShapedVineMountOne.jpg";
-import heartShapedVineMountTwo from "../public/heartShapedVineMountTwo.jpg";
-import heartShapedVineMountThree from "../public/heartShapedVineMountThree.jpg";
-import heartShapedVineMountFour from "../public/heartShapedVineMountFour.jpg";
-import heartShapedVineMountFive from "../public/heartShapedVineMountFive.jpg";
-import heartShapedVineMountSix from "../public/heartShapedVineMountSix.jpg";
-import heartShapedVineMountSeven from "../public/heartShapedVineMountSeven.jpg";
-import heartShapedVineMountEight from "../public/heartShapedVineMountEight.jpg";
-import heartShapedVineMountNine from "../public/heartShapedVineMountNine.jpg";
-import heartShapedVineMountTen from "../public/heartShapedVineMountTen.jpg";
+import heartShapedVineMountOne from "/public/heartShapedVineMountOne.jpg";
+import heartShapedVineMountTwo from "/public/heartShapedVineMountTwo.jpg";
+import heartShapedVineMountThree from "/public/heartShapedVineMountThree.jpg";
+import heartShapedVineMountFour from "/public/heartShapedVineMountFour.jpg";
+import heartShapedVineMountFive from "/public/heartShapedVineMountFive.jpg";
+import heartShapedVineMountSix from "/public/heartShapedVineMountSix.jpg";
+import heartShapedVineMountSeven from "/public/heartShapedVineMountSeven.jpg";
+import heartShapedVineMountEight from "/public/heartShapedVineMountEight.jpg";
+import heartShapedVineMountNine from "/public/heartShapedVineMountNine.jpg";
+import heartShapedVineMountTen from "/public/heartShapedVineMountTen.jpg";
 
 export const heartShapedVineMountGallery = [
   heartShapedVineMountOne,
@@ -262,18 +263,18 @@ export const heartShapedVineMountGallery = [
   heartShapedVineMountTen,
 ];
 
-import patioChairsOne from "../public/patioChairsOne.jpg";
-import patioChairsTwo from "../public/patioChairsTwo.jpg";
-import patioChairsThree from "../public/patioChairsThree.jpg";
-import patioChairsFour from "../public/patioChairsFour.jpg";
-import patioChairsFive from "../public/patioChairsFive.jpg";
-import patioChairsSix from "../public/patioChairsSix.jpg";
-import patioChairsSeven from "../public/patioChairsSeven.jpg";
-import patioChairsEight from "../public/patioChairsEight.jpg";
-import patioChairsNine from "../public/patioChairsNine.jpg";
-import patioChairsTen from "../public/patioChairsTen.jpg";
-import patioChairsEleven from "../public/patioChairsEleven.jpg";
-import patioChairsTwelve from "../public/patioChairsTwelve.jpg";
+import patioChairsOne from "/public/patioChairsOne.jpg";
+import patioChairsTwo from "/public/patioChairsTwo.jpg";
+import patioChairsThree from "/public/patioChairsThree.jpg";
+import patioChairsFour from "/public/patioChairsFour.jpg";
+import patioChairsFive from "/public/patioChairsFive.jpg";
+import patioChairsSix from "/public/patioChairsSix.jpg";
+import patioChairsSeven from "/public/patioChairsSeven.jpg";
+import patioChairsEight from "/public/patioChairsEight.jpg";
+import patioChairsNine from "/public/patioChairsNine.jpg";
+import patioChairsTen from "/public/patioChairsTen.jpg";
+import patioChairsEleven from "/public/patioChairsEleven.jpg";
+import patioChairsTwelve from "/public/patioChairsTwelve.jpg";
 
 export const patioChairsGallery = [
   patioChairsOne,
@@ -290,10 +291,10 @@ export const patioChairsGallery = [
   patioChairsTwelve,
 ];
 
-import patioTablesOne from "../public/patioTablesOne.jpg";
-import patioTablesTwo from "../public/patioTablesTwo.jpg";
-import patioTablesThree from "../public/patioTablesThree.jpg";
-import patioTablesFour from "../public/patioTablesFour.jpg";
+import patioTablesOne from "/public/patioTablesOne.jpg";
+import patioTablesTwo from "/public/patioTablesTwo.jpg";
+import patioTablesThree from "/public/patioTablesThree.jpg";
+import patioTablesFour from "/public/patioTablesFour.jpg";
 
 export const patioTablesGallery = [
   patioTablesOne,
@@ -302,11 +303,11 @@ export const patioTablesGallery = [
   patioTablesFour,
 ];
 
-import petFoodDispenser from "../public/petFoodDispenser.jpg";
-import petFoodDispenserOne from "../public/petFoodDispenserOne.jpg";
-import petFoodDispenserTwo from "../public/petFoodDispenserTwo.jpg";
-import petFoodDispenserThree from "../public/petFoodDispenserThree.jpg";
-import petFoodDispenserFour from "../public/petFoodDispenserFour.jpg";
+import petFoodDispenser from "/public/petFoodDispenser.jpg";
+import petFoodDispenserOne from "/public/petFoodDispenserOne.jpg";
+import petFoodDispenserTwo from "/public/petFoodDispenserTwo.jpg";
+import petFoodDispenserThree from "/public/petFoodDispenserThree.jpg";
+import petFoodDispenserFour from "/public/petFoodDispenserFour.jpg";
 
 export const petFoodDispenserGallery = [
   petFoodDispenser,
@@ -316,14 +317,14 @@ export const petFoodDispenserGallery = [
   petFoodDispenserFour,
 ];
 
-import plantingStation from "../public/plantingStation.jpg";
-import plantingStationOne from "../public/plantingStationOne.jpg";
-import plantingStationTwo from "../public/plantingStationTwo.jpg";
-import plantingStationThree from "../public/plantingStationThree.jpg";
-import plantingStationFour from "../public/plantingStationFour.jpg";
-import plantingStationFive from "../public/plantingStationFive.jpg";
-import plantingStationSix from "../public/plantingStationSix.jpg";
-import plantingStationSeven from "../public/plantingStationSeven.jpg";
+import plantingStation from "/public/plantingStation.jpg";
+import plantingStationOne from "/public/plantingStationOne.jpg";
+import plantingStationTwo from "/public/plantingStationTwo.jpg";
+import plantingStationThree from "/public/plantingStationThree.jpg";
+import plantingStationFour from "/public/plantingStationFour.jpg";
+import plantingStationFive from "/public/plantingStationFive.jpg";
+import plantingStationSix from "/public/plantingStationSix.jpg";
+import plantingStationSeven from "/public/plantingStationSeven.jpg";
 
 export const plantingStationGallery = [
   plantingStation,
@@ -336,23 +337,23 @@ export const plantingStationGallery = [
   plantingStationSeven,
 ];
 
-import soapSavers from "../public/soapSavers.jpg";
-import soapSaversTwo from "../public/soapSaversTwo.jpg";
-import soapSaversThree from "../public/soapSaversThree.jpg";
+import soapSavers from "/public/soapSavers.jpg";
+import soapSaversTwo from "/public/soapSaversTwo.jpg";
+import soapSaversThree from "/public/soapSaversThree.jpg";
 
 export const soapSaversGallery = [soapSavers, soapSaversTwo, soapSaversThree];
 
-import squirrelpicnictable from "../public/SquirrelPicnicTable.jpg";
-import squirrelpicnictableOne from "../public/SquirrelPicnicTableOne.jpg";
-import squirrelpicnictableTwo from "../public/SquirrelPicnicTableTwo.jpg";
-import squirrelpicnictableThree from "../public/SquirrelPicnicTableThree.jpg";
-import squirrelpicnictableFour from "../public/SquirrelPicnicTableFour.jpg";
-import squirrelpicnictableFive from "../public/SquirrelPicnicTableFive.jpg";
-import squirrelpicnictableSix from "../public/SquirrelPicnicTableSix.jpg";
-import squirrelpicnictableSeven from "../public/SquirrelPicnicTableSeven.jpg";
-import squirrelpicnictableEight from "../public/SquirrelPicnicTableEight.jpg";
-import squirrelpicnictableNine from "../public/SquirrelPicnicTableNine.jpg";
-import squirrelpicnictableTen from "../public/SquirrelPicnicTableTen.jpg";
+import squirrelpicnictable from "/public/SquirrelPicnicTable.jpg";
+import squirrelpicnictableOne from "/public/SquirrelPicnicTableOne.jpg";
+import squirrelpicnictableTwo from "/public/SquirrelPicnicTableTwo.jpg";
+import squirrelpicnictableThree from "/public/SquirrelPicnicTableThree.jpg";
+import squirrelpicnictableFour from "/public/SquirrelPicnicTableFour.jpg";
+import squirrelpicnictableFive from "/public/SquirrelPicnicTableFive.jpg";
+import squirrelpicnictableSix from "/public/SquirrelPicnicTableSix.jpg";
+import squirrelpicnictableSeven from "/public/SquirrelPicnicTableSeven.jpg";
+import squirrelpicnictableEight from "/public/SquirrelPicnicTableEight.jpg";
+import squirrelpicnictableNine from "/public/SquirrelPicnicTableNine.jpg";
+import squirrelpicnictableTen from "/public/SquirrelPicnicTableTen.jpg";
 
 export const squirrelPicnicTableGallery = [
   squirrelpicnictable,
@@ -368,14 +369,14 @@ export const squirrelPicnicTableGallery = [
   squirrelpicnictableTen,
 ];
 
-import tensegrityModel from "../public/tensegrity.jpg";
-import tensegrityModelOne from "../public/tensegrityOne.jpg";
-import tensegrityModelTwo from "../public/tensegrityTwo.jpg";
-import tensegrityModelThree from "../public/tensegrityThree.jpg";
-import tensegrityModelFour from "../public/tensegrityFour.jpg";
-import tensegrityModelFive from "../public/tensegrityFive.jpg";
-import tensegrityModelSix from "../public/tensegritySix.jpg";
-import tensegrityModelSeven from "../public/tensegritySeven.jpg";
+import tensegrityModel from "/public/tensegrity.jpg";
+import tensegrityModelOne from "/public/tensegrityOne.jpg";
+import tensegrityModelTwo from "/public/tensegrityTwo.jpg";
+import tensegrityModelThree from "/public/tensegrityThree.jpg";
+import tensegrityModelFour from "/public/tensegrityFour.jpg";
+import tensegrityModelFive from "/public/tensegrityFive.jpg";
+import tensegrityModelSix from "/public/tensegritySix.jpg";
+import tensegrityModelSeven from "/public/tensegritySeven.jpg";
 
 export const tensegrityModelGallery = [
   tensegrityModel,
@@ -388,13 +389,13 @@ export const tensegrityModelGallery = [
   tensegrityModelSeven,
 ];
 
-import vortexWaterFountain from "../public/vortexWaterFountain.jpg";
+import vortexWaterFountain from "/public/vortexWaterFountain.jpg";
 export const vortexWaterFountainGallery = [vortexWaterFountain];
 
-import workBench from "../public/workBench.jpg";
-import workBenchOne from "../public/workBenchOne.jpg";
-import workBenchTwo from "../public/workBenchTwo.jpg";
-import workBenchThree from "../public/workBenchThree.jpg";
+import workBench from "/public/workBench.jpg";
+import workBenchOne from "/public/workBenchOne.jpg";
+import workBenchTwo from "/public/workBenchTwo.jpg";
+import workBenchThree from "/public/workBenchThree.jpg";
 
 export const workBenchGallery = [
   workBench,
