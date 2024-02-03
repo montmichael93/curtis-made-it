@@ -1,9 +1,10 @@
-import { useState } from "react";
 import { useBuild } from "./Provider";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from "react-responsive-carousel";
 
 export const FullBuildInformation = () => {
   const { activeComponent, selectedBuild, setSelectedBuild } = useBuild();
-  const [currentImageFromGallery, setCurrentImageFromGallery] = useState(0);
+
   const willFullBuildInfoDisplay =
     selectedBuild && activeComponent === "Builds";
 
@@ -16,7 +17,6 @@ export const FullBuildInformation = () => {
               className="close-that-button"
               onClick={() => {
                 setSelectedBuild(null);
-                setCurrentImageFromGallery(0);
               }}
             >
               X
@@ -34,39 +34,19 @@ export const FullBuildInformation = () => {
               <p className="build-description">
                 {selectedBuild?.description[0]}
               </p>
-
-              <div className="gallery-buttons">
-                <button
-                  className="button"
-                  onClick={() => {
-                    setCurrentImageFromGallery((nextImage) =>
-                      nextImage === 0
-                        ? selectedBuild?.imageGallery.length - 1
-                        : nextImage - 1
-                    );
-                  }}
-                >
-                  Prev Image
-                </button>
-                <button
-                  className="button"
-                  onClick={() => {
-                    setCurrentImageFromGallery((prevImage) =>
-                      prevImage === selectedBuild?.imageGallery.length - 1
-                        ? 0
-                        : prevImage + 1
-                    );
-                  }}
-                >
-                  Next Image
-                </button>
-              </div>
-
-              <img
-                className="full-build-image"
-                src={selectedBuild?.imageGallery[currentImageFromGallery]}
-              />
             </div>
+
+            <Carousel>
+              {selectedBuild?.imageGallery.map((image) => (
+                <div>
+                  <img
+                    className="carousel-image full-build-image"
+                    src={image}
+                  />
+                  <p className="legend">{selectedBuild?.name}</p>
+                </div>
+              ))}
+            </Carousel>
           </div>
         </>
       )}

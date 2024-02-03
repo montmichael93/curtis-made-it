@@ -1,3 +1,8 @@
+/*
+* {
+  outline: 1px solid #f00 !important;
+} */
+
 #root {
   width: 100%;
   text-align: center;
@@ -81,6 +86,7 @@
 .selectors {
   display: flex;
   justify-content: space-between;
+  padding: 1.25rem;
 }
 
 .homePage-Image {
@@ -120,12 +126,6 @@
   color: black;
 }
 
-.youtube {
-  display: block;
-  width: 35rem;
-  height: 19.688rem;
-}
-
 .about-me-text {
   text-align: left;
 }
@@ -142,7 +142,11 @@
   gap: 1rem;
 }
 
-.temp-brand {
+.temp-brand-top {
+  width: 5rem;
+}
+
+.temp-brand-bottom {
   width: 5rem;
 }
 
@@ -156,13 +160,38 @@
 }
 
 .full-build-image {
-  width: 30rem;
+  width: 5rem;
 }
 
-/* 
-
 * {
-  outline: 1px solid #f00 !important;
-} 
+  font-family: monospace;
+}
 
-*/
+.hamburger-react {
+  display: none;
+}
+
+.mobile-menu {
+  display: none;
+}
+
+.mobile-selectors {
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.youtube {
+  display: block;
+  width: 45rem;
+  height: 25rem;
+}
+.carousel-root {
+  width: 45rem;
+  transform: translateX(23.5rem);
+  background-color: red;
+}
+
+.carousel .slide {
+  height: 50rem;
+}

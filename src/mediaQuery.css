@@ -11,19 +11,6 @@
   .container-header {
     font-size: 0.75rem;
   }
-  .youtube {
-    width: 24rem;
-    transform: translateX(1.5rem);
-  }
-
-  .build-image {
-    width: 20rem;
-  }
-
-  .full-build-image {
-    width: 24rem;
-    transform: translateX(1.55rem);
-  }
 
   .message-form {
     width: 99%;
@@ -46,9 +33,43 @@
   .build-card {
     width: 22rem;
   }
+  .hamburger-react {
+    display: block;
+  }
+
+  .mobile-menu {
+    display: block;
+  }
+
+  .container-header {
+    display: none;
+  }
+
   .map-api {
     width: 20rem;
     height: 20rem;
+  }
+  .temp-brand-top {
+    width: 3rem;
+    transform: translateX(21rem);
+  }
+
+  .temp-brand-bottom {
+    width: 3rem;
+  }
+
+  .youtube {
+    width: 23rem;
+    height: 15rem;
+    transform: translateX(1.25rem);
+  }
+
+  .carousel-root {
+    width: 23rem;
+    transform: translateX(0.7rem);
+  }
+  .carousel .slide {
+    height: 35rem;
   }
 }
 
@@ -62,19 +83,6 @@
 
   .homePage-Image {
     width: 25rem;
-  }
-  .youtube {
-    width: 26rem;
-    transform: translateX(1.5rem);
-  }
-
-  .build-image {
-    width: 24rem;
-  }
-
-  .full-build-image {
-    width: 26rem;
-    transform: translateX(1.6rem);
   }
 
   .gallery-buttons {
@@ -103,8 +111,41 @@
     width: 99%;
   }
 
+  .hamburger-react {
+    display: block;
+  }
+
+  .mobile-menu {
+    display: block;
+  }
+
+  .container-header {
+    display: none;
+  }
+
   .map-api {
     width: 20rem;
     height: 20rem;
+  }
+  .temp-brand-top {
+    width: 3rem;
+    transform: translateX(21rem);
+  }
+  .temp-brand-bottom {
+    width: 3rem;
+  }
+
+  .youtube {
+    width: 25rem;
+    height: 15rem;
+    transform: translateX(1.25rem);
+  }
+
+  .carousel-root {
+    width: 25rem;
+    transform: translateX(1rem);
+  }
+  .carousel .slide {
+    height: 30rem;
   }
 }

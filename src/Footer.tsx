@@ -3,7 +3,7 @@ export const FooterSection = () => {
   return (
     <>
       <div className="footer">
-        <img className="temp-brand" src={tempBrand} />
+        <img className="temp-brand-bottom" src={tempBrand} />
       </div>
     </>
   );
