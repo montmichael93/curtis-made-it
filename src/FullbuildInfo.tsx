@@ -28,7 +28,7 @@ export const FullBuildInformation = () => {
                 className="youtube"
                 src={selectedBuild?.youTubeLink}
                 title="YouTube video player"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
                 //allowfullscreen
               ></iframe>
               <p className="build-description">

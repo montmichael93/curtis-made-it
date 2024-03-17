@@ -1,4 +1,3 @@
-import { MapApi } from "./MapApi";
 import { useBuild } from "./Provider";
 import aboutMePageImage from "../public/CLoveOnTopOfDogHouse.jpg";
 
@@ -58,7 +57,6 @@ export const AboutPage = () => {
               the knowledge I have and the experiences I’ve gone through.
             </p>
           </div>
-          <MapApi />
         </div>
       </>
     )

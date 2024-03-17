@@ -1,5 +1,5 @@
 import { useBuild } from "./Provider";
-import tempBrand from "../public/tempBrand.png";
+import Brand from "../public/branding.jpg";
 import Hamburger from "hamburger-react";
 import { useState } from "react";
 
@@ -10,16 +10,16 @@ export const UpperSection = () => {
   return (
     <>
       <section id="main-section">
-        <img className="temp-brand-top" src={tempBrand} />
+        <img className="temp-brand-top" src={Brand} />
         <h1>Welcome to my Channel</h1>
-        <div
-          onClick={() => {
-            setIsMenuOpen(!isMenuOpen);
-          }}
-        >
-          <Hamburger />
-        </div>
 
+        <span className="react-burger">
+          <Hamburger
+            onToggle={() => {
+              setIsMenuOpen(!isMenuOpen);
+            }}
+          />
+        </span>
         {isMenuOpen && (
           <div className="mobile-menu">
             <div className="mobile-selectors">

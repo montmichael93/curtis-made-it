@@ -5,7 +5,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #4c4a4b;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -42,9 +42,11 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: #00ff00;
   cursor: pointer;
   transition: border-color 0.25s;
+  color: black;
+  font-size: 1rem;
 }
 button:hover {
   border-color: #646cff;
@@ -52,6 +54,13 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+
+.build-card {
+  background-color: #06f9ff;
+}
+
+.full-build-info-container {
 }
 
 @media (prefers-color-scheme: light) {

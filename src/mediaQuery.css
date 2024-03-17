@@ -51,7 +51,7 @@
   }
   .temp-brand-top {
     width: 3rem;
-    transform: translateX(21rem);
+    transform: translate(20rem, 0.6rem);
   }
 
   .temp-brand-bottom {
@@ -70,6 +70,9 @@
   }
   .carousel .slide {
     height: 35rem;
+  }
+  .react-burger {
+    transform: translateY(-7rem);
   }
 }
 
@@ -129,7 +132,7 @@
   }
   .temp-brand-top {
     width: 3rem;
-    transform: translateX(21rem);
+    transform: translate(27rem, 0.5rem);
   }
   .temp-brand-bottom {
     width: 3rem;
@@ -147,5 +150,9 @@
   }
   .carousel .slide {
     height: 30rem;
+  }
+
+  .react-burger {
+    transform: translateY(-7rem);
   }
 }
