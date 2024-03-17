@@ -1,4 +1,4 @@
-import Brand from "../public/Branding.jpg";
+import Brand from "../public/branding.jpg";
 export const FooterSection = () => {
   return (
     <>

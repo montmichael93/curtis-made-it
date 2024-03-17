@@ -12,15 +12,17 @@ export const FullBuildInformation = () => {
     <>
       {willFullBuildInfoDisplay && (
         <>
+          <button
+            className="close-that-button"
+            onClick={() => {
+              setSelectedBuild(null);
+            }}
+          >
+            X
+          </button>
+          <br />
+          <br />
           <div className="full-Build-Info">
-            <button
-              className="close-that-button"
-              onClick={() => {
-                setSelectedBuild(null);
-              }}
-            >
-              X
-            </button>
             <div className="build-flex-container">
               <h2>{selectedBuild?.name}</h2>
 

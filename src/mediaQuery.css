@@ -51,7 +51,6 @@
   }
   .temp-brand-top {
     width: 3rem;
-    transform: translate(20rem, 0.6rem);
   }
 
   .temp-brand-bottom {
@@ -61,7 +60,7 @@
   .youtube {
     width: 23rem;
     height: 15rem;
-    transform: translateX(1.25rem);
+    transform: translateX(1.5rem);
   }
 
   .carousel-root {
@@ -120,6 +119,7 @@
 
   .mobile-menu {
     display: block;
+    width: 100%;
   }
 
   .container-header {
@@ -132,7 +132,7 @@
   }
   .temp-brand-top {
     width: 3rem;
-    transform: translate(27rem, 0.5rem);
+    align-self: flex-end;
   }
   .temp-brand-bottom {
     width: 3rem;
@@ -146,7 +146,7 @@
 
   .carousel-root {
     width: 25rem;
-    transform: translateX(2.5rem);
+    transform: translateX(0.9rem);
   }
   .carousel .slide {
     height: 30rem;
@@ -154,5 +154,6 @@
 
   .react-burger {
     transform: translateY(-7rem);
+    align-self: flex-start;
   }
 }

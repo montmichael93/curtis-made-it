@@ -60,9 +60,6 @@ button:focus-visible {
   background-color: #06f9ff;
 }
 
-.full-build-info-container {
-}
-
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
