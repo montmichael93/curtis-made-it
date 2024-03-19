@@ -98,10 +98,7 @@
   .close-that-button {
     transform: translate(0rem, 1rem);
   }
-  .about-me-text {
-    width: 95%;
-    transform: translateX(10px);
-  }
+
   .build-name {
     font-size: 2rem;
   }

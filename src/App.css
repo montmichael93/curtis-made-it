@@ -46,6 +46,8 @@
 
 .build-image {
   width: 15rem;
+  border: double;
+  border-color: black;
 }
 
 .flex-container {
@@ -61,7 +63,9 @@
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
   overflow: hidden;
   width: 18.75rem;
-  background-color: #06f9ff;
+  background-color: #4c4a4b;
+  border: outset;
+  border-color: black;
 }
 
 #main-section {
@@ -124,11 +128,17 @@
 }
 
 .build-name {
-  color: black;
+  color: white;
+  font-size: 1.5rem;
+  border-bottom: ridge;
+  border-top: ridge;
+  border-color: #06f9ff;
 }
 
 .about-me-text {
   text-align: left;
+  background-color: #4c4a4b;
+  font-size: 1rem;
 }
 
 .map-api {
@@ -158,6 +168,7 @@
 
 .build-description {
   transform: translate(1rem, 0rem);
+  font-size: 1rem;
 }
 
 .full-build-image {
@@ -196,4 +207,8 @@
 
 .carousel .slide {
   height: 50rem;
+}
+
+.full-build-title {
+  font-size: 3rem;
 }

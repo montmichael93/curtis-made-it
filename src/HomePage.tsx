@@ -8,7 +8,10 @@ export const HomePage = () => {
   return (
     isHomePageSelected && (
       <>
-        <div className="flex-center-with-map">
+        <div
+          className="flex-center-with-map"
+          style={{ backgroundImage: "url(/fadedPaintBackground.jpg )" }}
+        >
           <img className="homePage-Image" src={CLoveSittingDown} alt=""></img>
           <div className="about-me-text">
             <p>

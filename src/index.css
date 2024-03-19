@@ -47,6 +47,8 @@ button {
   transition: border-color 0.25s;
   color: black;
   font-size: 1rem;
+  font-size: 1rem;
+  border: double;
 }
 button:hover {
   border-color: #646cff;
@@ -54,10 +56,6 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
-}
-
-.build-card {
-  background-color: #06f9ff;
 }
 
 @media (prefers-color-scheme: light) {

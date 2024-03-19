@@ -33,7 +33,7 @@ export const UpperSection = () => {
                     : setActiveComponent("Home");
                 }}
               >
-                Home!
+                Home
               </button>
 
               <button
@@ -46,7 +46,7 @@ export const UpperSection = () => {
                     : setActiveComponent("About");
                 }}
               >
-                About!
+                About
               </button>
 
               <button
@@ -59,7 +59,7 @@ export const UpperSection = () => {
                     : setActiveComponent("Builds");
                 }}
               >
-                check out my builds!
+                check out my builds
               </button>
 
               <button
@@ -72,7 +72,7 @@ export const UpperSection = () => {
                     : setActiveComponent("Message");
                 }}
               >
-                send me a message!
+                send me a message
               </button>
             </div>
           </div>
@@ -90,7 +90,7 @@ export const UpperSection = () => {
                   : setActiveComponent("Home");
               }}
             >
-              Home!
+              Home
             </button>
 
             <button
@@ -103,7 +103,7 @@ export const UpperSection = () => {
                   : setActiveComponent("About");
               }}
             >
-              About!
+              About
             </button>
 
             <button
@@ -116,7 +116,7 @@ export const UpperSection = () => {
                   : setActiveComponent("Builds");
               }}
             >
-              check out my builds!
+              check out my builds
             </button>
 
             <button
@@ -129,7 +129,7 @@ export const UpperSection = () => {
                   : setActiveComponent("Message");
               }}
             >
-              send me a message!
+              send me a message
             </button>
           </div>
         </div>

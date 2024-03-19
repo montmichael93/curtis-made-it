@@ -51,7 +51,7 @@ import {
 
 export const buildData: buildInfo[] = [
   {
-    name: "ball in cage",
+    name: "Ball In Cage",
     description: ballInCageDescription,
     youTubeLink:
       "https://www.youtube.com/embed/FXfQa9346Zw?si=nO9uAnFMbJ1fYHaH",
@@ -79,126 +79,126 @@ export const buildData: buildInfo[] = [
     imageGallery: chaosCuttingBoardGallery,
   },
   {
-    name: "Corn hole lawn game",
+    name: "Corn Hole Lawn Game",
     description: cornHoleLawnGameDescription,
     youTubeLink:
       "https://www.youtube.com/embed/rZk3z2MdaAc?si=W32XDnzs9iLohn9Q",
     imageGallery: cornHoleLawnGameGallery,
   },
   {
-    name: "deckRebuild",
+    name: "Deck Rebuild",
     description: deckRebuildDescription,
     youTubeLink:
       "https://www.youtube.com/embed/YpOj7Mq0y_g?si=ILmYPEVrN9uyh-Wc",
     imageGallery: deckRebuildGallery,
   },
   {
-    name: "desktop christmas trees",
+    name: "Desktop Christmas Trees",
     description: desktopChristmasTreesDescription,
     youTubeLink:
       "https://www.youtube.com/embed/m_yPYMZOZ2U?si=l6CfmkIDP42JLXaL",
     imageGallery: desktopChristmasTreesGallery,
   },
   {
-    name: "dog house",
+    name: "Dog House",
     description: dogHouseDescription,
     youTubeLink:
       "https://www.youtube.com/embed/ssmfQXo2Aqc?si=1Kx9KUePc1ZP5KFz",
     imageGallery: dogHouseGallery,
   },
   {
-    name: "Floating bedframe",
+    name: "Floating Bedframe",
     description: floatingBedFrameDescription,
     youTubeLink:
       "https://www.youtube.com/embed/M5258viSFSM?si=JftFnvK6auhxPnqO",
     imageGallery: floatingBedFrameGallery,
   },
   {
-    name: "floating wine holders",
+    name: "Floating Wine Holders",
     description: floatingWineHoldersDescription,
     youTubeLink:
       "https://www.youtube.com/embed/ELxkCLKPEs0?si=tWpoFivBlJydYfpW",
     imageGallery: floatingWineHoldersGallery,
   },
   {
-    name: "giant Jenga",
+    name: "Giant Jenga",
     description: giantJengaDescription,
     youTubeLink:
       "https://www.youtube.com/embed/tK6kZ52l3wI?si=zO53-FhmDW9vWQ71",
     imageGallery: giantJengaGallery,
   },
   {
-    name: "hardwood earrings",
+    name: "Hardwood Earrings",
     description: hardwoodEarringsDescription,
     youTubeLink:
       "https://www.youtube.com/embed/1T9l0oV8QrQ?si=vOAZwH9jHDS9SbEb",
     imageGallery: hardwoodEarringsGallery,
   },
   {
-    name: "heart shaped vine mount",
+    name: "Heart Shaped Vine Mount",
     description: heartShapedVineMountDescription,
     youTubeLink:
       "https://www.youtube.com/embed/zr7yIyB9S5E?si=tY0rKc3_rRFDrSop",
     imageGallery: heartShapedVineMountGallery,
   },
   {
-    name: "patio chairs",
+    name: "Patio Chairs",
     description: patioChairsDescription,
     youTubeLink:
       "https://www.youtube.com/embed/DSj2zrO9OKg?si=ulVpCPontIkOVWl1",
     imageGallery: patioChairsGallery,
   },
   {
-    name: "patio tables",
+    name: "Patio Tables",
     description: patioTablesDescription,
     youTubeLink:
       "https://www.youtube.com/embed/QmzxZlnkxMs?si=yhvvJGbHz_7vP2Bx",
     imageGallery: patioTablesGallery,
   },
   {
-    name: "pet food dispenser",
+    name: "Pet Food Dispenser",
     description: petFoodDispenserDescription,
     youTubeLink:
       "https://www.youtube.com/embed/hZV0mW659pc?si=A8TFRpk4O0OkJ9Uc",
     imageGallery: petFoodDispenserGallery,
   },
   {
-    name: "planting station",
+    name: "Planting Station",
     description: plantingStationDescription,
     youTubeLink:
       "https://www.youtube.com/embed/hZV0mW659pc?si=OzI93gkRoguZPgY9",
     imageGallery: plantingStationGallery,
   },
   {
-    name: "soap savers",
+    name: "Soap Savers",
     description: soapSaversDescription,
     youTubeLink:
       "https://www.youtube.com/embed/RxZp-cL32rQ?si=AH6DcWiO95y_4XTP",
     imageGallery: soapSaversGallery,
   },
   {
-    name: "squirrel picnic tables",
+    name: "Squirrel Picnic Tables",
     description: squirrelPicnicTableDescription,
     youTubeLink:
       "https://www.youtube.com/embed/n1U-CJgrnIM?si=6lxewYEFLx62-Kjj",
     imageGallery: squirrelPicnicTableGallery,
   },
   {
-    name: "tensegrity Models",
+    name: "Tensegrity Models",
     description: tensegrityModelDescription,
     youTubeLink:
       "https://www.youtube.com/embed/5fstT-vTEL0?si=3bE8FzllA4aW2NXP",
     imageGallery: tensegrityModelGallery,
   },
   {
-    name: "vortex water fountain",
+    name: "Vortex Water Fountain",
     description: vortexWaterFountainDescription,
     youTubeLink:
       "https://www.youtube.com/embed/_h3m9S_FHNk?si=a7B8Ez_87E6j3AFj",
     imageGallery: vortexWaterFountainGallery,
   },
   {
-    name: "work bench",
+    name: "Work Bench",
     description: workBenchDescription,
     youTubeLink:
       "https://www.youtube.com/embed/Ki3rK9v2Tx8?si=p7PKg-oMbRk7IN6Z",

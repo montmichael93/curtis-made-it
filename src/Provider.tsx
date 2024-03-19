@@ -41,4 +41,5 @@ export const BuildProvider = ({ children }: { children: ReactNode }) => {
   );
 };
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const useBuild = () => useContext(buildsContext);

@@ -24,7 +24,7 @@ export const FullBuildInformation = () => {
           <br />
           <div className="full-Build-Info">
             <div className="build-flex-container">
-              <h2>{selectedBuild?.name}</h2>
+              <h2 className="full-build-title">{selectedBuild?.name}</h2>
 
               <iframe
                 className="youtube"
