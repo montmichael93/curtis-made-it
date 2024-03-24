@@ -39,6 +39,7 @@
 
   .mobile-menu {
     display: block;
+    width: 100%;
   }
 
   .container-header {
@@ -71,7 +72,14 @@
     height: 35rem;
   }
   .react-burger {
-    transform: translateY(-7rem);
+    align-self: flex-start;
+  }
+  .flex-center-with-map {
+    height: 40rem;
+  }
+
+  .homePage-Image {
+    top: 25%;
   }
 }
 
@@ -150,7 +158,12 @@
   }
 
   .react-burger {
-    transform: translateY(-7rem);
     align-self: flex-start;
+  }
+  .flex-center-with-map {
+    height: 40rem;
+  }
+  .homePage-Image {
+    top: 20%;
   }
 }

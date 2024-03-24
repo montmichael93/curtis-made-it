@@ -2,6 +2,7 @@ import { useBuild } from "./Provider";
 import Brand from "../public/branding.jpg";
 import Hamburger from "hamburger-react";
 import { useState } from "react";
+import { FaYoutube, FaInstagram } from "react-icons/fa";
 
 export const UpperSection = () => {
   const { activeComponent, setActiveComponent } = useBuild();
@@ -10,8 +11,22 @@ export const UpperSection = () => {
   return (
     <>
       <section id="main-section">
-        <img className="temp-brand-top" src={Brand} />
-        <h1>Welcome to my Channel</h1>
+        <div className="header-container">
+          <img className="temp-brand-top" src={Brand} />
+          <h1>CurtisMadeIt</h1>
+          <div className="icons-section">
+            <a>
+              <FaYoutube
+                size={"2rem"}
+                href="https://www.youtube.com/@CurtisMadeIt"
+              />
+            </a>
+
+            <a href="https://www.instagram.com/curtis_made_it/">
+              <FaInstagram size={"2rem"} />
+            </a>
+          </div>
+        </div>
 
         <span className="react-burger">
           <Hamburger
@@ -59,7 +74,7 @@ export const UpperSection = () => {
                     : setActiveComponent("Builds");
                 }}
               >
-                check out my builds
+                Check Out My Builds
               </button>
 
               <button
@@ -72,7 +87,7 @@ export const UpperSection = () => {
                     : setActiveComponent("Message");
                 }}
               >
-                send me a message
+                Send Me A Message
               </button>
             </div>
           </div>
