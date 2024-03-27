@@ -310,3 +310,14 @@
 .hamburger-react {
   transform: translateX(-13rem);
 }
+
+.hot-toast-logo-image {
+  width: 4rem;
+  border-radius: 50%;
+}
+
+.hot-toast-branding {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

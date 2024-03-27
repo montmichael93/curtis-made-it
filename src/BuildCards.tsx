@@ -1,5 +1,6 @@
 import { useBuild } from "./Provider";
-
+import toast from "react-hot-toast";
+import brand from "../public/branding.jpg";
 export const BuildCards = () => {
   const { activeComponent, selectedBuild, setSelectedBuild, buildData } =
     useBuild();
@@ -21,6 +22,12 @@ export const BuildCards = () => {
                   <button
                     className="button"
                     onClick={() => {
+                      toast(() => (
+                        <span className="hot-toast-branding">
+                          <img className="hot-toast-logo-image" src={brand} />
+                          <b>{builds.name}</b>
+                        </span>
+                      ));
                       setSelectedBuild(builds);
                     }}
                   >
