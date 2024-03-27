@@ -8,6 +8,11 @@ export const FullBuildInformation = () => {
   const willFullBuildInfoDisplay =
     selectedBuild && activeComponent === "Builds";
 
+  console.log(selectedBuild?.description.length);
+
+  const selectRandomDescription =
+    selectedBuild?.description.length &&
+    Math.floor(Math.random() * selectedBuild?.description.length);
   return (
     <>
       {willFullBuildInfoDisplay && (
@@ -49,7 +54,9 @@ export const FullBuildInformation = () => {
               </Carousel>
             </div>
 
-            <p className="build-description">{selectedBuild?.description[0]}</p>
+            <p className="build-description">
+              {selectedBuild?.description[selectRandomDescription!]}
+            </p>
           </div>
         </>
       )}
