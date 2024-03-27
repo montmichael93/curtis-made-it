@@ -97,7 +97,7 @@
 .homePage-Image {
   width: 50rem;
   position: absolute;
-  top: 10%;
+  top: 0%;
   right: 50%;
   transform: translate(50%, 50%);
 }
@@ -114,16 +114,19 @@
 
 .full-Build-Info {
   background-color: #4c4a4b;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
 }
 
 .close-that-button {
-  float: right;
+  float: left;
 }
 
 .build-flex-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 .gallery-buttons {
@@ -142,7 +145,13 @@
 .about-me-text {
   text-align: left;
   background-color: #4c4a4b;
-  font-size: 1rem;
+  font-size: 0.9rem;
+  width: 50%;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+  border: outset;
+  border-color: black;
 }
 
 .map-api {
@@ -159,6 +168,10 @@
 
 .temp-brand-top {
   width: 3.5rem;
+  position: absolute;
+  top: 30%;
+  border-radius: 50%;
+  left: 48%;
 }
 
 .temp-brand-bottom {
@@ -174,8 +187,14 @@
 }
 
 .build-description {
-  transform: translate(1rem, 0rem);
   font-size: 1rem;
+  text-align: left;
+  font-size: 0.9rem;
+  width: 50%;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+  border: outset;
 }
 
 .full-build-image {
@@ -192,6 +211,7 @@
 
 .mobile-menu {
   display: none;
+  z-index: 1;
 }
 
 .mobile-selectors {
@@ -208,7 +228,6 @@
 }
 .carousel-root {
   width: 45rem;
-  transform: translateX(23.5rem);
   background-color: #4c4a4b;
 }
 
@@ -230,8 +249,60 @@
 .icons-section {
   display: flex;
   gap: 1rem;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
 }
 
-.flex-center-with-map {
-  height: 62.5rem;
+.about-flex-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 130%;
+  gap: 2rem;
+}
+
+.about-icons {
+  text-align: center;
+}
+
+.home-page-cards {
+  background-color: #4c4a4b;
+  border: solid;
+  border-width: thick;
+  padding: 1rem;
+}
+
+.home-page-cards-container {
+  display: flex;
+  gap: 4rem;
+  z-index: 1;
+  position: absolute;
+  top: 135%;
+  right: 8%;
+}
+
+.home-and-about-paragraph {
+  border: solid;
+  border-width: thick;
+  padding: 1rem;
+}
+
+.flex-center-with-map-home {
+  height: 65rem;
+}
+
+.flex-center-with-map-about {
+  height: 126rem;
+}
+
+.home-page-cards:hover {
+  color: black;
+  background-color: #00ff00;
+}
+
+.about-me-text:hover {
+  color: black;
+  background-color: #00ff00;
 }

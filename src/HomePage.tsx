@@ -1,5 +1,6 @@
 import { useBuild } from "./Provider";
 import CLoveSittingDown from "../public/CloveSittingDown.jpg";
+import { FaDiscourse, FaChair, FaTools, FaHouseUser } from "react-icons/fa";
 
 export const HomePage = () => {
   const { activeComponent } = useBuild();
@@ -9,43 +10,53 @@ export const HomePage = () => {
     isHomePageSelected && (
       <>
         <div
-          className="flex-center-with-map"
+          className="flex-center-with-map-home"
           style={{
             backgroundImage: "url(/fadedPaintBackground.jpg )",
-
             zIndex: "-1",
             filter: "blur(10px)",
-            position: "sticky",
           }}
         ></div>
+
         <img className="homePage-Image" src={CLoveSittingDown} alt=""></img>
+
         <div
-          className="about-me-text"
+          className="home-page-cards-container"
           style={{
             zIndex: "1",
           }}
         >
-          <p>
-            Welcome to CurtisMadeIt: Where Woodworking Meets YouTube At
-            CurtisMadeIt, craftsmanship isn't just a skill; it's a passion
-            shared with our dedicated community of woodworking enthusiasts. As a
-            sole proprietor, Curtis brings years of experience and artistry to
-            every custom wood build he creates. From sleek floating bedframes to
-            intricate furniture pieces, each creation is meticulously crafted
-            with precision and care. What sets CurtisMadeIt apart is more than
-            just our exceptional woodworking skills—it's the unique bond we
-            share with our loyal YouTube community. With our channel as our
-            platform, we invite you to join us on a journey of creativity,
-            inspiration, and collaboration. Our fans aren't just customers;
-            they're valued members of our woodworking family, guiding us every
-            step of the way as we bring their custom wood dreams to life.
-            Whether you're seeking a statement piece for your home or a
-            one-of-a-kind gift for a loved one, CurtisMadeIt is here to make
-            your vision a reality. Explore our portfolio of custom wood builds,
-            inspired by the passion and enthusiasm of our YouTube community.
-            Join us on our channel, where woodworking meets YouTube, and let's
-            create something extraordinary together.
-          </p>
+          <div className="home-page-cards">
+            <div className="about-icons">
+              <h3>Send A Message</h3>
+              <FaDiscourse size={"4rem"} />
+            </div>
+            <p>Need Something built? Shoot me a Message</p>
+          </div>
+
+          <div className="home-page-cards">
+            <h3>Artisanal Builds</h3>
+            <div className="about-icons">
+              <FaChair size={"4rem"} />
+            </div>
+            <p>Using the highest quality wood</p>
+          </div>
+
+          <div className="home-page-cards">
+            <h3>Home Improvement</h3>
+            <div className="about-icons">
+              <FaHouseUser size={"4rem"} />
+            </div>
+            <p>To Personalize your living space</p>
+          </div>
+
+          <div className="home-page-cards">
+            <h3>DIY</h3>
+            <div className="about-icons">
+              <FaTools size={"4rem"} />
+            </div>
+            <p>The finest in woodcraft</p>
+          </div>
         </div>
       </>
     )

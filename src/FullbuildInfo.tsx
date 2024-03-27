@@ -1,7 +1,7 @@
 import { useBuild } from "./Provider";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
-
+import { FaArrowLeft } from "react-icons/fa";
 export const FullBuildInformation = () => {
   const { activeComponent, selectedBuild, setSelectedBuild } = useBuild();
 
@@ -18,7 +18,7 @@ export const FullBuildInformation = () => {
               setSelectedBuild(null);
             }}
           >
-            X
+            <FaArrowLeft /> Back
           </button>
           <br />
           <br />
@@ -33,22 +33,23 @@ export const FullBuildInformation = () => {
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
                 //allowfullscreen
               ></iframe>
-              <p className="build-description">
-                {selectedBuild?.description[0]}
-              </p>
+              <br />
+              <br />
+
+              <Carousel>
+                {selectedBuild?.imageGallery.map((image) => (
+                  <div>
+                    <img
+                      className="carousel-image full-build-image"
+                      src={image}
+                    />
+                    <p className="legend">{selectedBuild?.name}</p>
+                  </div>
+                ))}
+              </Carousel>
             </div>
 
-            <Carousel>
-              {selectedBuild?.imageGallery.map((image) => (
-                <div>
-                  <img
-                    className="carousel-image full-build-image"
-                    src={image}
-                  />
-                  <p className="legend">{selectedBuild?.name}</p>
-                </div>
-              ))}
-            </Carousel>
+            <p className="build-description">{selectedBuild?.description[0]}</p>
           </div>
         </>
       )}
