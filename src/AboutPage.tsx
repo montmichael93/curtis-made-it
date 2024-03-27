@@ -1,6 +1,7 @@
 import { useBuild } from "./Provider";
 import aboutMePageImage from "../public/CLoveOnTopOfDogHouse.jpg";
 import { FaChurch, FaHandshake, FaYoutubeSquare } from "react-icons/fa";
+import toast from "react-hot-toast";
 
 export const AboutPage = () => {
   const { activeComponent } = useBuild();
@@ -21,7 +22,15 @@ export const AboutPage = () => {
         <img className="homePage-Image" src={aboutMePageImage} alt=""></img>
 
         <div className="about-flex-container">
-          <div className="about-me-text">
+          <div
+            className="about-me-text"
+            onClick={() => {
+              toast("Welcome To Curtismadeit! ✝️", {
+                icon: "😎👌🔥",
+                style: { background: "#333", color: "#fff" },
+              });
+            }}
+          >
             <div className="about-icons">
               <FaChurch size={"4rem"} />
             </div>
@@ -40,7 +49,15 @@ export const AboutPage = () => {
             </p>
           </div>
 
-          <div className="about-me-text">
+          <div
+            className="about-me-text"
+            onClick={() => {
+              toast("Join The Community! 🤝", {
+                icon: "🌎",
+                style: { background: "#333", color: "#fff" },
+              });
+            }}
+          >
             <div className="about-icons">
               <FaHandshake size={"4rem"} />
             </div>
@@ -59,7 +76,15 @@ export const AboutPage = () => {
             </p>
           </div>
 
-          <div className="about-me-text">
+          <div
+            className="about-me-text"
+            onClick={() => {
+              toast("Like And Subscribe ! 👍", {
+                icon: "🎬 🎥 🔴 ▶",
+                style: { background: "#333", color: "#fff" },
+              });
+            }}
+          >
             <div className="about-icons">
               <FaYoutubeSquare size={"4rem"} />
             </div>

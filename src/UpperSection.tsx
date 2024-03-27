@@ -45,6 +45,7 @@ export const UpperSection = () => {
                   activeComponent === "Home"
                     ? setActiveComponent(activeComponent)
                     : setActiveComponent("Home");
+                  setIsMenuOpen(!isMenuOpen);
                 }}
               >
                 Home
@@ -58,6 +59,7 @@ export const UpperSection = () => {
                   activeComponent === "About"
                     ? setActiveComponent(activeComponent)
                     : setActiveComponent("About");
+                  setIsMenuOpen(!isMenuOpen);
                 }}
               >
                 About
@@ -71,6 +73,7 @@ export const UpperSection = () => {
                   activeComponent === "Builds"
                     ? setActiveComponent(activeComponent)
                     : setActiveComponent("Builds");
+                  setIsMenuOpen(!isMenuOpen);
                 }}
               >
                 Check Out My Builds
@@ -84,6 +87,7 @@ export const UpperSection = () => {
                   activeComponent === "Message"
                     ? setActiveComponent(activeComponent)
                     : setActiveComponent("Message");
+                  setIsMenuOpen(!isMenuOpen);
                 }}
               >
                 Send Me A Message
