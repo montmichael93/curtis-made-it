@@ -219,10 +219,6 @@
   .build-description {
     width: 100%;
   }
-
-  /*.icons-section {
-    display: none;
-  }*/
 }
 
 @media (min-width: 768px) and (max-width: 1240px) {

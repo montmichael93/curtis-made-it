@@ -8,8 +8,6 @@ export const FullBuildInformation = () => {
   const willFullBuildInfoDisplay =
     selectedBuild && activeComponent === "Builds";
 
-  console.log(selectedBuild?.description.length);
-
   const selectRandomDescription =
     selectedBuild?.description.length &&
     Math.floor(Math.random() * selectedBuild?.description.length);

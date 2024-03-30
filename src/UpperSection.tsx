@@ -19,11 +19,8 @@ export const UpperSection = () => {
             />
           </span>
           <div className="icons-section">
-            <a>
-              <FaYoutube
-                size={"2rem"}
-                href="https://www.youtube.com/@CurtisMadeIt"
-              />
+            <a href="https://www.youtube.com/@CurtisMadeIt">
+              <FaYoutube size={"2rem"} />
             </a>
 
             <h1>CurtisMadeIt</h1>
