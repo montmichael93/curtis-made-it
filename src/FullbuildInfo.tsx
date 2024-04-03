@@ -34,11 +34,9 @@ export const FullBuildInformation = () => {
                 src={selectedBuild?.youTubeLink}
                 title="YouTube video player"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
-                //allowfullscreen
               ></iframe>
               <br />
               <br />
-
               <Carousel>
                 {selectedBuild?.imageGallery.map((image) => (
                   <div>

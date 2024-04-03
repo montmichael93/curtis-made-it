@@ -31,7 +31,7 @@ export const HomePage = () => {
             className="home-page-cards"
             onClick={() => {
               toast("Don't be shy! Send a message! 📨 ➜ 📬", {
-                icon: "✉",
+                icon: "📨",
                 style: { background: "#333", color: "#fff" },
               });
             }}
