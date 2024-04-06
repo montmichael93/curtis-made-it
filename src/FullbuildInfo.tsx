@@ -1,61 +1,441 @@
 import { useBuild } from "./Provider";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { Carousel } from "react-responsive-carousel";
-import { FaArrowLeft } from "react-icons/fa";
+import {
+  FaArrowLeft,
+  //FaArrowAltCircleRight,
+  FaArrowCircleLeft,
+  FaArrowCircleRight,
+} from "react-icons/fa";
+//import { AiOutlineArrowRight, AiOutlineArrowRight } from "react-icons/ai";
+import { buildData } from "./assets/buildData";
+import { Box, Flex, chakra, Link } from "@chakra-ui/react";
+import { useEffect, useState } from "react";
+import { CommentsAndReplies } from "./assets/types";
+import { Image } from "@chakra-ui/react";
+
 export const FullBuildInformation = () => {
-  const { activeComponent, selectedBuild, setSelectedBuild } = useBuild();
+  const { activeComponent, selectedVideo, setSelectedVideo } = useBuild();
+  const [commentData, setCommentData] = useState<CommentsAndReplies[] | []>([]);
+  const [currentImage, setCurrentImage] = useState(0);
 
   const willFullBuildInfoDisplay =
-    selectedBuild && activeComponent === "Builds";
+    selectedVideo && activeComponent === "Builds";
 
-  const selectRandomDescription =
-    selectedBuild?.description.length &&
-    Math.floor(Math.random() * selectedBuild?.description.length);
+  const filteredBuild = buildData.filter(
+    (build) => build.id === selectedVideo?.videoId
+  );
+
+  const cards = filteredBuild.map((entry) => entry.imageGallery);
+
+  console.log(cards);
+  //console.log(selectedVideo);
+
+  useEffect(() => {
+    const API_KEY = "AIzaSyDHZZogp5RCcjTOrZe_pYvzukZAByew0P8";
+    function fetchCommentsAndReplies(
+      pageToken: string
+    ): Promise<CommentsAndReplies> {
+      return fetch(
+        `https://www.googleapis.com/youtube/v3/commentThreads?videoId=${selectedVideo?.videoId}&key=${API_KEY}&part=snippet,replies&pageToken=${pageToken}`
+      ).then((response) => response.json());
+    }
+
+    // Function to recursively fetch all comments and replies
+    function getAllCommentsAndReplies() {
+      let allCommentsAndReplies: CommentsAndReplies[] | [] = [];
+      let nextPageToken = "";
+      function fetchNextPage(): Promise<CommentsAndReplies[] | []> {
+        return fetchCommentsAndReplies(nextPageToken).then((response) => {
+          const commentThreads = response.items;
+          const commentsAndReplies = commentThreads.map((thread) => {
+            const comment = thread.snippet.topLevelComment.snippet;
+            const replies = thread.replies
+              ? thread.replies.comments.map((reply) => reply.snippet)
+              : [];
+            return { comment, replies };
+          });
+
+          allCommentsAndReplies =
+            allCommentsAndReplies.concat(commentsAndReplies);
+          nextPageToken = response.nextPageToken;
+          if (nextPageToken) {
+            return fetchNextPage(); // Recursive call to fetch next page
+          }
+          return allCommentsAndReplies;
+        });
+      }
+
+      return fetchNextPage();
+    }
+
+    getAllCommentsAndReplies()
+      .then((commentsAndReplies) => {
+        const commentThread = commentsAndReplies.flatMap((thread) => thread);
+        const commentThreadData: CommentsAndReplies[] = commentThread.map(
+          (thread) => ({
+            videoId: thread.comment.videoId,
+            commenterName: thread.comment.authorDisplayName,
+            commenterImage: thread.comment.authorProfileImageUrl,
+            commenterLikes: thread.comment.likeCount,
+            commenterDate: thread.comment.publishedAt,
+            comment: thread.comment.textOriginal,
+            replierName: thread.replies[0]
+              ? thread.replies[0].authorDisplayName
+              : "No replier",
+            replierImage: thread.replies[0]
+              ? thread.replies[0].authorProfileImageUrl
+              : "",
+            replierLikes: thread.replies[0] ? thread.replies[0].likeCount : 0,
+            replierDate: thread.replies[0] ? thread.replies[0].publishedAt : "",
+            replierResponse: thread.replies[0]
+              ? thread.replies[0].textOriginal
+              : "No reply",
+          })
+        );
+        setCommentData(commentThreadData);
+      })
+      .catch((error) => {
+        console.error("Error fetching comments and replies:", error);
+      });
+  }, [selectedVideo?.videoId]);
+
+  console.log(selectedVideo);
+
+  //console.log(commentData);
+
   return (
     <>
       {willFullBuildInfoDisplay && (
         <>
-          <button
-            className="close-that-button"
-            onClick={() => {
-              setSelectedBuild(null);
-            }}
-          >
-            <FaArrowLeft /> Back
-          </button>
+          <div>
+            <button
+              className="float-left pr-5 pl-5"
+              onClick={() => {
+                setSelectedVideo(null);
+                setCommentData([]);
+              }}
+            >
+              <FaArrowLeft /> Back
+            </button>
+          </div>
           <br />
           <br />
-          <div className="full-Build-Info">
-            <div className="build-flex-container">
-              <h2 className="full-build-title">{selectedBuild?.name}</h2>
+          <br />
+          <div className="flex bg-blueWood flex-col ">
+            <iframe
+              className="sm: h-60 lg: h-96"
+              src={selectedVideo.embedLink}
+              title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
+            ></iframe>
 
-              <iframe
-                className="youtube"
-                src={selectedBuild?.youTubeLink}
-                title="YouTube video player"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
-              ></iframe>
-              <br />
-              <br />
-              <Carousel>
-                {selectedBuild?.imageGallery.map((image) => (
-                  <div>
-                    <img
-                      className="carousel-image full-build-image"
-                      src={image}
-                    />
-                    <p className="legend">{selectedBuild?.name}</p>
-                  </div>
-                ))}
-              </Carousel>
-            </div>
+            <Flex
+              //className="bg-blueWood"
+              _dark={{
+                bg: "#3e3e3e",
+              }}
+              p={50}
+              w="full"
+              alignItems="center"
+              justifyContent="center"
+            >
+              <Box
+                maxW="xl"
+                mx="auto"
+                px={4}
+                py={3}
+                bg="white"
+                _dark={{
+                  bg: "gray.800",
+                }}
+                shadow="md"
+                rounded="md"
+              >
+                <Flex justifyContent="space-between" alignItems="center">
+                  <chakra.span
+                    fontSize="sm"
+                    color="gray.800"
+                    _dark={{
+                      color: "gray.400",
+                    }}
+                  >
+                    Likes: {selectedVideo.statistics.likeCount}
+                  </chakra.span>
+                  <chakra.span
+                    fontSize="sm"
+                    color="gray.800"
+                    _dark={{
+                      color: "gray.400",
+                    }}
+                  >
+                    Views: {selectedVideo.statistics.viewCount}
+                  </chakra.span>
+                  <chakra.span
+                    color="brand.800"
+                    _dark={{
+                      color: "brand.900",
+                    }}
+                    px={3}
+                    py={1}
+                    rounded="full"
+                    textTransform="uppercase"
+                    fontSize="xs"
+                  >
+                    comments: {selectedVideo.statistics.commentCount}
+                  </chakra.span>
+                </Flex>
 
-            <p className="build-description">
-              {selectedBuild?.description[selectRandomDescription!]}
-            </p>
+                <Box>
+                  <chakra.h1
+                    fontSize="lg"
+                    fontWeight="bold"
+                    mt={2}
+                    color="gray.800"
+                    _dark={{
+                      color: "white",
+                    }}
+                  >
+                    {selectedVideo?.title}
+                  </chakra.h1>
+                  <chakra.p
+                    fontSize="sm"
+                    mt={2}
+                    color="gray.600"
+                    _dark={{
+                      color: "gray.300",
+                    }}
+                  >
+                    {selectedVideo.description}
+                  </chakra.p>
+                </Box>
+              </Box>
+            </Flex>
           </div>
         </>
       )}
+
+      {cards.length > 0 && (
+        <>
+          <Flex
+            className="bg-blueWood"
+            _dark={{
+              bg: "#3e3e3e",
+            }}
+            p={50}
+            w="auto"
+            alignItems="center"
+            justifyContent="center"
+          >
+            <Box
+              w="sm"
+              bg="white"
+              _dark={{
+                bg: "gray.800",
+              }}
+              shadow="lg"
+              rounded="lg"
+              overflow="hidden"
+              mx="auto"
+            >
+              <Image
+                w="full"
+                h="max-content"
+                fit="cover"
+                src={cards[0][currentImage]}
+                alt="avatar"
+              />
+
+              <Box py={5} textAlign="center">
+                <div className="flex justify-evenly">
+                  <button>
+                    <FaArrowCircleLeft
+                      size="3rem"
+                      onClick={() => {
+                        currentImage === 0
+                          ? setCurrentImage(cards[0].length - 1)
+                          : setCurrentImage(currentImage - 1);
+                      }}
+                    />
+                  </button>
+                  <span>
+                    {currentImage + 1} / {cards[0].length}
+                  </span>
+
+                  <button>
+                    <FaArrowCircleRight
+                      size="3rem"
+                      onClick={() => {
+                        currentImage === cards[0].length - 1
+                          ? setCurrentImage(0)
+                          : setCurrentImage(currentImage + 1);
+                      }}
+                    />
+                  </button>
+                </div>
+              </Box>
+            </Box>
+          </Flex>
+        </>
+      )}
+
+      {commentData &&
+        commentData.map((commentEntry) => (
+          <>
+            <Flex
+              className="bg-blueWood"
+              _dark={{
+                bg: "#3e3e3e",
+              }}
+              p={50}
+              w="full"
+              alignItems="center"
+              justifyContent="center"
+            >
+              <Box
+                mx="auto"
+                px={8}
+                py={4}
+                rounded="lg"
+                shadow="lg"
+                bg="white"
+                _dark={{
+                  bg: "gray.800",
+                }}
+                maxW="2xl"
+              >
+                <Flex justifyContent="space-between" alignItems="center">
+                  <chakra.span
+                    fontSize="sm"
+                    color="gray.600"
+                    _dark={{
+                      color: "gray.400",
+                    }}
+                  >
+                    {commentEntry.commenterDate}
+                  </chakra.span>
+                </Flex>
+
+                <Box mt={2}>
+                  <chakra.p
+                    mt={2}
+                    color="gray.600"
+                    _dark={{
+                      color: "gray.300",
+                    }}
+                  >
+                    {commentEntry.comment}
+                  </chakra.p>
+                </Box>
+
+                <Flex justifyContent="space-between" alignItems="center" mt={4}>
+                  <Link
+                    color="brand.600"
+                    _dark={{
+                      color: "brand.400",
+                    }}
+                    _hover={{
+                      textDecor: "underline",
+                    }}
+                  >
+                    Likes: {commentEntry.commenterLikes}
+                  </Link>
+
+                  <Flex alignItems="center">
+                    <Image
+                      mx={4}
+                      w={10}
+                      h={10}
+                      rounded="full"
+                      fit="cover"
+                      display={{
+                        base: "none",
+                        sm: "block",
+                      }}
+                      src={commentEntry.commenterImage}
+                      alt="avatar"
+                    />
+                    <Link
+                      color="gray.700"
+                      _dark={{
+                        color: "gray.200",
+                      }}
+                      fontWeight="700"
+                      cursor="pointer"
+                    >
+                      {commentEntry.commenterName}
+                    </Link>
+                  </Flex>
+                </Flex>
+                <br />
+                <hr />
+                <br />
+
+                <Flex justifyContent="space-between" alignItems="center">
+                  <chakra.span
+                    fontSize="sm"
+                    color="gray.600"
+                    _dark={{
+                      color: "gray.400",
+                    }}
+                  >
+                    {commentEntry.replierDate}
+                  </chakra.span>
+                </Flex>
+
+                <Box mt={2}>
+                  <chakra.p
+                    mt={2}
+                    color="gray.600"
+                    _dark={{
+                      color: "gray.300",
+                    }}
+                  >
+                    {commentEntry.replierResponse}
+                  </chakra.p>
+                </Box>
+
+                <Flex justifyContent="space-between" alignItems="center" mt={4}>
+                  <Link
+                    color="brand.600"
+                    _dark={{
+                      color: "brand.400",
+                    }}
+                    _hover={{
+                      textDecor: "underline",
+                    }}
+                  >
+                    Likes: {commentEntry.replierLikes}
+                  </Link>
+
+                  <Flex alignItems="center">
+                    <Image
+                      mx={4}
+                      w={10}
+                      h={10}
+                      rounded="full"
+                      fit="cover"
+                      display={{
+                        base: "none",
+                        sm: "block",
+                      }}
+                      src={commentEntry.replierImage}
+                      alt="avatar"
+                    />
+                    <Link
+                      color="gray.700"
+                      _dark={{
+                        color: "gray.200",
+                      }}
+                      fontWeight="700"
+                      cursor="pointer"
+                    >
+                      {commentEntry.commenterName}
+                    </Link>
+                  </Flex>
+                </Flex>
+              </Box>
+            </Flex>
+          </>
+        ))}
     </>
   );
 };

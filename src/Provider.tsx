@@ -6,14 +6,12 @@ import {
   useContext,
   useState,
 } from "react";
-import { buildData } from "../src/assets/buildData";
-import { ActiveComponent, buildInfo } from "../src/assets/types";
+import { ActiveComponent, VideoData } from "../src/assets/types";
 
 type TypeBuildsProvider = {
-  buildData: buildInfo[];
-  selectedBuild: buildInfo | null;
+  selectedVideo: VideoData | null;
   activeComponent: ActiveComponent;
-  setSelectedBuild: Dispatch<SetStateAction<buildInfo | null>>;
+  setSelectedVideo: Dispatch<SetStateAction<VideoData | null>>;
   setActiveComponent: Dispatch<SetStateAction<ActiveComponent>>;
 };
 
@@ -24,16 +22,15 @@ const buildsContext = createContext<TypeBuildsProvider>(
 export const BuildProvider = ({ children }: { children: ReactNode }) => {
   const [activeComponent, setActiveComponent] =
     useState<ActiveComponent>("Home");
-  const [selectedBuild, setSelectedBuild] = useState<buildInfo | null>(null);
+  const [selectedVideo, setSelectedVideo] = useState<VideoData | null>(null);
 
   return (
     <buildsContext.Provider
       value={{
-        buildData,
         activeComponent,
-        selectedBuild,
+        selectedVideo,
         setActiveComponent,
-        setSelectedBuild,
+        setSelectedVideo,
       }}
     >
       {children}

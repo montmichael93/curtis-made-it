@@ -1,8 +1,8 @@
 /*
 * {
   outline: 1px solid #f00 !important;
-} */
-
+}
+*/
 #root {
   width: 100%;
   text-align: center;
@@ -57,17 +57,6 @@
   gap: 5rem;
 }
 
-.build-card {
-  margin: 10px;
-  border-radius: 10px;
-  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
-  overflow: hidden;
-  width: 18.75rem;
-  background-color: #4c4a4b;
-  border: outset;
-  border-color: black;
-}
-
 #main-section {
   border: 2px solid black;
   background-color: black;
@@ -94,14 +83,6 @@
   padding: 1.25rem;
 }
 
-.homePage-Image {
-  width: 50rem;
-  position: absolute;
-  top: 0%;
-  right: 50%;
-  transform: translate(50%, 50%);
-}
-
 .message-form {
   width: 100%;
   height: 50rem;
@@ -112,34 +93,9 @@
   height: 100%;
 }
 
-.full-Build-Info {
-  background-color: #4c4a4b;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  width: 100%;
-}
-
-.close-that-button {
-  float: left;
-}
-
-.build-flex-container {
-  display: flex;
-  flex-direction: column;
-}
-
 .gallery-buttons {
   display: flex;
   gap: 14rem;
-}
-
-.build-name {
-  color: white;
-  font-size: 1.5rem;
-  border-bottom: ridge;
-  border-top: ridge;
-  border-color: #06f9ff;
 }
 
 .about-me-text {
@@ -157,13 +113,6 @@
 .map-api {
   height: 35rem;
   width: 35rem;
-}
-
-.flex-center-with-map {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
 }
 
 .temp-brand-top {
@@ -221,11 +170,6 @@
   gap: 0.5rem;
 }
 
-.youtube {
-  display: block;
-  width: 45rem;
-  height: 25rem;
-}
 .carousel-root {
   width: 45rem;
   background-color: #4c4a4b;
@@ -267,34 +211,10 @@
   text-align: center;
 }
 
-.home-page-cards {
-  background-color: #4c4a4b;
-  border: solid;
-  border-width: thick;
-  padding: 1rem;
-}
-
-.home-page-cards-container {
-  display: flex;
-  gap: 4rem;
-  z-index: 1;
-  position: absolute;
-  top: 135%;
-  right: 8%;
-}
-
 .home-and-about-paragraph {
   border: solid;
   border-width: thick;
   padding: 1rem;
-}
-
-.flex-center-with-map-home {
-  height: 65rem;
-}
-
-.flex-center-with-map-about {
-  height: 126rem;
 }
 
 .home-page-cards:hover {
@@ -306,11 +226,6 @@
   color: black;
   background-color: #00ff00;
 }
-
-.hamburger-react {
-  transform: translateX(-13rem);
-}
-
 .hot-toast-logo-image {
   width: 4rem;
   border-radius: 50%;

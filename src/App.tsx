@@ -8,19 +8,22 @@ import { MessageComponent } from "./MessageComponent";
 import { BuildProvider } from "./Provider";
 import { UpperSection } from "./UpperSection";
 import { FooterSection } from "./Footer";
+import { ChakraProvider } from "@chakra-ui/react";
 
 function App() {
   return (
     <>
-      <BuildProvider>
-        <UpperSection />
-        <HomePage />
-        <AboutPage />
-        <BuildCards />
-        <FullBuildInformation />
-        <MessageComponent />
-        <FooterSection />
-      </BuildProvider>
+      <ChakraProvider>
+        <BuildProvider>
+          <UpperSection />
+          <HomePage />
+          <AboutPage />
+          <BuildCards />
+          <FullBuildInformation />
+          <MessageComponent />
+          <FooterSection />
+        </BuildProvider>
+      </ChakraProvider>
     </>
   );
 }
