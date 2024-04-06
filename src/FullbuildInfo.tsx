@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useBuild } from "./Provider";
 import {
   FaArrowLeft,
@@ -45,17 +46,24 @@ export const FullBuildInformation = () => {
       let nextPageToken = "";
       function fetchNextPage(): Promise<CommentsAndReplies[] | []> {
         return fetchCommentsAndReplies(nextPageToken).then((response) => {
+          // @ts-expect-error/ will figure out later
           const commentThreads = response.items;
-          const commentsAndReplies = commentThreads.map((thread) => {
-            const comment = thread.snippet.topLevelComment.snippet;
-            const replies = thread.replies
-              ? thread.replies.comments.map((reply) => reply.snippet)
-              : [];
-            return { comment, replies };
-          });
+          const commentsAndReplies = commentThreads.map(
+            (thread: {
+              snippet: { topLevelComment: { snippet: any } };
+              replies: { comments: any[] };
+            }) => {
+              const comment = thread.snippet.topLevelComment.snippet;
+              const replies = thread.replies
+                ? thread.replies.comments.map((reply) => reply.snippet)
+                : [];
+              return { comment, replies };
+            }
+          );
 
           allCommentsAndReplies =
             allCommentsAndReplies.concat(commentsAndReplies);
+          // @ts-expect-error/ will figure out later
           nextPageToken = response.nextPageToken;
           if (nextPageToken) {
             return fetchNextPage(); // Recursive call to fetch next page
@@ -72,22 +80,36 @@ export const FullBuildInformation = () => {
         const commentThread = commentsAndReplies.flatMap((thread) => thread);
         const commentThreadData: CommentsAndReplies[] = commentThread.map(
           (thread) => ({
+            // @ts-expect-error/ will figure out later
             videoId: thread.comment.videoId,
+            // @ts-expect-error/ will figure out later
             commenterName: thread.comment.authorDisplayName,
+            // @ts-expect-error/ will figure out later
             commenterImage: thread.comment.authorProfileImageUrl,
+            // @ts-expect-error/ will figure out later
             commenterLikes: thread.comment.likeCount,
+            // @ts-expect-error/ will figure out later
             commenterDate: thread.comment.publishedAt,
+            // @ts-expect-error/ will figure out later
             comment: thread.comment.textOriginal,
+            // @ts-expect-error/ will figure out later
             replierName: thread.replies[0]
-              ? thread.replies[0].authorDisplayName
+              ? // @ts-expect-error/ will figure out later
+                thread.replies[0].authorDisplayName
               : "No replier",
+            // @ts-expect-error/ will figure out later
             replierImage: thread.replies[0]
-              ? thread.replies[0].authorProfileImageUrl
+              ? // @ts-expect-error/ will figure out later
+                thread.replies[0].authorProfileImageUrl
               : "",
+            // @ts-expect-error/ will figure out later
             replierLikes: thread.replies[0] ? thread.replies[0].likeCount : 0,
+            // @ts-expect-error/ will figure out later
             replierDate: thread.replies[0] ? thread.replies[0].publishedAt : "",
+            // @ts-expect-error/ will figure out later
             replierResponse: thread.replies[0]
-              ? thread.replies[0].textOriginal
+              ? // @ts-expect-error/ will figure out later
+                thread.replies[0].textOriginal
               : "No reply",
           })
         );

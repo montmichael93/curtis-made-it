@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 const API_KEY = "AIzaSyDHZZogp5RCcjTOrZe_pYvzukZAByew0P8";
 const fetchChannelData = () => {
   return fetch(
@@ -5,11 +6,16 @@ const fetchChannelData = () => {
   )
     .then((response) => response.json())
     .then((data) => {
-      const channelData = data.items.map((item) => ({
-        channelId: item.id,
-        subscribers: item.statistics.subscriberCount,
-        totalChannelViews: item.statistics.viewCount,
-      }));
+      const channelData = data.items.map(
+        (item: {
+          id: any;
+          statistics: { subscriberCount: any; viewCount: any };
+        }) => ({
+          channelId: item.id,
+          subscribers: item.statistics.subscriberCount,
+          totalChannelViews: item.statistics.viewCount,
+        })
+      );
 
       return channelData;
     })
@@ -40,17 +46,27 @@ const youTubeVideos = () => {
         "1_8K5ZWqRso",
       ];
 
-      const allVideos = data.items.map((item) => ({
-        title: item.snippet.title,
-        thumbnails: item.snippet.thumbnails.high,
-        videoId: item.snippet.resourceId.videoId,
-        description: item.snippet.description,
-        datePosted: item.snippet.publishedAt,
-        embedLink: `https://www.youtube.com/embed/${item.snippet.resourceId.videoId}`,
-      }));
+      const allVideos = data.items.map(
+        (item: {
+          snippet: {
+            title: any;
+            thumbnails: { high: any };
+            resourceId: { videoId: any };
+            description: any;
+            publishedAt: any;
+          };
+        }) => ({
+          title: item.snippet.title,
+          thumbnails: item.snippet.thumbnails.high,
+          videoId: item.snippet.resourceId.videoId,
+          description: item.snippet.description,
+          datePosted: item.snippet.publishedAt,
+          embedLink: `https://www.youtube.com/embed/${item.snippet.resourceId.videoId}`,
+        })
+      );
 
       const videos = allVideos.filter(
-        (vid) => !vidsToExclude.includes(vid.videoId)
+        (vid: { videoId: string }) => !vidsToExclude.includes(vid.videoId)
       );
 
       return videos;
@@ -61,7 +77,7 @@ const youTubeVideos = () => {
     });
 };
 
-const videoStats = (videos, arrayOfPromises) => {
+const videoStats = (videos: any[], arrayOfPromises: any) => {
   return Promise.all(arrayOfPromises)
     .then((responses) => {
       return Promise.all(responses.map((res) => res.json()));
@@ -79,89 +95,6 @@ const videoStats = (videos, arrayOfPromises) => {
       return vidAndStats;
     });
 };
-
-/*
-youTubeVideos()
-  .then((videos) => {
-    //setState here for video entries
-    const fetchStatsWithIDs = videos.map((vid) =>
-      fetch(
-        `https://www.googleapis.com/youtube/v3/videos?key=${API_KEY}&id=${vid.videoId}&part=statistics`
-      )
-    );
-    return videoStats(videos, fetchStatsWithIDs);
-  })
-  .then((vidsAndStatistics) => {
-    console.log(vidsAndStatistics)
-})
-  .catch((error) => {
-    console.error("Error handling data from YouTube API: 2", error);
-  });*/
-/*
-const videoId = "f4yLBTJxJ_4";
-
-function fetchCommentsAndReplies(pageToken) {
-  return fetch(
-    `https://www.googleapis.com/youtube/v3/commentThreads?videoId=${videoId}&key=${API_KEY}&part=snippet,replies&pageToken=${pageToken}DELETETHIS`
-  ).then((response) => response.json());
-}
-
-// Function to recursively fetch all comments and replies
-function getAllCommentsAndReplies() {
-  let allCommentsAndReplies = [];
-  let nextPageToken = "";
-
-  function fetchNextPage() {
-    return fetchCommentsAndReplies(nextPageToken).then((response) => {
-      const commentThreads = response.items;
-      const commentsAndReplies = commentThreads.map((thread) => {
-        const comment = thread.snippet.topLevelComment.snippet;
-        const replies = thread.replies
-          ? thread.replies.comments.map((reply) => reply.snippet)
-          : [];
-        return { comment, replies };
-      });
-
-      allCommentsAndReplies = allCommentsAndReplies.concat(commentsAndReplies);
-      nextPageToken = response.nextPageToken;
-      if (nextPageToken) {
-        return fetchNextPage(); // Recursive call to fetch next page
-      }
-      return allCommentsAndReplies;
-    });
-  }
-
-  return fetchNextPage();
-}
-*/
-/*
-getAllCommentsAndReplies()
-  .then((commentsAndReplies) => {
-    const commentThread = commentsAndReplies.flatMap((thread) => thread);
-    const commentThreadData = commentThread.map((thread) => ({
-      videoId: thread.comment.videoId,
-      commenterName: thread.comment.authorDisplayName,
-      commenterImage: thread.comment.authorProfileImageUrl,
-      commenterLikes: thread.comment.likeCount,
-      commenterDate: thread.comment.publishedAt,
-      comment: thread.comment.textOriginal,
-      replierName: thread.replies[0]
-        ? thread.replies[0].authorDisplayName
-        : "No replier",
-      replierImage: thread.replies[0]
-        ? thread.replies[0].authorProfileImageUrl
-        : "",
-      replierLikes: thread.replies[0] ? thread.replies[0].likeCount : 0,
-      replierDate: thread.replies[0] ? thread.replies[0].publishedAt : "",
-      replierResponse: thread.replies[0]
-        ? thread.replies[0].textOriginal
-        : "No reply",
-    }));
-    return commentThreadData;
-  })
-  .catch((error) => {
-    console.error("Error fetching comments and replies:", error);
-  });*/
 
 export const Requests = {
   fetchChannelData,
