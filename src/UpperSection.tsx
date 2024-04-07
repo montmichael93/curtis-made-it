@@ -61,7 +61,6 @@ export const UpperSection = () => {
                   _dark={{
                     color: "inherit",
                   }}
-                  variant="ghost"
                   icon={<AiOutlineMenu />}
                   onClick={mobileNav.onOpen}
                 />
@@ -89,58 +88,52 @@ export const UpperSection = () => {
 
                   <Button
                     w="full"
-                    variant="ghost"
                     leftIcon={<AiFillHome />}
                     onClick={() => {
                       activeComponent === "Home"
                         ? setActiveComponent(activeComponent)
                         : setActiveComponent("Home");
                       setIsMenuOpen(!isMenuOpen);
-                      mobileNav.onClose;
+                      mobileNav.onClose();
                     }}
                   >
                     Home
                   </Button>
                   <Button
                     w="full"
-                    colorScheme="brand"
-                    variant="ghost"
                     leftIcon={<BsPerson />}
                     onClick={() => {
                       activeComponent === "About"
                         ? setActiveComponent(activeComponent)
                         : setActiveComponent("About");
                       setIsMenuOpen(!isMenuOpen);
-                      mobileNav.onClose;
+                      mobileNav.onClose();
                     }}
                   >
                     About
                   </Button>
                   <Button
                     w="full"
-                    //variant="ghost"
-                    colorScheme="brand"
                     leftIcon={<BsFillCameraVideoFill />}
                     onClick={() => {
                       activeComponent === "Builds"
                         ? setActiveComponent(activeComponent)
                         : setActiveComponent("Builds");
                       setIsMenuOpen(!isMenuOpen);
-                      mobileNav.onClose;
+                      mobileNav.onClose();
                     }}
                   >
                     Videos
                   </Button>
                   <Button
                     w="full"
-                    variant="ghost"
                     leftIcon={<AiOutlineMail />}
                     onClick={() => {
                       activeComponent === "Message"
                         ? setActiveComponent(activeComponent)
                         : setActiveComponent("Message");
                       setIsMenuOpen(!isMenuOpen);
-                      mobileNav.onClose;
+                      mobileNav.onClose();
                     }}
                   >
                     Send me a Message
