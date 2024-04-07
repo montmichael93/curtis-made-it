@@ -2,11 +2,9 @@
 import { useBuild } from "./Provider";
 import {
   FaArrowLeft,
-  //FaArrowAltCircleRight,
   FaArrowCircleLeft,
   FaArrowCircleRight,
 } from "react-icons/fa";
-//import { AiOutlineArrowRight, AiOutlineArrowRight } from "react-icons/ai";
 import { buildData } from "./assets/buildData";
 import { Box, Flex, chakra, Link } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
@@ -27,9 +25,6 @@ export const FullBuildInformation = () => {
   );
 
   const cards = filteredBuild.map((entry) => entry.imageGallery);
-
-  console.log(cards);
-  //console.log(selectedVideo);
 
   useEffect(() => {
     const API_KEY = "AIzaSyDHZZogp5RCcjTOrZe_pYvzukZAByew0P8";
@@ -120,10 +115,6 @@ export const FullBuildInformation = () => {
         console.error("Error fetching comments and replies:", error);
       });
   }, [selectedVideo?.videoId]);
-
-  console.log(selectedVideo);
-
-  //console.log(commentData);
 
   return (
     <>
