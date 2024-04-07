@@ -32,7 +32,6 @@ export const UpperSection = () => {
     <>
       <Box shadow="md">
         <chakra.header
-          hidden={true}
           bg={bg}
           borderColor="gray.600"
           borderBottomWidth={1}
@@ -104,7 +103,7 @@ export const UpperSection = () => {
                   </Button>
                   <Button
                     w="full"
-                    //colorScheme="brand"
+                    colorScheme="brand"
                     variant="ghost"
                     leftIcon={<BsPerson />}
                     onClick={() => {
@@ -154,7 +153,12 @@ export const UpperSection = () => {
               </chakra.h1>
             </HStack>
             <HStack spacing={3} display="flex" alignItems="center">
-              <Avatar size="sm" name="c-love" src={curtisAvatar} />
+              <Avatar
+                size="sm"
+                name="c-love"
+                className="sm: hidden"
+                src={curtisAvatar}
+              />
             </HStack>
           </Flex>
         </chakra.header>
