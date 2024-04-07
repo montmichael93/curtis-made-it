@@ -157,10 +157,75 @@ export const FullBuildInformation = () => {
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
             ></iframe>
 
+            {cards.length > 0 && (
+              <>
+                <Flex
+                  className="bg-blueWood"
+                  _dark={{
+                    bg: "#3e3e3e",
+                  }}
+                  p={50}
+                  w="auto"
+                  alignItems="center"
+                  justifyContent="center"
+                >
+                  <Box
+                    w="sm"
+                    bg="white"
+                    _dark={{
+                      bg: "gray.800",
+                    }}
+                    shadow="lg"
+                    rounded="lg"
+                    overflow="hidden"
+                    mx="auto"
+                  >
+                    <Image
+                      w="full"
+                      h="max-content"
+                      fit="cover"
+                      src={cards[0][currentImage]}
+                      alt="avatar"
+                    />
+
+                    <Box py={5} textAlign="center">
+                      <div className="flex justify-evenly">
+                        <button>
+                          <FaArrowCircleLeft
+                            size="3rem"
+                            onClick={() => {
+                              currentImage === 0
+                                ? setCurrentImage(cards[0].length - 1)
+                                : setCurrentImage(currentImage - 1);
+                            }}
+                          />
+                        </button>
+                        <span>
+                          {currentImage + 1} / {cards[0].length}
+                        </span>
+
+                        <button>
+                          <FaArrowCircleRight
+                            size="3rem"
+                            onClick={() => {
+                              currentImage === cards[0].length - 1
+                                ? setCurrentImage(0)
+                                : setCurrentImage(currentImage + 1);
+                            }}
+                          />
+                        </button>
+                      </div>
+                    </Box>
+                  </Box>
+                </Flex>
+              </>
+            )}
+
             <button
               className="bg-black text-white p-4"
               onClick={() => {
                 setDescriptionHidden(!descriptionHidden);
+                setCommentsHidden(true);
               }}
             >
               Video Description
@@ -170,12 +235,7 @@ export const FullBuildInformation = () => {
               className="bg-black text-white p-4"
               onClick={() => {
                 setCommentsHidden(!commentsHidden);
-                toast(() => (
-                  <span className="flex flex-col items-center">
-                    <img className="w-16 rounded-[50%]" src={branding} />
-                    <p>Scroll Down To See Comments!</p>
-                  </span>
-                ));
+                setDescriptionHidden(true);
               }}
             >
               Video Comments
@@ -262,70 +322,6 @@ export const FullBuildInformation = () => {
               </Box>
             </Flex>
           </div>
-        </>
-      )}
-
-      {cards.length > 0 && (
-        <>
-          <Flex
-            className="bg-blueWood"
-            _dark={{
-              bg: "#3e3e3e",
-            }}
-            p={50}
-            w="auto"
-            alignItems="center"
-            justifyContent="center"
-          >
-            <Box
-              w="sm"
-              bg="white"
-              _dark={{
-                bg: "gray.800",
-              }}
-              shadow="lg"
-              rounded="lg"
-              overflow="hidden"
-              mx="auto"
-            >
-              <Image
-                w="full"
-                h="max-content"
-                fit="cover"
-                src={cards[0][currentImage]}
-                alt="avatar"
-              />
-
-              <Box py={5} textAlign="center">
-                <div className="flex justify-evenly">
-                  <button>
-                    <FaArrowCircleLeft
-                      size="3rem"
-                      onClick={() => {
-                        currentImage === 0
-                          ? setCurrentImage(cards[0].length - 1)
-                          : setCurrentImage(currentImage - 1);
-                      }}
-                    />
-                  </button>
-                  <span>
-                    {currentImage + 1} / {cards[0].length}
-                  </span>
-
-                  <button>
-                    <FaArrowCircleRight
-                      size="3rem"
-                      onClick={() => {
-                        currentImage === cards[0].length - 1
-                          ? setCurrentImage(0)
-                          : setCurrentImage(currentImage + 1);
-                      }}
-                    />
-                  </button>
-                </div>
-              </Box>
-            </Box>
-          </Flex>
         </>
       )}
 
