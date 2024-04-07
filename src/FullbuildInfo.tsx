@@ -129,6 +129,8 @@ export const FullBuildInformation = () => {
                 setSelectedVideo(null);
                 setCommentData([]);
                 setCurrentImage(0);
+                setDescriptionHidden(true);
+                setCommentsHidden(true);
               }}
             >
               <FaArrowLeft />
