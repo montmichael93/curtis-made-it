@@ -112,7 +112,12 @@ export const FullBuildInformation = () => {
               : "Not replied yet",
           })
         );
-        setCommentData(commentThreadData);
+        //setCommentData(commentThreadData);
+        return toast.promise(setCommentData(commentThreadData), {
+          loading: "Saving...",
+          success: <b>Settings saved!</b>,
+          error: <b>Could not save.</b>,
+        });
       })
       .catch((error) => {
         console.error("Error fetching comments and replies:", error);
