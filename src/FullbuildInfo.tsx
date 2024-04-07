@@ -6,17 +6,7 @@ import {
   FaArrowCircleRight,
 } from "react-icons/fa";
 import { buildData } from "./assets/buildData";
-import {
-  Box,
-  Flex,
-  chakra,
-  Link,
-  Accordion,
-  AccordionItem,
-  AccordionIcon,
-  AccordionButton,
-  AccordionPanel,
-} from "@chakra-ui/react";
+import { Box, Flex, chakra, Link } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { CommentsAndReplies } from "./assets/types";
 import { Image } from "@chakra-ui/react";
