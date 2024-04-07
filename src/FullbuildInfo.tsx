@@ -11,6 +11,7 @@ import { useEffect, useState } from "react";
 import { CommentsAndReplies } from "./assets/types";
 import { Image } from "@chakra-ui/react";
 import branding from "../public/branding.jpg";
+import toast from "react-hot-toast";
 
 export const FullBuildInformation = () => {
   const { activeComponent, selectedVideo, setSelectedVideo } = useBuild();
@@ -157,7 +158,7 @@ export const FullBuildInformation = () => {
             ></iframe>
 
             <button
-              className="bg-black text-white"
+              className="bg-black text-white p-4"
               onClick={() => {
                 setDescriptionHidden(!descriptionHidden);
               }}
@@ -166,9 +167,15 @@ export const FullBuildInformation = () => {
             </button>
 
             <button
-              className="bg-black text-white"
+              className="bg-black text-white p-4"
               onClick={() => {
                 setCommentsHidden(!commentsHidden);
+                toast(() => (
+                  <span className="flex flex-col items-center">
+                    <img className="w-16 rounded-[50%]" src={branding} />
+                    <p>Scroll Down To See Comments!</p>
+                  </span>
+                ));
               }}
             >
               Video Comments

@@ -128,9 +128,9 @@ export const BuildCards = () => {
                           }}
                           onClick={() => {
                             toast(() => (
-                              <span className="hot-toast-branding">
+                              <span className="flex flex-col items-center">
                                 <img
-                                  className="hot-toast-logo-image"
+                                  className="w-16 rounded-[50%]"
                                   src={brand}
                                 />
                                 <b>{video.title}</b>
