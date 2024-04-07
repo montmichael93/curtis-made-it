@@ -11,7 +11,6 @@ import { useEffect, useState } from "react";
 import { CommentsAndReplies } from "./assets/types";
 import { Image } from "@chakra-ui/react";
 import branding from "../public/branding.jpg";
-import toast from "react-hot-toast";
 
 export const FullBuildInformation = () => {
   const { activeComponent, selectedVideo, setSelectedVideo } = useBuild();
@@ -112,12 +111,7 @@ export const FullBuildInformation = () => {
               : "Not replied yet",
           })
         );
-        //setCommentData(commentThreadData);
-        return toast.promise(setCommentData(commentThreadData), {
-          loading: "Saving...",
-          success: <b>Settings saved!</b>,
-          error: <b>Could not save.</b>,
-        });
+        setCommentData(commentThreadData);
       })
       .catch((error) => {
         console.error("Error fetching comments and replies:", error);
