@@ -32,6 +32,7 @@ export const UpperSection = () => {
     <>
       <Box shadow="md">
         <chakra.header
+          hidden={true}
           bg={bg}
           borderColor="gray.600"
           borderBottomWidth={1}

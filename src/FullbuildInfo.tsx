@@ -6,7 +6,17 @@ import {
   FaArrowCircleRight,
 } from "react-icons/fa";
 import { buildData } from "./assets/buildData";
-import { Box, Flex, chakra, Link } from "@chakra-ui/react";
+import {
+  Box,
+  Flex,
+  chakra,
+  Link,
+  Accordion,
+  AccordionItem,
+  AccordionIcon,
+  AccordionButton,
+  AccordionPanel,
+} from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { CommentsAndReplies } from "./assets/types";
 import { Image } from "@chakra-ui/react";
@@ -16,6 +26,8 @@ export const FullBuildInformation = () => {
   const { activeComponent, selectedVideo, setSelectedVideo } = useBuild();
   const [commentData, setCommentData] = useState<CommentsAndReplies[] | []>([]);
   const [currentImage, setCurrentImage] = useState(0);
+  const [descriptionHidden, setDescriptionHidden] = useState(true);
+  const [commentsHidden, setCommentsHidden] = useState(true);
 
   const willFullBuildInfoDisplay =
     selectedVideo && activeComponent === "Builds";
@@ -122,15 +134,26 @@ export const FullBuildInformation = () => {
         <>
           <div>
             <button
-              className="float-left pr-5 pl-5"
+              className="float-left p-3"
               onClick={() => {
                 setSelectedVideo(null);
                 setCommentData([]);
                 setCurrentImage(0);
               }}
             >
-              <FaArrowLeft /> Back
+              <FaArrowLeft />
             </button>
+            <div className="flex justify-evenly">
+              <span className="text-lg">
+                Likes: {selectedVideo.statistics.likeCount}
+              </span>
+              <span className="text-lg">
+                Views: {selectedVideo.statistics.viewCount}
+              </span>
+              <span className="text-lg">
+                comments: {selectedVideo.statistics.commentCount}
+              </span>
+            </div>
           </div>
           <br />
           <br />
@@ -143,18 +166,36 @@ export const FullBuildInformation = () => {
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
             ></iframe>
 
+            <button
+              className="bg-black text-white"
+              onClick={() => {
+                setDescriptionHidden(!descriptionHidden);
+              }}
+            >
+              Video Description
+            </button>
+
+            <button
+              className="bg-black text-white"
+              onClick={() => {
+                setCommentsHidden(!commentsHidden);
+              }}
+            >
+              Video Comments
+            </button>
+
             <Flex
-              //className="bg-blueWood"
+              hidden={descriptionHidden}
               _dark={{
                 bg: "#3e3e3e",
               }}
               p={50}
-              w="full"
+              //w="min-content"
               alignItems="center"
               justifyContent="center"
             >
               <Box
-                maxW="xl"
+                maxW="sm"
                 mx="auto"
                 px={4}
                 py={3}
@@ -165,40 +206,6 @@ export const FullBuildInformation = () => {
                 shadow="md"
                 rounded="md"
               >
-                <Flex justifyContent="space-between" alignItems="center">
-                  <chakra.span
-                    fontSize="sm"
-                    color="gray.800"
-                    _dark={{
-                      color: "gray.400",
-                    }}
-                  >
-                    Likes: {selectedVideo.statistics.likeCount}
-                  </chakra.span>
-                  <chakra.span
-                    fontSize="sm"
-                    color="gray.800"
-                    _dark={{
-                      color: "gray.400",
-                    }}
-                  >
-                    Views: {selectedVideo.statistics.viewCount}
-                  </chakra.span>
-                  <chakra.span
-                    color="brand.800"
-                    _dark={{
-                      color: "brand.900",
-                    }}
-                    px={3}
-                    py={1}
-                    rounded="full"
-                    textTransform="uppercase"
-                    fontSize="xs"
-                  >
-                    comments: {selectedVideo.statistics.commentCount}
-                  </chakra.span>
-                </Flex>
-
                 <Box>
                   <chakra.h1
                     fontSize="lg"
@@ -211,6 +218,39 @@ export const FullBuildInformation = () => {
                   >
                     {selectedVideo?.title}
                   </chakra.h1>
+                  <Flex justifyContent="space-between" alignItems="center">
+                    <chakra.span
+                      fontSize="sm"
+                      color="gray.800"
+                      _dark={{
+                        color: "gray.400",
+                      }}
+                    >
+                      Likes: {selectedVideo.statistics.likeCount}
+                    </chakra.span>
+                    <chakra.span
+                      fontSize="sm"
+                      color="gray.800"
+                      _dark={{
+                        color: "gray.400",
+                      }}
+                    >
+                      Views: {selectedVideo.statistics.viewCount}
+                    </chakra.span>
+                    <chakra.span
+                      color="brand.800"
+                      _dark={{
+                        color: "brand.900",
+                      }}
+                      px={3}
+                      py={1}
+                      rounded="full"
+                      textTransform="uppercase"
+                      fontSize="xs"
+                    >
+                      comments: {selectedVideo.statistics.commentCount}
+                    </chakra.span>
+                  </Flex>
                   <chakra.p
                     fontSize="sm"
                     mt={2}
@@ -296,6 +336,7 @@ export const FullBuildInformation = () => {
         commentData.map((commentEntry) => (
           <>
             <Flex
+              hidden={commentsHidden}
               className="bg-blueWood"
               _dark={{
                 bg: "#3e3e3e",
@@ -315,7 +356,7 @@ export const FullBuildInformation = () => {
                 _dark={{
                   bg: "gray.800",
                 }}
-                maxW="2xl"
+                maxW="sm"
               >
                 <Flex justifyContent="space-between" alignItems="center">
                   <chakra.span
