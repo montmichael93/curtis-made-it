@@ -12,6 +12,7 @@ import { Box, Flex, chakra, Link } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { CommentsAndReplies } from "./assets/types";
 import { Image } from "@chakra-ui/react";
+import branding from "../public/branding.jpg";
 
 export const FullBuildInformation = () => {
   const { activeComponent, selectedVideo, setSelectedVideo } = useBuild();
@@ -96,7 +97,7 @@ export const FullBuildInformation = () => {
             replierName: thread.replies[0]
               ? // @ts-expect-error/ will figure out later
                 thread.replies[0].authorDisplayName
-              : "No replier",
+              : "",
             // @ts-expect-error/ will figure out later
             replierImage: thread.replies[0]
               ? // @ts-expect-error/ will figure out later
@@ -110,7 +111,7 @@ export const FullBuildInformation = () => {
             replierResponse: thread.replies[0]
               ? // @ts-expect-error/ will figure out later
                 thread.replies[0].textOriginal
-              : "No reply",
+              : "Not replied yet",
           })
         );
         setCommentData(commentThreadData);
@@ -134,6 +135,7 @@ export const FullBuildInformation = () => {
               onClick={() => {
                 setSelectedVideo(null);
                 setCommentData([]);
+                setCurrentImage(0);
               }}
             >
               <FaArrowLeft /> Back
@@ -358,7 +360,9 @@ export const FullBuildInformation = () => {
                       textDecor: "underline",
                     }}
                   >
-                    Likes: {commentEntry.commenterLikes}
+                    {commentEntry.commenterLikes > "0"
+                      ? `Likes: ${commentEntry.commenterLikes}`
+                      : ""}
                   </Link>
 
                   <Flex alignItems="center">
@@ -425,7 +429,9 @@ export const FullBuildInformation = () => {
                       textDecor: "underline",
                     }}
                   >
-                    Likes: {commentEntry.replierLikes}
+                    {commentEntry.replierLikes > "0"
+                      ? `Likes: ${commentEntry.replierLikes}`
+                      : ""}
                   </Link>
 
                   <Flex alignItems="center">
@@ -439,7 +445,11 @@ export const FullBuildInformation = () => {
                         base: "none",
                         sm: "block",
                       }}
-                      src={commentEntry.replierImage}
+                      src={
+                        commentEntry.replierImage
+                          ? commentEntry.replierImage
+                          : branding
+                      }
                       alt="avatar"
                     />
                     <Link
@@ -450,7 +460,7 @@ export const FullBuildInformation = () => {
                       fontWeight="700"
                       cursor="pointer"
                     >
-                      {commentEntry.commenterName}
+                      {commentEntry.replierName ? commentEntry.replierName : ""}
                     </Link>
                   </Flex>
                 </Flex>
