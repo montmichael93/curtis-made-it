@@ -17,11 +17,9 @@ export const FullBuildInformation = () => {
   const [descriptionHidden, setDescriptionHidden] = useState(true);
   const [commentsHidden, setCommentsHidden] = useState(true);
   const navigate = useNavigate();
-
   const filteredBuild = buildData.filter(
     (build) => build.id === selectedVideo?.videoId
   );
-
   const cards = filteredBuild.map((entry) => entry.imageGallery);
 
   return (
@@ -56,7 +54,7 @@ export const FullBuildInformation = () => {
         <br />
         <div className="flex bg-blueWood flex-col items-center">
           <iframe
-            className="sm: h-60 lg: max-w-lg"
+            className="youtube-video"
             src={selectedVideo?.embedLink}
             title="YouTube video player"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
@@ -125,26 +123,27 @@ export const FullBuildInformation = () => {
               </Flex>
             </>
           )}
+          <Flex>
+            <button
+              className="bg-black text-white p-4"
+              onClick={() => {
+                setDescriptionHidden(!descriptionHidden);
+                setCommentsHidden(true);
+              }}
+            >
+              Video Description
+            </button>
 
-          <button
-            className="bg-black text-white p-4"
-            onClick={() => {
-              setDescriptionHidden(!descriptionHidden);
-              setCommentsHidden(true);
-            }}
-          >
-            Video Description
-          </button>
-
-          <button
-            className="bg-black text-white p-4"
-            onClick={() => {
-              setCommentsHidden(!commentsHidden);
-              setDescriptionHidden(true);
-            }}
-          >
-            Video Comments
-          </button>
+            <button
+              className="bg-black text-white p-4"
+              onClick={() => {
+                setCommentsHidden(!commentsHidden);
+                setDescriptionHidden(true);
+              }}
+            >
+              Video Comments
+            </button>
+          </Flex>
 
           <Flex
             hidden={descriptionHidden}
@@ -306,7 +305,6 @@ export const FullBuildInformation = () => {
                         sm: "block",
                       }}
                       src={commentEntry.commenterImage}
-                      alt="avatar"
                     />
                     <Link
                       color="gray.700"
@@ -379,7 +377,6 @@ export const FullBuildInformation = () => {
                           ? commentEntry.replierImage
                           : branding
                       }
-                      alt="avatar"
                     />
                     <Link
                       color="gray.700"

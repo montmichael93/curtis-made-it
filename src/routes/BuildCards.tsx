@@ -7,7 +7,6 @@ import { Link } from "react-router-dom";
 
 export const BuildCards = () => {
   const { videoData, setSelectedVideo } = useBuild();
-
   return (
     <>
       <div

@@ -214,3 +214,8 @@
   color: black;
   background-color: #00ff00;
 }
+
+.youtube-video {
+  width: 50rem;
+  height: 30rem;
+}
