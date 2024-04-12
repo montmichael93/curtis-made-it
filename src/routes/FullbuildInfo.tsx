@@ -14,12 +14,12 @@ import branding from "../../public/branding.jpg";
 import { useNavigate } from "react-router-dom";
 
 export const FullBuildInformation = () => {
-  const { selectedVideo, setSelectedVideo } = useBuild();
+  const { selectedVideo } = useBuild();
   const [commentData, setCommentData] = useState<CommentsAndReplies[] | []>([]);
   const [currentImage, setCurrentImage] = useState(0);
   const [descriptionHidden, setDescriptionHidden] = useState(true);
   const [commentsHidden, setCommentsHidden] = useState(true);
-  let navigate = useNavigate();
+  const navigate = useNavigate();
 
   const filteredBuild = buildData.filter(
     (build) => build.id === selectedVideo?.videoId
@@ -126,8 +126,6 @@ export const FullBuildInformation = () => {
           <button
             className="float-left p-3"
             onClick={() => {
-              //setSelectedVideo(null);
-              //setCommentData([]);
               setCurrentImage(0);
               setDescriptionHidden(true);
               setCommentsHidden(true);
