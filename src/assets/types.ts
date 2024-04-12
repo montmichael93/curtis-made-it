@@ -57,12 +57,3 @@ const CommentsAndRepliesSchema = z.object({
 });
 
 export type CommentsAndReplies = z.infer<typeof CommentsAndRepliesSchema>;
-
-const ActiveComponentSchema = z.union([
-  z.literal("Home"),
-  z.literal("About"),
-  z.literal("Builds"),
-  z.literal("Message"),
-]);
-
-export type ActiveComponent = z.infer<typeof ActiveComponentSchema>;

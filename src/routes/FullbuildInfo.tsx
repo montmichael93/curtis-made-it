@@ -1,26 +1,25 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { useBuild } from "./Provider";
+import { useBuild } from "../Provider";
 import {
   FaArrowLeft,
   FaArrowCircleLeft,
   FaArrowCircleRight,
 } from "react-icons/fa";
-import { buildData } from "./assets/buildData";
+import { buildData } from "../assets/buildData";
 import { Box, Flex, chakra, Link } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
-import { CommentsAndReplies } from "./assets/types";
+import { CommentsAndReplies } from "../assets/types";
 import { Image } from "@chakra-ui/react";
-import branding from "../public/branding.jpg";
+import branding from "../../public/branding.jpg";
+import { useNavigate } from "react-router-dom";
 
 export const FullBuildInformation = () => {
-  const { activeComponent, selectedVideo, setSelectedVideo } = useBuild();
+  const { selectedVideo, setSelectedVideo } = useBuild();
   const [commentData, setCommentData] = useState<CommentsAndReplies[] | []>([]);
   const [currentImage, setCurrentImage] = useState(0);
   const [descriptionHidden, setDescriptionHidden] = useState(true);
   const [commentsHidden, setCommentsHidden] = useState(true);
-
-  const willFullBuildInfoDisplay =
-    selectedVideo && activeComponent === "Builds";
+  let navigate = useNavigate();
 
   const filteredBuild = buildData.filter(
     (build) => build.id === selectedVideo?.videoId
@@ -118,213 +117,214 @@ export const FullBuildInformation = () => {
       });
   }, [selectedVideo?.videoId]);
 
+  console.log(selectedVideo);
+
   return (
     <>
-      {willFullBuildInfoDisplay && (
-        <>
-          <div>
-            <button
-              className="float-left p-3"
-              onClick={() => {
-                setSelectedVideo(null);
-                setCommentData([]);
-                setCurrentImage(0);
-                setDescriptionHidden(true);
-                setCommentsHidden(true);
-              }}
-            >
-              <FaArrowLeft />
-            </button>
-            <div className="flex justify-evenly">
-              <span className="text-lg">
-                Likes: {selectedVideo.statistics.likeCount}
-              </span>
-              <span className="text-lg">
-                Views: {selectedVideo.statistics.viewCount}
-              </span>
-              <span className="text-lg">
-                comments: {selectedVideo.statistics.commentCount}
-              </span>
-            </div>
+      <>
+        <div>
+          <button
+            className="float-left p-3"
+            onClick={() => {
+              //setSelectedVideo(null);
+              //setCommentData([]);
+              setCurrentImage(0);
+              setDescriptionHidden(true);
+              setCommentsHidden(true);
+              navigate("/videos");
+            }}
+          >
+            <FaArrowLeft />
+          </button>
+          <div className="flex justify-evenly">
+            <span className="text-lg">
+              Likes: {selectedVideo?.statistics.likeCount}
+            </span>
+            <span className="text-lg">
+              Views: {selectedVideo?.statistics.viewCount}
+            </span>
+            <span className="text-lg">
+              comments: {selectedVideo?.statistics.commentCount}
+            </span>
           </div>
-          <br />
-          <br />
-          <br />
-          <div className="flex bg-blueWood flex-col ">
-            <iframe
-              className="sm: h-60 lg: h-96"
-              src={selectedVideo.embedLink}
-              title="YouTube video player"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
-            ></iframe>
+        </div>
+        <br />
+        <br />
+        <br />
+        <div className="flex bg-blueWood flex-col ">
+          <iframe
+            className="sm: h-60 lg: h-96"
+            src={selectedVideo?.embedLink}
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
+          ></iframe>
 
-            {cards.length > 0 && (
-              <>
-                <Flex
-                  className="bg-blueWood"
-                  _dark={{
-                    bg: "#3e3e3e",
-                  }}
-                  p={50}
-                  w="auto"
-                  alignItems="center"
-                  justifyContent="center"
-                >
-                  <Box
-                    w="sm"
-                    bg="white"
-                    _dark={{
-                      bg: "gray.800",
-                    }}
-                    shadow="lg"
-                    rounded="lg"
-                    overflow="hidden"
-                    mx="auto"
-                  >
-                    <Image
-                      w="full"
-                      h="max-content"
-                      fit="cover"
-                      src={cards[0][currentImage]}
-                      alt="avatar"
-                    />
-
-                    <Box py={5} textAlign="center">
-                      <div className="flex justify-evenly">
-                        <button>
-                          <FaArrowCircleLeft
-                            size="3rem"
-                            onClick={() => {
-                              currentImage === 0
-                                ? setCurrentImage(cards[0].length - 1)
-                                : setCurrentImage(currentImage - 1);
-                            }}
-                          />
-                        </button>
-                        <span>
-                          {currentImage + 1} / {cards[0].length}
-                        </span>
-
-                        <button>
-                          <FaArrowCircleRight
-                            size="3rem"
-                            onClick={() => {
-                              currentImage === cards[0].length - 1
-                                ? setCurrentImage(0)
-                                : setCurrentImage(currentImage + 1);
-                            }}
-                          />
-                        </button>
-                      </div>
-                    </Box>
-                  </Box>
-                </Flex>
-              </>
-            )}
-
-            <button
-              className="bg-black text-white p-4"
-              onClick={() => {
-                setDescriptionHidden(!descriptionHidden);
-                setCommentsHidden(true);
-              }}
-            >
-              Video Description
-            </button>
-
-            <button
-              className="bg-black text-white p-4"
-              onClick={() => {
-                setCommentsHidden(!commentsHidden);
-                setDescriptionHidden(true);
-              }}
-            >
-              Video Comments
-            </button>
-
-            <Flex
-              hidden={descriptionHidden}
-              _dark={{
-                bg: "#3e3e3e",
-              }}
-              p={50}
-              //w="min-content"
-              alignItems="center"
-              justifyContent="center"
-            >
-              <Box
-                maxW="sm"
-                mx="auto"
-                px={4}
-                py={3}
-                bg="white"
+          {cards.length > 0 && (
+            <>
+              <Flex
+                className="bg-blueWood"
                 _dark={{
-                  bg: "gray.800",
+                  bg: "#3e3e3e",
                 }}
-                shadow="md"
-                rounded="md"
+                p={50}
+                w="auto"
+                alignItems="center"
+                justifyContent="center"
               >
-                <Box>
-                  <chakra.h1
-                    fontSize="lg"
-                    fontWeight="bold"
-                    mt={2}
+                <Box
+                  w="sm"
+                  bg="white"
+                  _dark={{
+                    bg: "gray.800",
+                  }}
+                  shadow="lg"
+                  rounded="lg"
+                  overflow="hidden"
+                  mx="auto"
+                >
+                  <Image
+                    w="full"
+                    h="max-content"
+                    fit="cover"
+                    src={cards[0][currentImage]}
+                    alt="avatar"
+                  />
+
+                  <Box py={5} textAlign="center">
+                    <div className="flex justify-evenly">
+                      <button>
+                        <FaArrowCircleLeft
+                          size="3rem"
+                          onClick={() => {
+                            currentImage === 0
+                              ? setCurrentImage(cards[0].length - 1)
+                              : setCurrentImage(currentImage - 1);
+                          }}
+                        />
+                      </button>
+                      <span>
+                        {currentImage + 1} / {cards[0].length}
+                      </span>
+
+                      <button>
+                        <FaArrowCircleRight
+                          size="3rem"
+                          onClick={() => {
+                            currentImage === cards[0].length - 1
+                              ? setCurrentImage(0)
+                              : setCurrentImage(currentImage + 1);
+                          }}
+                        />
+                      </button>
+                    </div>
+                  </Box>
+                </Box>
+              </Flex>
+            </>
+          )}
+
+          <button
+            className="bg-black text-white p-4"
+            onClick={() => {
+              setDescriptionHidden(!descriptionHidden);
+              setCommentsHidden(true);
+            }}
+          >
+            Video Description
+          </button>
+
+          <button
+            className="bg-black text-white p-4"
+            onClick={() => {
+              setCommentsHidden(!commentsHidden);
+              setDescriptionHidden(true);
+            }}
+          >
+            Video Comments
+          </button>
+
+          <Flex
+            hidden={descriptionHidden}
+            _dark={{
+              bg: "#3e3e3e",
+            }}
+            p={50}
+            //w="min-content"
+            alignItems="center"
+            justifyContent="center"
+          >
+            <Box
+              maxW="sm"
+              mx="auto"
+              px={4}
+              py={3}
+              bg="white"
+              _dark={{
+                bg: "gray.800",
+              }}
+              shadow="md"
+              rounded="md"
+            >
+              <Box>
+                <chakra.h1
+                  fontSize="lg"
+                  fontWeight="bold"
+                  mt={2}
+                  color="gray.800"
+                  _dark={{
+                    color: "white",
+                  }}
+                >
+                  {selectedVideo?.title}
+                </chakra.h1>
+                <Flex justifyContent="space-between" alignItems="center">
+                  <chakra.span
+                    fontSize="sm"
                     color="gray.800"
                     _dark={{
-                      color: "white",
+                      color: "gray.400",
                     }}
                   >
-                    {selectedVideo?.title}
-                  </chakra.h1>
-                  <Flex justifyContent="space-between" alignItems="center">
-                    <chakra.span
-                      fontSize="sm"
-                      color="gray.800"
-                      _dark={{
-                        color: "gray.400",
-                      }}
-                    >
-                      Likes: {selectedVideo.statistics.likeCount}
-                    </chakra.span>
-                    <chakra.span
-                      fontSize="sm"
-                      color="gray.800"
-                      _dark={{
-                        color: "gray.400",
-                      }}
-                    >
-                      Views: {selectedVideo.statistics.viewCount}
-                    </chakra.span>
-                    <chakra.span
-                      color="brand.800"
-                      _dark={{
-                        color: "brand.900",
-                      }}
-                      px={3}
-                      py={1}
-                      rounded="full"
-                      textTransform="uppercase"
-                      fontSize="xs"
-                    >
-                      comments: {selectedVideo.statistics.commentCount}
-                    </chakra.span>
-                  </Flex>
-                  <chakra.p
+                    Likes: {selectedVideo?.statistics.likeCount}
+                  </chakra.span>
+                  <chakra.span
                     fontSize="sm"
-                    mt={2}
-                    color="gray.600"
+                    color="gray.800"
                     _dark={{
-                      color: "gray.300",
+                      color: "gray.400",
                     }}
                   >
-                    {selectedVideo.description}
-                  </chakra.p>
-                </Box>
+                    Views: {selectedVideo?.statistics.viewCount}
+                  </chakra.span>
+                  <chakra.span
+                    color="brand.800"
+                    _dark={{
+                      color: "brand.900",
+                    }}
+                    px={3}
+                    py={1}
+                    rounded="full"
+                    textTransform="uppercase"
+                    fontSize="xs"
+                  >
+                    comments: {selectedVideo?.statistics.commentCount}
+                  </chakra.span>
+                </Flex>
+                <chakra.p
+                  fontSize="sm"
+                  mt={2}
+                  color="gray.600"
+                  _dark={{
+                    color: "gray.300",
+                  }}
+                >
+                  {selectedVideo?.description}
+                </chakra.p>
               </Box>
-            </Flex>
-          </div>
-        </>
-      )}
+            </Box>
+          </Flex>
+        </div>
+      </>
 
       {commentData &&
         commentData.map((commentEntry) => (

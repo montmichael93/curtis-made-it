@@ -1,12 +1,75 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App.tsx";
 import "./index.css";
 import { Toaster } from "react-hot-toast";
+
+import {
+  //createRoutesFromElements,
+  createBrowserRouter,
+  //Route,
+  RouterProvider,
+} from "react-router-dom";
+
+import Root from "./routes/Root";
+import ErrorPage from "./error-page";
+import { AboutPage } from "./routes/AboutPage";
+import { MessageComponent } from "./routes/MessageComponent";
+import { BuildCards } from "./routes/BuildCards";
+import { FullBuildInformation } from "./routes/FullbuildInfo";
+import Index from "./routes/Index";
+//import { FullBuildInformation } from "./routes/FullbuildInfo";
+//import { useBuild } from "../Provider";
+//import {useParams } from 'react-router-dom';
+
+//const { selectedVideo, setSelectedVideo } = useBuild();
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Root />,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        children: [
+          { index: true, element: <Index /> },
+          {
+            path: "about",
+            element: <AboutPage />,
+          },
+          {
+            path: "message",
+            element: <MessageComponent />,
+          },
+          {
+            path: "videos",
+            element: <BuildCards />,
+          },
+          {
+            path: "videos/:videoId",
+            element: <FullBuildInformation />,
+          },
+        ],
+      },
+    ],
+  },
+]);
+/*
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path="/" element={<Root />} errorElement={<ErrorPage />}>
+      <Route index element={<Index />} />
+      <Route path="about" element={<AboutPage />} />
+      <Route path="message" element={<MessageComponent />} />
+      <Route path="videos" element={<BuildCards />}>
+        <Route path=":videoId" element={<FullBuildInformation />} />
+      </Route>
+    </Route>
+  )
+);*/
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <Toaster />
-    <App />
+    <RouterProvider router={router} />
   </React.StrictMode>
 );

@@ -1,5 +1,5 @@
 import { Flex, Icon, chakra } from "@chakra-ui/react";
-import Brand from "../public/branding.jpg";
+//import Brand from "../public/branding.jpg";
 import { FaYoutube, FaInstagram } from "react-icons/fa";
 export const FooterSection = () => {
   return (
@@ -126,19 +126,6 @@ export const FooterSection = () => {
           </Flex>
         </Flex>
       </Flex>
-
-      <div className="footer" hidden={true}>
-        <a>
-          <FaYoutube
-            size={"2rem"}
-            href="https://www.youtube.com/@CurtisMadeIt"
-          />
-        </a>
-        <img className="temp-brand-bottom" src={Brand} />
-        <a href="https://www.instagram.com/curtis_made_it/">
-          <FaInstagram size={"2rem"} />
-        </a>
-      </div>
     </>
   );
 };
