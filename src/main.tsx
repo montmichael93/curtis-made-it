@@ -1,9 +1,11 @@
+import ReactDOM from "react-dom/client";
 import "./index.css";
 import { Toaster } from "react-hot-toast";
 
 import {
-  BrowserRouter,
+  //BrowserRouter,
   createBrowserRouter,
+  //HashRouter,
   RouterProvider,
 } from "react-router-dom";
 
@@ -14,7 +16,7 @@ import { MessageComponent } from "./routes/MessageComponent";
 import { BuildCards } from "./routes/BuildCards";
 import { FullBuildInformation } from "./routes/FullbuildInfo";
 import Index from "./routes/Index";
-import ReactDOM from "react-dom";
+import React from "react";
 
 const router = createBrowserRouter([
   {
@@ -46,6 +48,7 @@ const router = createBrowserRouter([
     ],
   },
 ]);
+
 /*
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -59,19 +62,27 @@ const router = createBrowserRouter(
     </Route>
   )
 );*/
-/*
+
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <Toaster />
     <RouterProvider router={router} />
   </React.StrictMode>
 );
-*/
 
-ReactDOM.render(
-  <BrowserRouter basename="https://curtismadeit-version-2.vercel.app/">
-    <Toaster />
-    <RouterProvider router={router} />
-  </BrowserRouter>,
-  document.getElementById("root")
-);
+/*
+document.addEventListener("DOMContentLoaded", function () {
+  const rootElement = document.getElementById("root");
+  if (rootElement) {
+    const root = createRoot(rootElement);
+
+    root.render(
+      <BrowserRouter basename="/">
+        <Toaster />
+        <RouterProvider router={router} />
+      </BrowserRouter>
+    );
+  } else {
+    console.error("Root element not found in the document.");
+  }
+}); */
