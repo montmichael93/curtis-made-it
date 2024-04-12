@@ -9,16 +9,10 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { BiWifiOff } from "react-icons/bi";
-//import { useHistory } from "react-router-dom";
 
 export default function ErrorPage() {
   const error = useRouteError();
   console.error(error);
-  /*
-  const history = useHistory();
-  const goBack = () => {
-    history.goBack();
-  };*/
 
   return (
     <>
@@ -34,6 +28,7 @@ export default function ErrorPage() {
           <CardBody>
             <Text>Sorry, an unexpected error has occurred.</Text>
             <Text>
+              {/* @ts-expect-error/ will figure out later */}
               <i>Page {error.statusText || error.message}</i>
             </Text>
           </CardBody>

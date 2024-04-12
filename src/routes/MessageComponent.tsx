@@ -1,12 +1,7 @@
-//import { useBuild } from "../Provider";
-
 export const MessageComponent = () => {
-  //const { activeComponent } = useBuild();
-  //const isMessageComponentSelected = activeComponent === "Message";
   const handleIframeLoad = () => {
     window.parent.scrollTo(0, 0);
   };
-
   return (
     <>
       <iframe
