@@ -3,12 +3,7 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import { Toaster } from "react-hot-toast";
 
-import {
-  //createRoutesFromElements,
-  createBrowserRouter,
-  //Route,
-  RouterProvider,
-} from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import Root from "./routes/Root";
 import ErrorPage from "./error-page";
@@ -17,11 +12,6 @@ import { MessageComponent } from "./routes/MessageComponent";
 import { BuildCards } from "./routes/BuildCards";
 import { FullBuildInformation } from "./routes/FullbuildInfo";
 import Index from "./routes/Index";
-//import { FullBuildInformation } from "./routes/FullbuildInfo";
-//import { useBuild } from "../Provider";
-//import {useParams } from 'react-router-dom';
-
-//const { selectedVideo, setSelectedVideo } = useBuild();
 
 const router = createBrowserRouter([
   {
