@@ -2,34 +2,12 @@ import { useBuild } from "../Provider";
 import toast from "react-hot-toast";
 import brand from "../../public/branding.jpg";
 import { Flex, Box, chakra } from "@chakra-ui/react";
-import { useEffect, useState } from "react";
-import { Requests } from "../../utils/requests";
-import { VideoData } from "../assets/types";
 import { MdPlayArrow } from "react-icons/md";
 import { Link } from "react-router-dom";
 
 export const BuildCards = () => {
-  const { setSelectedVideo } = useBuild();
-  const [videoData, setVideoData] = useState<VideoData[] | null>(null);
+  const { videoData, setSelectedVideo } = useBuild();
 
-  useEffect(() => {
-    Requests.youTubeVideos()
-      .then((videos) => {
-        const API_KEY = "AIzaSyDHZZogp5RCcjTOrZe_pYvzukZAByew0P8";
-        const fetchStatsWithIDs = videos.map((vid: VideoData) =>
-          fetch(
-            `https://www.googleapis.com/youtube/v3/videos?key=${API_KEY}&id=${vid.videoId}&part=statistics`
-          )
-        );
-        return Requests.videoStats(videos, fetchStatsWithIDs);
-      })
-      .then((vidsAndStatistics) => {
-        setVideoData(vidsAndStatistics);
-      })
-      .catch((error) => {
-        console.error("Error fetching channel data:", error);
-      });
-  }, []);
   return (
     <>
       <div

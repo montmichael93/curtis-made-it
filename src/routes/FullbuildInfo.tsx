@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useBuild } from "../Provider";
 import {
   FaArrowLeft,
@@ -7,15 +6,13 @@ import {
 } from "react-icons/fa";
 import { buildData } from "../assets/buildData";
 import { Box, Flex, chakra, Link } from "@chakra-ui/react";
-import { useEffect, useState } from "react";
-import { CommentsAndReplies } from "../assets/types";
+import { useState } from "react";
 import { Image } from "@chakra-ui/react";
 import branding from "../../public/branding.jpg";
 import { useNavigate } from "react-router-dom";
 
 export const FullBuildInformation = () => {
-  const { selectedVideo } = useBuild();
-  const [commentData, setCommentData] = useState<CommentsAndReplies[] | []>([]);
+  const { selectedVideo, commentData } = useBuild();
   const [currentImage, setCurrentImage] = useState(0);
   const [descriptionHidden, setDescriptionHidden] = useState(true);
   const [commentsHidden, setCommentsHidden] = useState(true);
@@ -26,98 +23,6 @@ export const FullBuildInformation = () => {
   );
 
   const cards = filteredBuild.map((entry) => entry.imageGallery);
-
-  useEffect(() => {
-    const API_KEY = "AIzaSyDHZZogp5RCcjTOrZe_pYvzukZAByew0P8";
-    function fetchCommentsAndReplies(
-      pageToken: string
-    ): Promise<CommentsAndReplies> {
-      return fetch(
-        `https://www.googleapis.com/youtube/v3/commentThreads?videoId=${selectedVideo?.videoId}&key=${API_KEY}&part=snippet,replies&pageToken=${pageToken}`
-      ).then((response) => response.json());
-    }
-
-    // Function to recursively fetch all comments and replies
-    function getAllCommentsAndReplies() {
-      let allCommentsAndReplies: CommentsAndReplies[] | [] = [];
-      let nextPageToken = "";
-      function fetchNextPage(): Promise<CommentsAndReplies[] | []> {
-        return fetchCommentsAndReplies(nextPageToken).then((response) => {
-          // @ts-expect-error/ will figure out later
-          const commentThreads = response.items;
-          const commentsAndReplies = commentThreads.map(
-            (thread: {
-              snippet: { topLevelComment: { snippet: any } };
-              replies: { comments: any[] };
-            }) => {
-              const comment = thread.snippet.topLevelComment.snippet;
-              const replies = thread.replies
-                ? thread.replies.comments.map((reply) => reply.snippet)
-                : [];
-              return { comment, replies };
-            }
-          );
-
-          allCommentsAndReplies =
-            allCommentsAndReplies.concat(commentsAndReplies);
-          // @ts-expect-error/ will figure out later
-          nextPageToken = response.nextPageToken;
-          if (nextPageToken) {
-            return fetchNextPage(); // Recursive call to fetch next page
-          }
-          return allCommentsAndReplies;
-        });
-      }
-
-      return fetchNextPage();
-    }
-
-    getAllCommentsAndReplies()
-      .then((commentsAndReplies) => {
-        const commentThread = commentsAndReplies.flatMap((thread) => thread);
-        const commentThreadData: CommentsAndReplies[] = commentThread.map(
-          (thread) => ({
-            // @ts-expect-error/ will figure out later
-            videoId: thread.comment.videoId,
-            // @ts-expect-error/ will figure out later
-            commenterName: thread.comment.authorDisplayName,
-            // @ts-expect-error/ will figure out later
-            commenterImage: thread.comment.authorProfileImageUrl,
-            // @ts-expect-error/ will figure out later
-            commenterLikes: thread.comment.likeCount,
-            // @ts-expect-error/ will figure out later
-            commenterDate: thread.comment.publishedAt,
-            // @ts-expect-error/ will figure out later
-            comment: thread.comment.textOriginal,
-            // @ts-expect-error/ will figure out later
-            replierName: thread.replies[0]
-              ? // @ts-expect-error/ will figure out later
-                thread.replies[0].authorDisplayName
-              : "",
-            // @ts-expect-error/ will figure out later
-            replierImage: thread.replies[0]
-              ? // @ts-expect-error/ will figure out later
-                thread.replies[0].authorProfileImageUrl
-              : "",
-            // @ts-expect-error/ will figure out later
-            replierLikes: thread.replies[0] ? thread.replies[0].likeCount : 0,
-            // @ts-expect-error/ will figure out later
-            replierDate: thread.replies[0] ? thread.replies[0].publishedAt : "",
-            // @ts-expect-error/ will figure out later
-            replierResponse: thread.replies[0]
-              ? // @ts-expect-error/ will figure out later
-                thread.replies[0].textOriginal
-              : "Not replied yet",
-          })
-        );
-        setCommentData(commentThreadData);
-      })
-      .catch((error) => {
-        console.error("Error fetching comments and replies:", error);
-      });
-  }, [selectedVideo?.videoId]);
-
-  console.log(selectedVideo);
 
   return (
     <>
@@ -149,9 +54,9 @@ export const FullBuildInformation = () => {
         <br />
         <br />
         <br />
-        <div className="flex bg-blueWood flex-col ">
+        <div className="flex bg-blueWood flex-col items-center">
           <iframe
-            className="sm: h-60 lg: h-96"
+            className="sm: h-60 lg: max-w-lg"
             src={selectedVideo?.embedLink}
             title="YouTube video player"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"

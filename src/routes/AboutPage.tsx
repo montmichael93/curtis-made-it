@@ -1,4 +1,3 @@
-//import { useBuild } from "../Provider";
 import aboutMePageImage from "../../public/CLoveOnTopOfDogHouse.jpg";
 import { FaChurch, FaHandshake, FaYoutubeSquare } from "react-icons/fa";
 import toast from "react-hot-toast";
@@ -6,9 +5,6 @@ import { Flex, chakra } from "@chakra-ui/react";
 import { Box } from "@chakra-ui/react";
 
 export const AboutPage = () => {
-  //const { activeComponent } = useBuild();
-  // const isAboutPageSelected = activeComponent === "About";
-
   return (
     <>
       <Flex

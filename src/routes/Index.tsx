@@ -17,26 +17,13 @@ import {
   Box,
 } from "@chakra-ui/react";
 import { BiHome, BiMessage, BiChair } from "react-icons/bi";
-import { useEffect, useState } from "react";
-import { Requests } from "../../utils/requests";
-import { channelData } from "../assets/types";
 import { Image } from "@chakra-ui/react";
 import { BsTools, BsEye } from "react-icons/bs";
 import { MdLocationOn, MdSubscriptions } from "react-icons/md";
+import { useBuild } from "../Provider";
 
 export default function Index() {
-  //const { isHomePageActive } = useBuild();
-  const [channelData, setChannelData] = useState<channelData[] | null>(null);
-
-  useEffect(() => {
-    Requests.fetchChannelData()
-      .then((channelData) => {
-        setChannelData(channelData);
-      })
-      .catch((error) => {
-        console.error("Error fetching channel data:", error);
-      });
-  }, []);
+  const { channelData } = useBuild();
 
   return (
     <>
