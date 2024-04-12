@@ -1,9 +1,11 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
 import "./index.css";
 import { Toaster } from "react-hot-toast";
 
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import {
+  BrowserRouter,
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
 
 import Root from "./routes/Root";
 import ErrorPage from "./error-page";
@@ -12,6 +14,7 @@ import { MessageComponent } from "./routes/MessageComponent";
 import { BuildCards } from "./routes/BuildCards";
 import { FullBuildInformation } from "./routes/FullbuildInfo";
 import Index from "./routes/Index";
+import ReactDOM from "react-dom";
 
 const router = createBrowserRouter([
   {
@@ -56,10 +59,19 @@ const router = createBrowserRouter(
     </Route>
   )
 );*/
-
+/*
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <Toaster />
     <RouterProvider router={router} />
   </React.StrictMode>
+);
+*/
+
+ReactDOM.render(
+  <BrowserRouter basename="https://curtismadeit-version-2.vercel.app/">
+    <Toaster />
+    <RouterProvider router={router} />
+  </BrowserRouter>,
+  document.getElementById("root")
 );
