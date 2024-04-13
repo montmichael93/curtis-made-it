@@ -15,9 +15,9 @@ import {
   useColorModeValue,
   useDisclosure,
 } from "@chakra-ui/react";
-import { AiFillHome, AiOutlineMenu, AiOutlineMail } from "react-icons/ai";
-import { BsFillCameraVideoFill, BsPerson } from "react-icons/bs";
-import curtisAvatar from "../public/curtisAvatar.png";
+import { AiFillHome, AiOutlineMenu, AiFillMail } from "react-icons/ai";
+import { BsFillCameraVideoFill, BsPersonFill } from "react-icons/bs";
+import Branding from "../public/branding.jpg";
 import { Link } from "react-router-dom";
 
 export const UpperSection = () => {
@@ -96,7 +96,7 @@ export const UpperSection = () => {
                   <Link to={`/about`} className="w-full">
                     <Button
                       w="full"
-                      leftIcon={<BsPerson />}
+                      leftIcon={<BsPersonFill />}
                       onClick={() => {
                         mobileNav.onClose();
                       }}
@@ -120,7 +120,7 @@ export const UpperSection = () => {
                   <Link to={`/message`} className="w-full">
                     <Button
                       w="full"
-                      leftIcon={<AiOutlineMail />}
+                      leftIcon={<AiFillMail />}
                       onClick={() => {
                         mobileNav.onClose();
                       }}
@@ -142,7 +142,7 @@ export const UpperSection = () => {
                 size="sm"
                 name="c-love"
                 className="sm: hidden"
-                src={curtisAvatar}
+                src={Branding}
               />
             </HStack>
           </Flex>
