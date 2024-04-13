@@ -254,7 +254,7 @@ export const FullBuildInformation = () => {
                     color: "gray.300",
                   }}
                 >
-                  <TextWithLinks text={selectedVideo?.description} />d
+                  <TextWithLinks text={selectedVideo?.description} />
                 </chakra.p>
               </Box>
             </Box>

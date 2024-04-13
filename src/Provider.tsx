@@ -34,6 +34,8 @@ export const BuildProvider = ({ children }: { children: ReactNode }) => {
   const [commentData, setCommentData] = useState<CommentsAndReplies[] | []>([]);
   const { videoId } = useParams();
 
+  console.log(videoData);
+
   useEffect(() => {
     Requests.fetchChannelData()
       .then((channelData) => {
@@ -67,7 +69,6 @@ export const BuildProvider = ({ children }: { children: ReactNode }) => {
     const videoSelectedBeforeReload = videoData?.filter(
       (video) => video.videoId === videoId
     );
-    console.log(videoSelectedBeforeReload);
     videoSelectedBeforeReload && setSelectedVideo(videoSelectedBeforeReload[0]);
   }, [videoData, videoId]);
 
