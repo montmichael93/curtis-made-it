@@ -20,6 +20,7 @@ type TypeBuildsProvider = {
   videoData: VideoData[] | null;
   selectedVideo: VideoData | null;
   commentData: CommentsAndReplies[] | [];
+  vidDescriptionData: string | null;
   setSelectedVideo: Dispatch<SetStateAction<VideoData | null>>;
 };
 
@@ -32,9 +33,10 @@ export const BuildProvider = ({ children }: { children: ReactNode }) => {
   const [videoData, setVideoData] = useState<VideoData[] | null>(null);
   const [selectedVideo, setSelectedVideo] = useState<VideoData | null>(null);
   const [commentData, setCommentData] = useState<CommentsAndReplies[] | []>([]);
+  const [vidDescriptionData, setVidDescriptionData] = useState<string | null>(
+    null
+  );
   const { videoId } = useParams();
-
-  console.log(videoData);
 
   useEffect(() => {
     Requests.fetchChannelData()
@@ -45,6 +47,8 @@ export const BuildProvider = ({ children }: { children: ReactNode }) => {
         console.error("Error fetching channel data:", error);
       });
   }, []);
+
+  useEffect(() => {}, []);
 
   useEffect(() => {
     Requests.youTubeVideos()
@@ -70,7 +74,10 @@ export const BuildProvider = ({ children }: { children: ReactNode }) => {
       (video) => video.videoId === videoId
     );
     videoSelectedBeforeReload && setSelectedVideo(videoSelectedBeforeReload[0]);
-  }, [videoData, videoId]);
+    selectedVideo && setVidDescriptionData(selectedVideo?.description);
+
+    console.log(vidDescriptionData);
+  }, [selectedVideo, vidDescriptionData, videoData, videoId]);
 
   useEffect(() => {
     const API_KEY = "AIzaSyDHZZogp5RCcjTOrZe_pYvzukZAByew0P8";
@@ -170,6 +177,7 @@ export const BuildProvider = ({ children }: { children: ReactNode }) => {
         videoData,
         selectedVideo,
         commentData,
+        vidDescriptionData,
         setSelectedVideo,
       }}
     >

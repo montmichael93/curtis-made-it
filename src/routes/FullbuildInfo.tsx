@@ -12,7 +12,7 @@ import branding from "../../public/branding.jpg";
 import { useNavigate } from "react-router-dom";
 
 export const FullBuildInformation = () => {
-  const { selectedVideo, commentData } = useBuild();
+  const { selectedVideo, commentData, vidDescriptionData } = useBuild();
   const [currentImage, setCurrentImage] = useState(0);
   const [descriptionHidden, setDescriptionHidden] = useState(true);
   const [commentsHidden, setCommentsHidden] = useState(true);
@@ -21,40 +21,8 @@ export const FullBuildInformation = () => {
     (build) => build.id === selectedVideo?.videoId
   );
   const cards = filteredBuild.map((entry) => entry.imageGallery);
-  // @ts-expect-error/ will figure out later
-  function renderTextWithLinks(text) {
-    // Regular expression to find URLs in the text
-    const urlRegex = /(https?:\/\/[^\s]+)/g;
-
-    // Split the text by URLs and non-URLs
-    const parts = text.split(urlRegex);
-
-    // Map each part of the text to either a link or plain text
-    // @ts-expect-error/ will figure out later
-    return parts.map((part, index) => {
-      if (part.match(urlRegex)) {
-        // If the part is a URL, render it as a clickable link
-        return (
-          <a
-            key={index}
-            href={part}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sky-500"
-          >
-            {part}
-          </a>
-        );
-      } else {
-        // Otherwise, render it as plain text
-        return part;
-      }
-    });
-  }
-  // @ts-expect-error/ will figure out later
-  function TextWithLinks({ text }) {
-    return <div>{renderTextWithLinks(text)}</div>;
-  }
+  const urlRegex = /(https?:\/\/[^\s]+)/g;
+  const parts = vidDescriptionData?.split(urlRegex);
 
   return (
     <>
@@ -254,7 +222,26 @@ export const FullBuildInformation = () => {
                     color: "gray.300",
                   }}
                 >
-                  <TextWithLinks text={selectedVideo?.description} />
+                  {parts &&
+                    parts.map((part, index) => {
+                      if (part.match(urlRegex)) {
+                        // If the part is a URL, render it as a clickable link
+                        return (
+                          <a
+                            key={index}
+                            href={part}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-sky-500"
+                          >
+                            {part}
+                          </a>
+                        );
+                      } else {
+                        // Otherwise, render it as plain text
+                        return part;
+                      }
+                    })}
                 </chakra.p>
               </Box>
             </Box>
