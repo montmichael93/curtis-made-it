@@ -21,6 +21,40 @@ export const FullBuildInformation = () => {
     (build) => build.id === selectedVideo?.videoId
   );
   const cards = filteredBuild.map((entry) => entry.imageGallery);
+  // @ts-expect-error/ will figure out later
+  function renderTextWithLinks(text) {
+    // Regular expression to find URLs in the text
+    const urlRegex = /(https?:\/\/[^\s]+)/g;
+
+    // Split the text by URLs and non-URLs
+    const parts = text.split(urlRegex);
+
+    // Map each part of the text to either a link or plain text
+    // @ts-expect-error/ will figure out later
+    return parts.map((part, index) => {
+      if (part.match(urlRegex)) {
+        // If the part is a URL, render it as a clickable link
+        return (
+          <a
+            key={index}
+            href={part}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sky-500"
+          >
+            {part}
+          </a>
+        );
+      } else {
+        // Otherwise, render it as plain text
+        return part;
+      }
+    });
+  }
+  // @ts-expect-error/ will figure out later
+  function TextWithLinks({ text }) {
+    return <div>{renderTextWithLinks(text)}</div>;
+  }
 
   return (
     <>
@@ -196,7 +230,7 @@ export const FullBuildInformation = () => {
                       color: "gray.400",
                     }}
                   >
-                    Views: {selectedVideo?.statistics.viewCount}
+                    Vie ws: {selectedVideo?.statistics.viewCount}
                   </chakra.span>
                   <chakra.span
                     color="brand.800"
@@ -220,7 +254,7 @@ export const FullBuildInformation = () => {
                     color: "gray.300",
                   }}
                 >
-                  {selectedVideo?.description}
+                  <TextWithLinks text={selectedVideo?.description} />d
                 </chakra.p>
               </Box>
             </Box>
@@ -262,7 +296,7 @@ export const FullBuildInformation = () => {
                       color: "gray.400",
                     }}
                   >
-                    {commentEntry.commenterDate}
+                    {commentEntry.commenterDate.slice(0, -10)}
                   </chakra.span>
                 </Flex>
 
@@ -330,7 +364,7 @@ export const FullBuildInformation = () => {
                       color: "gray.400",
                     }}
                   >
-                    {commentEntry.replierDate}
+                    {commentEntry.replierDate.slice(0, -10)}
                   </chakra.span>
                 </Flex>
 

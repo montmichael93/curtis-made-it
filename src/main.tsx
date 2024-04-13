@@ -2,12 +2,7 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import { Toaster } from "react-hot-toast";
 
-import {
-  //BrowserRouter,
-  createBrowserRouter,
-  //HashRouter,
-  RouterProvider,
-} from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import Root from "./routes/Root";
 import ErrorPage from "./error-page";
@@ -69,20 +64,3 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
     <RouterProvider router={router} />
   </React.StrictMode>
 );
-
-/*
-document.addEventListener("DOMContentLoaded", function () {
-  const rootElement = document.getElementById("root");
-  if (rootElement) {
-    const root = createRoot(rootElement);
-
-    root.render(
-      <BrowserRouter basename="/">
-        <Toaster />
-        <RouterProvider router={router} />
-      </BrowserRouter>
-    );
-  } else {
-    console.error("Root element not found in the document.");
-  }
-}); */
