@@ -226,6 +226,7 @@ export const FullBuildInformation = () => {
                     parts.map((part, index) => {
                       if (part.match(urlRegex)) {
                         // If the part is a URL, render it as a clickable link
+
                         return (
                           <a
                             key={index}

@@ -1,4 +1,4 @@
-import { buildInfo } from "../assets/types";
+import { buildInfo } from "../../utils/types.ts";
 import {
   ballInCageGallery,
   bedHeadboardGallery,

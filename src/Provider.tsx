@@ -7,11 +7,7 @@ import {
   useEffect,
   useState,
 } from "react";
-import {
-  CommentsAndReplies,
-  VideoData,
-  channelData,
-} from "../src/assets/types";
+import { CommentsAndReplies, VideoData, channelData } from "../utils/types";
 import { useParams } from "react-router-dom";
 import { Requests } from "../utils/requests";
 
@@ -75,8 +71,6 @@ export const BuildProvider = ({ children }: { children: ReactNode }) => {
     );
     videoSelectedBeforeReload && setSelectedVideo(videoSelectedBeforeReload[0]);
     selectedVideo && setVidDescriptionData(selectedVideo?.description);
-
-    console.log(vidDescriptionData);
   }, [selectedVideo, vidDescriptionData, videoData, videoId]);
 
   useEffect(() => {

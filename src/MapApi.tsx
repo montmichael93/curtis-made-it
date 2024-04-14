@@ -1,13 +1,44 @@
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-let map: google.maps.Map;
-async function initMap(): Promise<void> {
-  const { Map } = (await google.maps.importLibrary(
-    "maps"
-  )) as google.maps.MapsLibrary;
-  map = new Map(document.getElementById("map") as HTMLElement, {
-    center: { lat: -34.397, lng: 150.644 },
-    zoom: 8,
-  });
-}
+import { useState } from "react";
+import {
+  APIProvider,
+  Map,
+  AdvancedMarker,
+  Pin,
+  InfoWindow,
+} from "@vis.gl/react-google-maps";
 
-initMap();
+import Branding from "../public/branding.jpg";
+
+export const MapApi = () => {
+  const position = { lat: 32.768799, lng: -97.309341 };
+  const [open, setOpen] = useState(false);
+
+  return (
+    <APIProvider apiKey="AIzaSyBHEJozl10vu9xgUYD6_72mBief_qd0VrI">
+      <div style={{ height: "500px" }}>
+        <Map zoom={9} center={position} mapId={"1d9044d89c83a3ab"}>
+          <AdvancedMarker
+            position={position}
+            onClick={() => {
+              setOpen(true);
+            }}
+          >
+            <Pin background={"gray"} borderColor={"navy"} glyphColor={"navy"} />
+          </AdvancedMarker>
+          {open && (
+            <InfoWindow
+              position={position}
+              onCloseClick={() => {
+                setOpen(false);
+              }}
+            >
+              <img src={Branding} />
+              <p>Send Me A Message</p>
+              <p>Let's Build It Together</p>
+            </InfoWindow>
+          )}
+        </Map>
+      </div>
+    </APIProvider>
+  );
+};

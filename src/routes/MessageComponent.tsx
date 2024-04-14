@@ -10,7 +10,7 @@ export const MessageComponent = () => {
         onLoad={handleIframeLoad}
         allow="geolocation; microphone; camera"
         src="https://form.jotform.com/233424549821155"
-        className="message-form"
+        className="w-full h-[50rem]"
       />
     </>
   );

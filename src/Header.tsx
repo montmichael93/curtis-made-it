@@ -150,58 +150,60 @@ export const UpperSection = () => {
 
         <Hide below="md">
           <Flex
-            //alignItems="center"
-            //justifyContent="space-between"
+            alignItems="center"
+            justifyContent="space-between"
             ml={0}
             borderWidth={0}
             overflowX="auto"
           >
             <Tabs defaultIndex={0} borderBottomColor="#00ff00">
               <TabList>
-                <Link to={`/`}>
-                  <Tab
-                    py={4}
-                    m={0}
-                    _focus={{
-                      boxShadow: "none",
-                    }}
-                  >
-                    Home
-                  </Tab>
-                </Link>
-                <Link to={`/about`}>
-                  <Tab
-                    py={4}
-                    m={0}
-                    _focus={{
-                      boxShadow: "none",
-                    }}
-                  >
-                    About
-                  </Tab>
-                </Link>
-                <Link to={`/videos`}>
-                  <Tab
-                    py={4}
-                    m={0}
-                    _focus={{
-                      boxShadow: "none",
-                    }}
-                  >
-                    Videos
-                  </Tab>
-                </Link>
-                <Link to={`/message`}>
-                  <Tab
-                    py={4}
-                    m={0}
-                    _focus={{
-                      boxShadow: "none",
-                    }}
-                  >
-                    Send me a Message
-                  </Tab>
-                </Link>
+                <div className="flex">
+                  <Link to={`/`}>
+                    <Tab
+                      py={4}
+                      m={0}
+                      _focus={{
+                        boxShadow: "none",
+                      }}
+                    >
+                      Home
+                    </Tab>
+                  </Link>
+                  <Link to={`/about`}>
+                    <Tab
+                      py={4}
+                      m={0}
+                      _focus={{
+                        boxShadow: "none",
+                      }}
+                    >
+                      About
+                    </Tab>
+                  </Link>
+                  <Link to={`/videos`}>
+                    <Tab
+                      py={4}
+                      m={0}
+                      _focus={{
+                        boxShadow: "none",
+                      }}
+                    >
+                      Videos
+                    </Tab>
+                  </Link>
+                  <Link to={`/message`}>
+                    <Tab
+                      py={4}
+                      m={0}
+                      _focus={{
+                        boxShadow: "none",
+                      }}
+                    >
+                      Send me a Message
+                    </Tab>
+                  </Link>
+                </div>
               </TabList>
             </Tabs>
           </Flex>

@@ -3,6 +3,7 @@ import { FaChurch, FaHandshake, FaYoutubeSquare } from "react-icons/fa";
 import toast from "react-hot-toast";
 import { Flex, chakra } from "@chakra-ui/react";
 import { Box } from "@chakra-ui/react";
+import { MapApi } from "../MapApi";
 
 export const AboutPage = () => {
   return (
@@ -202,6 +203,7 @@ export const AboutPage = () => {
           </Flex>
         </Box>
       </Flex>
+      <MapApi />
     </>
   );
 };

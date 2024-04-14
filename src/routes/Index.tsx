@@ -20,8 +20,12 @@ import { Image } from "@chakra-ui/react";
 import { BsTools, BsEye } from "react-icons/bs";
 import { MdLocationOn, MdSubscriptions } from "react-icons/md";
 import { useBuild } from "../Provider";
+import { MapApi } from "../MapApi";
 
 export default function Index() {
+  //const API_KEY = "AIzaSyBHEJozl10vu9xgUYD6_72mBief_qd0VrI";
+  //const [apiLoaded, setApiLoaded] = useState(false);
+
   const { channelData } = useBuild();
 
   return (
@@ -229,6 +233,7 @@ export default function Index() {
           </Card>
         </SimpleGrid>
       </section>
+      <MapApi />
     </>
   );
 }
