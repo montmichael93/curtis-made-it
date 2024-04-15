@@ -96,6 +96,7 @@ export const UpperSection = () => {
                       leftIcon={<AiFillHome />}
                       onClick={() => {
                         mobileNav.onClose();
+                        window.scrollTo(0, 0);
                       }}
                     >
                       Home
@@ -109,6 +110,7 @@ export const UpperSection = () => {
                       leftIcon={<BsPersonFill />}
                       onClick={() => {
                         mobileNav.onClose();
+                        window.scrollTo(0, 0);
                       }}
                     >
                       About
@@ -123,6 +125,7 @@ export const UpperSection = () => {
                       leftIcon={<BsFillCameraVideoFill />}
                       onClick={() => {
                         mobileNav.onClose();
+                        window.scrollTo(0, 0);
                       }}
                     >
                       Videos
@@ -137,6 +140,7 @@ export const UpperSection = () => {
                       leftIcon={<AiFillMail />}
                       onClick={() => {
                         mobileNav.onClose();
+                        window.scrollTo(0, 0);
                       }}
                     >
                       Send me a Message
