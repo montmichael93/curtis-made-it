@@ -129,6 +129,7 @@ export const BuildCards = () => {
                                 }}
                                 onClick={() => {
                                   setSelectedVideo(video);
+                                  window.scrollTo(0, 0);
                                 }}
                               >
                                 <FaYoutube size={"2rem"} className="animate" />
