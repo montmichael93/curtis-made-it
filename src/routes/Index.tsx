@@ -195,7 +195,7 @@ export default function Index() {
         style={{ backgroundImage: "url(/blueWood.jpg)" }}
         className="blurred-background"
       >
-        <CardBody className="mr-10 ml-10">
+        <CardBody className="mr-4 ml-4">
           <MapApi />
         </CardBody>
       </Card>
