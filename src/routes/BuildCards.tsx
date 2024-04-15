@@ -5,7 +5,6 @@ import {
   Box,
   chakra,
   SimpleGrid,
-  //CardHeader,
   Card,
   CardBody,
 } from "@chakra-ui/react";
@@ -92,6 +91,27 @@ export const BuildCards = () => {
                             letterSpacing={1}
                           >
                             {video.title}
+                            <div className="flex flex-col items-center">
+                              <Link to={`/videos/${video.videoId}`}>
+                                <chakra.span
+                                  id={video.videoId}
+                                  fontWeight="bold"
+                                  color="gray.200"
+                                  _dark={{
+                                    color: "gray.200",
+                                  }}
+                                  onClick={() => {
+                                    setSelectedVideo(video);
+                                    window.scrollTo(0, 0);
+                                  }}
+                                >
+                                  <FaYoutube
+                                    size={"2rem"}
+                                    className="animate"
+                                  />
+                                </chakra.span>
+                              </Link>
+                            </div>
                           </chakra.h3>
 
                           <Flex
@@ -113,7 +133,7 @@ export const BuildCards = () => {
                                 color: "gray.200",
                               }}
                             >
-                              <span className="flex gap-2">
+                              <span className="flex flex-col">
                                 <FaThumbsUp /> {video.statistics.likeCount}
                               </span>
                             </chakra.span>
@@ -135,16 +155,7 @@ export const BuildCards = () => {
                                     _dark={{
                                       color: "gray.200",
                                     }}
-                                    onClick={() => {
-                                      setSelectedVideo(video);
-                                      window.scrollTo(0, 0);
-                                    }}
-                                  >
-                                    <FaYoutube
-                                      size={"2rem"}
-                                      className="animate"
-                                    />
-                                  </chakra.span>
+                                  ></chakra.span>
                                 </Link>
                                 <FaEye /> {video.statistics.viewCount}
                               </div>
@@ -158,7 +169,7 @@ export const BuildCards = () => {
                                 color: "gray.200",
                               }}
                             >
-                              <span className="flex gap-2 items-center">
+                              <span className="flex flex-col items-center">
                                 <FaCommentDots />
                                 {video.statistics.commentCount}
                               </span>
