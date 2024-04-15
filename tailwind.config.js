@@ -5,6 +5,7 @@ export default {
     extend: {
       backgroundImage: {
         blueWood: "url(/blueWood.jpg)",
+        headerFooter: "url(/headerFooter.png",
       },
     },
   },

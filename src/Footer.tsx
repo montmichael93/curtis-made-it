@@ -13,6 +13,7 @@ export const FooterSection = () => {
         p={50}
         alignItems="center"
         justifyContent="center"
+        style={{ backgroundImage: "url(/headerFooter.png)" }}
       >
         <Flex
           w="full"
@@ -25,22 +26,13 @@ export const FooterSection = () => {
           justify="space-between"
           px="6"
           py="4"
-          bg="white"
-          _dark={{
-            bg: "gray.800",
-          }}
+          bg="gray.800"
         >
           <chakra.a
             href="#"
             fontSize="xl"
             fontWeight="bold"
-            color="gray.600"
-            _dark={{
-              color: "white",
-              _hover: {
-                color: "gray.300",
-              },
-            }}
+            color="white"
             _hover={{
               color: "gray.700",
             }}
@@ -53,7 +45,7 @@ export const FooterSection = () => {
               base: "2",
               sm: "0",
             }}
-            color="gray.800"
+            color="white"
             _dark={{
               color: "white",
             }}
@@ -65,7 +57,7 @@ export const FooterSection = () => {
             <chakra.a
               href="#"
               mx="2"
-              color="gray.600"
+              color="gray.300"
               _dark={{
                 color: "gray.300",
                 _hover: {
@@ -73,7 +65,7 @@ export const FooterSection = () => {
                 },
               }}
               _hover={{
-                color: "gray.500",
+                color: "gray.400",
               }}
               aria-label="Reddit"
             >

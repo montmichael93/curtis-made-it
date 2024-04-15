@@ -15,8 +15,12 @@ export const MapApi = () => {
 
   return (
     <APIProvider apiKey="AIzaSyBHEJozl10vu9xgUYD6_72mBief_qd0VrI">
-      <div style={{ height: "500px" }}>
-        <Map zoom={9} center={position} mapId={"1d9044d89c83a3ab"}>
+      <div
+        style={{
+          height: "500px",
+        }}
+      >
+        <Map zoom={11} center={position} mapId={"4f4da17c72a0c4f3"}>
           <AdvancedMarker
             position={position}
             onClick={() => {

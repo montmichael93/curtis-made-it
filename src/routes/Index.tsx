@@ -1,6 +1,5 @@
 import CLoveSittingDown from "../../public/CloveSittingDown.jpg";
 import { FaTools } from "react-icons/fa";
-import toast from "react-hot-toast";
 
 import {
   Card,
@@ -23,19 +22,19 @@ import { useBuild } from "../Provider";
 import { MapApi } from "../MapApi";
 
 export default function Index() {
-  //const API_KEY = "AIzaSyBHEJozl10vu9xgUYD6_72mBief_qd0VrI";
-  //const [apiLoaded, setApiLoaded] = useState(false);
-
   const { channelData } = useBuild();
 
   return (
     <>
       <Flex
-        className="bg-blueWood"
+        //className="bg-blueWood bg-no-repeat bg-center bg-cover"
+        style={{ backgroundImage: "url(/blueWood.jpg)" }}
+        className="blurred-background"
         p={50}
         w="full"
         alignItems="center"
         justifyContent="center"
+        mt={10}
       >
         <Box
           w="sm"
@@ -47,6 +46,7 @@ export default function Index() {
           shadow="lg"
           rounded="lg"
           overflow="hidden"
+          zIndex={100}
         >
           <Image
             w="full"
@@ -58,9 +58,9 @@ export default function Index() {
           />
 
           <Flex alignItems="center" px={6} py={3} bg="gray.900">
-            <Icon as={BsTools} h={6} w={6} color="white" />
+            <Icon as={BsTools} h={6} w={6} color="gray.300" />
 
-            <chakra.h1 mx={3} color="white" fontWeight="bold" fontSize="lg">
+            <chakra.h1 mx={3} color="gray.300" fontWeight="bold" fontSize="lg">
               Curtismadeit
             </chakra.h1>
           </Flex>
@@ -79,26 +79,25 @@ export default function Index() {
 
             <chakra.p
               py={2}
-              color="white"
+              color="gray.400"
               _dark={{
                 color: "gray.400",
               }}
             >
-              Artisanal Wood Crafter / xylologist , let me know what you need
-              built
+              Artisanal Wood Crafter / Friend , let me know what you need built
             </chakra.p>
 
             <Flex
               alignItems="center"
               mt={4}
-              color="white"
+              color="gray.200"
               _dark={{
                 color: "gray.200",
               }}
             >
               <Icon as={BsEye} h={6} w={6} mr={2} />
 
-              <chakra.h1 px={2} fontSize="sm" color="white">
+              <chakra.h1 px={2} fontSize="sm" color="gray.200">
                 Channel views:{" "}
                 {channelData && channelData[0]?.totalChannelViews}
               </chakra.h1>
@@ -107,21 +106,21 @@ export default function Index() {
             <Flex
               alignItems="center"
               mt={4}
-              color="white"
+              color="gray.200"
               _dark={{
                 color: "gray.200",
               }}
             >
               <Icon as={MdSubscriptions} h={6} w={6} mr={2} />
 
-              <chakra.h1 px={2} fontSize="sm" color="white">
+              <chakra.h1 px={2} fontSize="sm" color="gray.200">
                 Subscribers: {channelData && channelData[0]?.subscribers}
               </chakra.h1>
             </Flex>
             <Flex
               alignItems="center"
               mt={4}
-              color="white"
+              color="gray.200"
               _dark={{
                 color: "gray.200",
               }}
@@ -138,20 +137,12 @@ export default function Index() {
 
       <section className="flex justify-center flex-col z-[1]">
         <SimpleGrid
-          className="bg-blueWood"
+          style={{ backgroundImage: "url(/blueWood.jpg)" }}
+          className="blurred-background"
           spacing={5}
           templateColumns="repeat(auto-fill, minmax(300px, 1fr))"
         >
-          <Card
-            color="white"
-            backgroundColor="gray.800"
-            onClick={() => {
-              toast("Don't be shy! Send a message! 📨 ➜ 📬", {
-                icon: "📨",
-                style: { background: "#333", color: "#fff" },
-              });
-            }}
-          >
+          <Card color="gray.300" backgroundColor="gray.800">
             <CardHeader>
               <Heading size="md">Send A Message</Heading>
             </CardHeader>
@@ -163,16 +154,7 @@ export default function Index() {
             </CardFooter>
           </Card>
 
-          <Card
-            color="white"
-            backgroundColor="gray.800"
-            onClick={() => {
-              toast("Each build is customized to your tastes! 🪵➜ 🪑", {
-                icon: "🛠️",
-                style: { background: "#333", color: "#fff" },
-              });
-            }}
-          >
+          <Card color="gray.300" backgroundColor="gray.800">
             <CardHeader>
               <Heading size="md">Artisanal Builds</Heading>
             </CardHeader>
@@ -184,19 +166,7 @@ export default function Index() {
             </CardFooter>
           </Card>
 
-          <Card
-            color="white"
-            backgroundColor="gray.800"
-            onClick={() => {
-              toast(
-                "Need To Customize Your Living Space? 🏠❤️ Let's Get Started! 👨‍🔧 💪 😎",
-                {
-                  icon: "🧐",
-                  style: { background: "#333", color: "#fff" },
-                }
-              );
-            }}
-          >
+          <Card color="gray.300" backgroundColor="gray.800">
             <CardHeader>
               <Heading size="md">Home Improvement</Heading>
             </CardHeader>
@@ -208,19 +178,7 @@ export default function Index() {
             </CardFooter>
           </Card>
 
-          <Card
-            color="white"
-            backgroundColor="gray.800"
-            onClick={() => {
-              toast(
-                "Learn The Art Of Woodcraft! 🎓 🪚 Ask If Your Need Help! 👨‍🏫 👨‍🔧",
-                {
-                  icon: "👨‍🎓",
-                  style: { background: "#333", color: "#fff" },
-                }
-              );
-            }}
-          >
+          <Card color="gray.300" backgroundColor="gray.800">
             <CardHeader>
               <Heading size="md">DIY</Heading>
             </CardHeader>
@@ -233,7 +191,14 @@ export default function Index() {
           </Card>
         </SimpleGrid>
       </section>
-      <MapApi />
+      <Card
+        style={{ backgroundImage: "url(/blueWood.jpg)" }}
+        className="blurred-background"
+      >
+        <CardBody className="mr-16 ml-16">
+          <MapApi />
+        </CardBody>
+      </Card>
     </>
   );
 }

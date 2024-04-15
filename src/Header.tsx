@@ -29,7 +29,7 @@ export const UpperSection = () => {
       {/*mobile nav menu*/}
       <Box shadow="md">
         <chakra.header
-          bg={bg}
+          style={{ backgroundImage: "url(/headerFooter.png)" }}
           borderColor="gray.600"
           borderBottomWidth={1}
           w="full"
@@ -38,6 +38,10 @@ export const UpperSection = () => {
             sm: 4,
           }}
           py={4}
+          position="fixed"
+          top={0}
+          width="100%"
+          zIndex={999}
         >
           <Flex alignItems="center" justifyContent="space-between" mx="auto">
             <HStack spacing={4} display="flex" alignItems="center">
@@ -54,7 +58,8 @@ export const UpperSection = () => {
                   }}
                   aria-label="Open menu"
                   fontSize="20px"
-                  color="gray.800"
+                  backgroundColor="gray.800"
+                  color="gray.400"
                   _dark={{
                     color: "inherit",
                   }}
@@ -62,6 +67,7 @@ export const UpperSection = () => {
                   onClick={mobileNav.onOpen}
                 />
                 <VStack
+                  style={{ backgroundImage: "url(/headerFooter.png)" }}
                   pos="absolute"
                   top={0}
                   left={0}
@@ -80,10 +86,12 @@ export const UpperSection = () => {
                     aria-label="Close menu"
                     justifySelf="self-start"
                     onClick={mobileNav.onClose}
-                    color={"white"}
+                    color="gray.400"
                   />
                   <Link to={`/`} className="w-full">
                     <Button
+                      backgroundColor="gray.800"
+                      color="gray.400"
                       w="full"
                       leftIcon={<AiFillHome />}
                       onClick={() => {
@@ -96,6 +104,8 @@ export const UpperSection = () => {
                   <Link to={`/about`} className="w-full">
                     <Button
                       w="full"
+                      backgroundColor="gray.800"
+                      color="gray.400"
                       leftIcon={<BsPersonFill />}
                       onClick={() => {
                         mobileNav.onClose();
@@ -108,6 +118,8 @@ export const UpperSection = () => {
                   <Link to={`/videos`} className="w-full">
                     <Button
                       w="full"
+                      backgroundColor="gray.800"
+                      color="gray.400"
                       leftIcon={<BsFillCameraVideoFill />}
                       onClick={() => {
                         mobileNav.onClose();
@@ -120,6 +132,8 @@ export const UpperSection = () => {
                   <Link to={`/message`} className="w-full">
                     <Button
                       w="full"
+                      backgroundColor="gray.800"
+                      color="gray.400"
                       leftIcon={<AiFillMail />}
                       onClick={() => {
                         mobileNav.onClose();
@@ -150,16 +164,25 @@ export const UpperSection = () => {
 
         <Hide below="md">
           <Flex
-            alignItems="center"
-            justifyContent="space-between"
+            style={{ backgroundImage: "url(/headerFooter.png)" }}
             ml={0}
             borderWidth={0}
             overflowX="auto"
+            className="bg-gray-800"
+            position="fixed" // Set the position to fixed
+            top={0} // Position at the top of the viewport
+            width="100%" // Take up the full width of the viewport
+            zIndex={999} // Set a high z-index to ensure it stays on top of other content
           >
             <Tabs defaultIndex={0} borderBottomColor="#00ff00">
-              <TabList>
+              <TabList className="text-gray-200">
                 <div className="flex">
-                  <Link to={`/`}>
+                  <Link
+                    to={`/`}
+                    onClick={() => {
+                      window.scrollTo(0, 0);
+                    }}
+                  >
                     <Tab
                       py={4}
                       m={0}
@@ -170,7 +193,12 @@ export const UpperSection = () => {
                       Home
                     </Tab>
                   </Link>
-                  <Link to={`/about`}>
+                  <Link
+                    to={`/about`}
+                    onClick={() => {
+                      window.scrollTo(0, 0);
+                    }}
+                  >
                     <Tab
                       py={4}
                       m={0}
@@ -181,7 +209,12 @@ export const UpperSection = () => {
                       About
                     </Tab>
                   </Link>
-                  <Link to={`/videos`}>
+                  <Link
+                    to={`/videos`}
+                    onClick={() => {
+                      window.scrollTo(0, 0);
+                    }}
+                  >
                     <Tab
                       py={4}
                       m={0}
@@ -192,7 +225,12 @@ export const UpperSection = () => {
                       Videos
                     </Tab>
                   </Link>
-                  <Link to={`/message`}>
+                  <Link
+                    to={`/message`}
+                    onClick={() => {
+                      window.scrollTo(0, 0);
+                    }}
+                  >
                     <Tab
                       py={4}
                       m={0}

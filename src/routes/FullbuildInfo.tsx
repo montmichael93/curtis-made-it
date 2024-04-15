@@ -3,7 +3,11 @@ import {
   FaArrowLeft,
   FaArrowCircleLeft,
   FaArrowCircleRight,
+  FaThumbsUp,
+  FaEye,
+  FaCommentDots,
 } from "react-icons/fa";
+
 import { buildData } from "../assets/buildData";
 import { Box, Flex, chakra, Link } from "@chakra-ui/react";
 import { useState } from "react";
@@ -21,15 +25,15 @@ export const FullBuildInformation = () => {
     (build) => build.id === selectedVideo?.videoId
   );
   const cards = filteredBuild.map((entry) => entry.imageGallery);
-  const urlRegex = /(https?:\/\/[^\s]+)/g;
-  const parts = vidDescriptionData?.split(urlRegex);
 
+  const urlRegex = /(https?:\/\/[^\s]+|\bCurtis_Made_It\b)/gi;
+  const parts = vidDescriptionData?.split(urlRegex);
   return (
     <>
       <>
-        <div>
+        <div className="flex items-center bg-gray-800 mt-16">
           <button
-            className="float-left p-3"
+            className=" p-3"
             onClick={() => {
               setCurrentImage(0);
               setDescriptionHidden(true);
@@ -37,26 +41,30 @@ export const FullBuildInformation = () => {
               navigate("/videos");
             }}
           >
-            <FaArrowLeft />
+            <FaArrowLeft className="text-gray-300" />
           </button>
-          <div className="flex justify-evenly">
-            <span className="text-lg">
-              Likes: {selectedVideo?.statistics.likeCount}
-            </span>
-            <span className="text-lg">
-              Views: {selectedVideo?.statistics.viewCount}
-            </span>
-            <span className="text-lg">
-              comments: {selectedVideo?.statistics.commentCount}
-            </span>
-          </div>
+          <span className="text-base text-gray-300">Go Back</span>
         </div>
-        <br />
-        <br />
-        <br />
-        <div className="flex bg-blueWood flex-col items-center">
+
+        <div className="flex justify-evenly bg-gray-800 ">
+          <span className="text-xl text-gray-300 flex flex-col items-center">
+            <FaThumbsUp />{" "}
+            <span> Likes: {selectedVideo?.statistics.likeCount} </span>
+          </span>
+
+          <span className="text-xl text-gray-300 flex flex-col items-center">
+            <FaEye />
+            <span> Views: {selectedVideo?.statistics.viewCount}</span>
+          </span>
+          <span className="text-xl text-gray-300 flex flex-col items-center">
+            <FaCommentDots />{" "}
+            <span> comments: {selectedVideo?.statistics.commentCount} </span>
+          </span>
+        </div>
+
+        <div className="flex bg-blueWood flex-col items-center pt-4 blurred-background">
           <iframe
-            className="youtube-video"
+            className="youtube-video z-50"
             src={selectedVideo?.embedLink}
             title="YouTube video player"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
@@ -65,7 +73,7 @@ export const FullBuildInformation = () => {
           {cards.length > 0 && (
             <>
               <Flex
-                className="bg-blueWood"
+                zIndex={100}
                 _dark={{
                   bg: "#3e3e3e",
                 }}
@@ -75,8 +83,9 @@ export const FullBuildInformation = () => {
                 justifyContent="center"
               >
                 <Box
+                  zIndex={100}
                   w="sm"
-                  bg="white"
+                  bg="gray.800"
                   _dark={{
                     bg: "gray.800",
                   }}
@@ -93,10 +102,11 @@ export const FullBuildInformation = () => {
                     alt="avatar"
                   />
 
-                  <Box py={5} textAlign="center">
+                  <Box py={5} textAlign="center" zIndex={100}>
                     <div className="flex justify-evenly">
-                      <button>
+                      <span>
                         <FaArrowCircleLeft
+                          className="text-gray-300"
                           size="3rem"
                           onClick={() => {
                             currentImage === 0
@@ -104,13 +114,14 @@ export const FullBuildInformation = () => {
                               : setCurrentImage(currentImage - 1);
                           }}
                         />
-                      </button>
-                      <span>
+                      </span>
+                      <span className="z-50 text-white">
                         {currentImage + 1} / {cards[0].length}
                       </span>
 
-                      <button>
+                      <span>
                         <FaArrowCircleRight
+                          className="text-gray-300"
                           size="3rem"
                           onClick={() => {
                             currentImage === cards[0].length - 1
@@ -118,16 +129,16 @@ export const FullBuildInformation = () => {
                               : setCurrentImage(currentImage + 1);
                           }}
                         />
-                      </button>
+                      </span>
                     </div>
                   </Box>
                 </Box>
               </Flex>
             </>
           )}
-          <Flex>
+          <Flex className="flex gap-10">
             <button
-              className="bg-black text-white p-4"
+              className="bg-gray-800 text-gray-300 p-4 z-50"
               onClick={() => {
                 setDescriptionHidden(!descriptionHidden);
                 setCommentsHidden(true);
@@ -137,7 +148,7 @@ export const FullBuildInformation = () => {
             </button>
 
             <button
-              className="bg-black text-white p-4"
+              className="bg-gray-800 text-gray-300 p-4 z-50"
               onClick={() => {
                 setCommentsHidden(!commentsHidden);
                 setDescriptionHidden(true);
@@ -148,6 +159,7 @@ export const FullBuildInformation = () => {
           </Flex>
 
           <Flex
+            zIndex={100}
             hidden={descriptionHidden}
             _dark={{
               bg: "#3e3e3e",
@@ -162,7 +174,7 @@ export const FullBuildInformation = () => {
               mx="auto"
               px={4}
               py={3}
-              bg="white"
+              bg="gray.800"
               _dark={{
                 bg: "gray.800",
               }}
@@ -174,7 +186,7 @@ export const FullBuildInformation = () => {
                   fontSize="lg"
                   fontWeight="bold"
                   mt={2}
-                  color="gray.800"
+                  color="white"
                   _dark={{
                     color: "white",
                   }}
@@ -184,7 +196,7 @@ export const FullBuildInformation = () => {
                 <Flex justifyContent="space-between" alignItems="center">
                   <chakra.span
                     fontSize="sm"
-                    color="gray.800"
+                    color="gray.400"
                     _dark={{
                       color: "gray.400",
                     }}
@@ -193,15 +205,15 @@ export const FullBuildInformation = () => {
                   </chakra.span>
                   <chakra.span
                     fontSize="sm"
-                    color="gray.800"
+                    color="gray.400"
                     _dark={{
                       color: "gray.400",
                     }}
                   >
-                    Vie ws: {selectedVideo?.statistics.viewCount}
+                    Views: {selectedVideo?.statistics.viewCount}
                   </chakra.span>
                   <chakra.span
-                    color="brand.800"
+                    color="gray.400"
                     _dark={{
                       color: "brand.900",
                     }}
@@ -217,7 +229,7 @@ export const FullBuildInformation = () => {
                 <chakra.p
                   fontSize="sm"
                   mt={2}
-                  color="gray.600"
+                  color="gray.300"
                   _dark={{
                     color: "gray.300",
                   }}
@@ -226,18 +238,32 @@ export const FullBuildInformation = () => {
                     parts.map((part, index) => {
                       if (part.match(urlRegex)) {
                         // If the part is a URL, render it as a clickable link
-
-                        return (
-                          <a
-                            key={index}
-                            href={part}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-sky-500"
-                          >
-                            {part}
-                          </a>
-                        );
+                        if (part.startsWith("http")) {
+                          return (
+                            <a
+                              className="text-sky-400"
+                              key={index}
+                              href={part}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              {part}
+                            </a>
+                          );
+                        } else {
+                          // If the part is 'curtis_made_it', render it as a link
+                          return (
+                            <a
+                              className="text-sky-400"
+                              key={index}
+                              href="https://www.instagram.com/curtis_made_it/"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              {part}
+                            </a>
+                          );
+                        }
                       } else {
                         // Otherwise, render it as plain text
                         return part;
@@ -255,7 +281,7 @@ export const FullBuildInformation = () => {
           <>
             <Flex
               hidden={commentsHidden}
-              className="bg-blueWood"
+              className="bg-blueWood  blurred-background"
               _dark={{
                 bg: "#3e3e3e",
               }}
@@ -265,12 +291,13 @@ export const FullBuildInformation = () => {
               justifyContent="center"
             >
               <Box
+                zIndex={100}
                 mx="auto"
                 px={8}
                 py={4}
                 rounded="lg"
                 shadow="lg"
-                bg="white"
+                bg="gray.800"
                 _dark={{
                   bg: "gray.800",
                 }}
@@ -279,7 +306,7 @@ export const FullBuildInformation = () => {
                 <Flex justifyContent="space-between" alignItems="center">
                   <chakra.span
                     fontSize="sm"
-                    color="gray.600"
+                    color="gray.400"
                     _dark={{
                       color: "gray.400",
                     }}
@@ -291,7 +318,7 @@ export const FullBuildInformation = () => {
                 <Box mt={2}>
                   <chakra.p
                     mt={2}
-                    color="gray.600"
+                    color="gray.300"
                     _dark={{
                       color: "gray.300",
                     }}
@@ -302,7 +329,7 @@ export const FullBuildInformation = () => {
 
                 <Flex justifyContent="space-between" alignItems="center" mt={4}>
                   <Link
-                    color="brand.600"
+                    color="brand.400"
                     _dark={{
                       color: "brand.400",
                     }}
@@ -329,7 +356,7 @@ export const FullBuildInformation = () => {
                       src={commentEntry.commenterImage}
                     />
                     <Link
-                      color="gray.700"
+                      color="gray.200"
                       _dark={{
                         color: "gray.200",
                       }}
@@ -347,7 +374,7 @@ export const FullBuildInformation = () => {
                 <Flex justifyContent="space-between" alignItems="center">
                   <chakra.span
                     fontSize="sm"
-                    color="gray.600"
+                    color="gray.400"
                     _dark={{
                       color: "gray.400",
                     }}
@@ -359,7 +386,7 @@ export const FullBuildInformation = () => {
                 <Box mt={2}>
                   <chakra.p
                     mt={2}
-                    color="gray.600"
+                    color="gray.300"
                     _dark={{
                       color: "gray.300",
                     }}
@@ -370,7 +397,7 @@ export const FullBuildInformation = () => {
 
                 <Flex justifyContent="space-between" alignItems="center" mt={4}>
                   <Link
-                    color="brand.600"
+                    color="brand.400"
                     _dark={{
                       color: "brand.400",
                     }}
@@ -401,7 +428,7 @@ export const FullBuildInformation = () => {
                       }
                     />
                     <Link
-                      color="gray.700"
+                      color="gray.200"
                       _dark={{
                         color: "gray.200",
                       }}

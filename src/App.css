@@ -52,3 +52,60 @@
   width: 50rem;
   height: 30rem;
 }
+
+.blurred-background {
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.cut-wood-blurred-background {
+  position: relative;
+}
+
+.cut-wood-blurred-background:before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #000000;
+  opacity: 0.75;
+  content: "";
+}
+
+.blurred-background:before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #000000;
+  opacity: 0.75;
+  content: "";
+}
+
+.animate {
+  border-radius: 50%;
+  box-shadow: 0 0 0 0 rgba(255, 0, 0, 1);
+  transform: scale(1);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.7);
+  }
+
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(255, 0, 0, 0);
+  }
+
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(255, 0, 0, 0);
+  }
+}
