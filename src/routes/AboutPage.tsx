@@ -241,7 +241,7 @@ export const AboutPage = () => {
         style={{ backgroundImage: "url(/blueWood.jpg)" }}
         className="blurred-background"
       >
-        <CardBody className="mr-16 ml-16">
+        <CardBody className="mr-10 ml-10">
           <MapApi />
         </CardBody>
       </Card>
