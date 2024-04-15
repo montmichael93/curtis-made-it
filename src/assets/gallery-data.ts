@@ -92,6 +92,10 @@ import cornholeThree from "/public/cornHoleThree.jpg";
 import cornholeFour from "/public/cornHoleFour.jpg";
 import cornholeFive from "/public/cornHoleFive.jpg";
 
+import cornholeSix from "/public/cornHoleSix.jpg";
+import cornholeSeven from "/public/cornHoleSeven.jpg";
+import cornholeEight from "/public/cornHoleEight.jpg";
+
 export const cornHoleLawnGameGallery = [
   cornhole,
   cornholeOne,
@@ -99,6 +103,9 @@ export const cornHoleLawnGameGallery = [
   cornholeThree,
   cornholeFour,
   cornholeFive,
+  cornholeSix,
+  cornholeSeven,
+  cornholeEight,
 ];
 
 import deckRebuildOne from "/public/deckRebuildOne.jpg";
@@ -145,6 +152,32 @@ export const desktopChristmasTreesGallery = [
   deskTopXmasTreeThree,
 ];
 
+import dewalt from "/public/dewalt.jpg";
+import dewaltOne from "/public/dewaltOne.jpg";
+import dewaltTwo from "/public/dewaltTwo.jpg";
+import dewaltThree from "/public/dewaltThree.jpg";
+import dewaltFour from "/public/dewaltFour.jpg";
+import dewaltFive from "/public/dewaltFive.jpg";
+import dewaltSix from "/public/dewaltSix.jpg";
+import dewaltSeven from "/public/dewaltSeven.jpg";
+import dewaltEight from "/public/dewaltEight.jpg";
+import dewaltNine from "/public/dewaltNine.jpg";
+import dewaltTen from "/public/dewaltTen.jpg";
+
+export const dewaltGallery = [
+  dewalt,
+  dewaltOne,
+  dewaltTwo,
+  dewaltThree,
+  dewaltFour,
+  dewaltFive,
+  dewaltSix,
+  dewaltSeven,
+  dewaltEight,
+  dewaltNine,
+  dewaltTen,
+];
+
 import dogHouse from "/public/dogHouse.jpg";
 import dogHouseOne from "/public/dogHouseOne.jpg";
 import dogHouseTwo from "/public/dogHouseTwo.jpg";
@@ -157,20 +190,20 @@ export const dogHouseGallery = [
   dogHouseThree,
 ];
 
-import floatingBedframeOne from "/public/FBFOne.jpg";
-import floatingBedframeTwo from "/public/FBFTwo.jpg";
-import floatingBedframeThree from "/public/FBFThree.jpg";
-import floatingBedframeFour from "/public/FBFFour.jpg";
-import floatingBedframeFive from "/public/FBFFive.jpg";
-import floatingBedframeSix from "/public/FBFSix.jpg";
-import floatingBedframeSeven from "/public/FBFSeven.jpg";
-import floatingBedframeEight from "/public/FBFEight.jpg";
-import floatingBedframeNine from "/public/FBFNine.jpg";
-import floatingBedframeTen from "/public/FBFTen.jpg";
-import floatingBedframeEleven from "/public/FBFEleven.jpg";
-import floatingBedframeTwelve from "/public/FBFTwelve.jpg";
-import floatingBedframeThirteen from "/public/FBFThirteen.jpg";
-import floatingBedframeFourteen from "/public/FBFFourteen.jpg";
+import floatingBedframeOne from "/public/FBFOne.jpg"; //queen
+import floatingBedframeTwo from "/public/FBFTwo.jpg"; //queen
+import floatingBedframeThree from "/public/FBFThree.jpg"; //queen
+import floatingBedframeFour from "/public/FBFFour.jpg"; //queen
+import floatingBedframeFive from "/public/FBFFive.jpg"; //ask
+import floatingBedframeSix from "/public/FBFSix.jpg"; //ask
+import floatingBedframeSeven from "/public/FBFSeven.jpg"; //ask
+import floatingBedframeEight from "/public/FBFEight.jpg"; //queen
+import floatingBedframeNine from "/public/FBFNine.jpg"; //queen
+import floatingBedframeTen from "/public/FBFTen.jpg"; //queen
+import floatingBedframeEleven from "/public/FBFEleven.jpg"; //queen
+import floatingBedframeTwelve from "/public/FBFTwelve.jpg"; //queen
+import floatingBedframeThirteen from "/public/FBFThirteen.jpg"; //queen
+import floatingBedframeFourteen from "/public/FBFFourteen.jpg"; //queen
 
 export const floatingBedFrameGallery = [
   floatingBedframeOne,
@@ -210,6 +243,11 @@ export const floatingWineHoldersGallery = [
   floatingWineHoldersSeven,
   floatingWineHoldersEight,
 ];
+
+import giantDominoSet from "/public/giantDominoSet.jpg";
+import giantDominoSetOne from "/public/giantDominoSetOne.jpg";
+
+export const giantDominoGallery = [giantDominoSet, giantDominoSetOne];
 
 import GiantJenga from "/public/giantJenga.jpg";
 import GiantJengaOne from "/public/giantJengaOne.jpg";
@@ -336,6 +374,17 @@ export const plantingStationGallery = [
   plantingStationSix,
   plantingStationSeven,
 ];
+
+import R4331 from "/public/R4331.jpg";
+import R4331One from "/public/R4331One.jpg";
+import R4331Two from "/public/R4331Two.jpg";
+
+export const R4331Gallery = [R4331, R4331One, R4331Two];
+
+import ringSwing from "/public/ringSwing.jpg";
+import ringSwingOne from "/public/ringSwingOne.jpg";
+
+export const ringSwingGallery = [ringSwing, ringSwingOne];
 
 import soapSavers from "/public/soapSavers.jpg";
 import soapSaversTwo from "/public/soapSaversTwo.jpg";

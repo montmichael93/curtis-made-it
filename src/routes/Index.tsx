@@ -125,7 +125,7 @@ export default function Index() {
               <Icon as={MdLocationOn} h={6} w={6} mr={2} />
 
               <chakra.h1 px={2} fontSize="sm">
-                Fort Worth, Texas
+                Houston, Texas
               </chakra.h1>
             </Flex>
           </Box>

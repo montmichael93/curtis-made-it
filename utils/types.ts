@@ -36,7 +36,6 @@ export type VideoData = z.infer<typeof videoDataSchema>;
 const BuildGallerySchema = z.object({
   id: z.string(),
   name: z.string(),
-  description: z.array(z.string()),
   imageGallery: z.array(z.string()),
 });
 

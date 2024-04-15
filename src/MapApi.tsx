@@ -10,7 +10,7 @@ import {
 import Branding from "../public/branding.jpg";
 
 export const MapApi = () => {
-  const position = { lat: 32.768799, lng: -97.309341 };
+  const position = { lat: 29.760427, lng: -95.369804 };
   const [open, setOpen] = useState(false);
 
   return (

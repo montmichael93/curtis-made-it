@@ -33,6 +33,8 @@ export const BuildProvider = ({ children }: { children: ReactNode }) => {
     null
   );
 
+  console.log(videoData);
+
   const { videoId } = useParams();
 
   useEffect(() => {
