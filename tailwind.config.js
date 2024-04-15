@@ -5,7 +5,8 @@ export default {
     extend: {
       backgroundImage: {
         blueWood: "url(/blueWood.jpg)",
-        headerFooter: "url(/headerFooter.png",
+        headerFooter: "url(/headerFooter.png)",
+        blackMetal: "url(/blackMetal.jpg)",
       },
     },
   },

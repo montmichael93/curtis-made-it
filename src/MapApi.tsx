@@ -20,7 +20,7 @@ export const MapApi = () => {
           height: "500px",
         }}
       >
-        <Map zoom={11} center={position} mapId={"4f4da17c72a0c4f3"}>
+        <Map zoom={10} center={position} mapId={"4f4da17c72a0c4f3"}>
           <AdvancedMarker
             position={position}
             onClick={() => {

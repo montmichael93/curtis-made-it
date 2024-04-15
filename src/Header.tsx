@@ -12,24 +12,37 @@ import {
   Tabs,
   VStack,
   chakra,
-  useColorModeValue,
   useDisclosure,
 } from "@chakra-ui/react";
 import { AiFillHome, AiOutlineMenu, AiFillMail } from "react-icons/ai";
 import { BsFillCameraVideoFill, BsPersonFill } from "react-icons/bs";
 import Branding from "../public/branding.jpg";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
 
 export const UpperSection = () => {
-  const bg = useColorModeValue("black", "gray.800");
   const mobileNav = useDisclosure();
+  const location = useLocation();
+  const path = location.pathname;
+  const { videoId } = useParams();
+  console.log(videoId);
+  const pageTab = () => {
+    if (path === "/") {
+      return 0;
+    } else if (path === "/about") {
+      return 1;
+    } else if (path === "/videos" || videoId) {
+      return 2;
+    } else if (path === "/message") {
+      return 3;
+    }
+  };
 
   return (
     <>
       {/*mobile nav menu*/}
       <Box shadow="md">
         <chakra.header
-          style={{ backgroundImage: "url(/headerFooter.png)" }}
+          className="bg-headerFooter"
           borderColor="gray.600"
           borderBottomWidth={1}
           w="full"
@@ -58,8 +71,8 @@ export const UpperSection = () => {
                   }}
                   aria-label="Open menu"
                   fontSize="20px"
-                  backgroundColor="gray.800"
-                  color="gray.400"
+                  style={{ backgroundImage: "url(/blackMetal.jpg)" }}
+                  color="gray.200"
                   _dark={{
                     color: "inherit",
                   }}
@@ -77,7 +90,6 @@ export const UpperSection = () => {
                   p={2}
                   pb={4}
                   m={2}
-                  bg={bg}
                   spacing={3}
                   rounded="sm"
                   shadow="sm"
@@ -86,12 +98,13 @@ export const UpperSection = () => {
                     aria-label="Close menu"
                     justifySelf="self-start"
                     onClick={mobileNav.onClose}
-                    color="gray.400"
+                    color="gray.200"
+                    style={{ backgroundImage: "url(/blackMetal.jpg)" }}
                   />
                   <Link to={`/`} className="w-full">
                     <Button
-                      backgroundColor="gray.800"
-                      color="gray.400"
+                      style={{ backgroundImage: "url(/blackMetal.jpg)" }}
+                      color="gray.200"
                       w="full"
                       leftIcon={<AiFillHome />}
                       onClick={() => {
@@ -105,8 +118,8 @@ export const UpperSection = () => {
                   <Link to={`/about`} className="w-full">
                     <Button
                       w="full"
-                      backgroundColor="gray.800"
-                      color="gray.400"
+                      style={{ backgroundImage: "url(/blackMetal.jpg)" }}
+                      color="gray.200"
                       leftIcon={<BsPersonFill />}
                       onClick={() => {
                         mobileNav.onClose();
@@ -120,8 +133,8 @@ export const UpperSection = () => {
                   <Link to={`/videos`} className="w-full">
                     <Button
                       w="full"
-                      backgroundColor="gray.800"
-                      color="gray.400"
+                      style={{ backgroundImage: "url(/blackMetal.jpg)" }}
+                      color="gray.200"
                       leftIcon={<BsFillCameraVideoFill />}
                       onClick={() => {
                         mobileNav.onClose();
@@ -135,8 +148,8 @@ export const UpperSection = () => {
                   <Link to={`/message`} className="w-full">
                     <Button
                       w="full"
-                      backgroundColor="gray.800"
-                      color="gray.400"
+                      style={{ backgroundImage: "url(/blackMetal.jpg)" }}
+                      color="gray.200"
                       leftIcon={<AiFillMail />}
                       onClick={() => {
                         mobileNav.onClose();
@@ -168,17 +181,16 @@ export const UpperSection = () => {
 
         <Hide below="md">
           <Flex
-            style={{ backgroundImage: "url(/headerFooter.png)" }}
             ml={0}
             borderWidth={0}
             overflowX="auto"
-            className="bg-gray-800"
-            position="fixed" // Set the position to fixed
-            top={0} // Position at the top of the viewport
-            width="100%" // Take up the full width of the viewport
-            zIndex={999} // Set a high z-index to ensure it stays on top of other content
+            className="bg-headerFooter"
+            position="fixed"
+            top={0}
+            width="100%"
+            zIndex={999}
           >
-            <Tabs defaultIndex={0} borderBottomColor="#00ff00">
+            <Tabs defaultIndex={pageTab()} borderBottomColor="#00ff00">
               <TabList className="text-gray-200">
                 <div className="flex">
                   <Link

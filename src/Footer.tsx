@@ -1,5 +1,4 @@
 import { Flex, Icon, chakra } from "@chakra-ui/react";
-//import Brand from "../public/branding.jpg";
 import { FaYoutube, FaInstagram } from "react-icons/fa";
 export const FooterSection = () => {
   return (
@@ -26,7 +25,7 @@ export const FooterSection = () => {
           justify="space-between"
           px="6"
           py="4"
-          bg="gray.800"
+          className="bg-blackMetal"
         >
           <chakra.a
             href="#"

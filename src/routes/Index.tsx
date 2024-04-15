@@ -1,6 +1,5 @@
 import CLoveSittingDown from "../../public/CloveSittingDown.jpg";
 import { FaTools } from "react-icons/fa";
-
 import {
   Card,
   CardHeader,
@@ -27,9 +26,7 @@ export default function Index() {
   return (
     <>
       <Flex
-        //className="bg-blueWood bg-no-repeat bg-center bg-cover"
-        style={{ backgroundImage: "url(/blueWood.jpg)" }}
-        className="blurred-background"
+        className="blurred-background bg-blueWood"
         p={50}
         w="full"
         alignItems="center"
@@ -65,7 +62,7 @@ export default function Index() {
             </chakra.h1>
           </Flex>
 
-          <Box py={4} px={6}>
+          <Box py={4} px={6} className="bg-blackMetal">
             <chakra.h1
               fontSize="xl"
               fontWeight="bold"
@@ -142,7 +139,7 @@ export default function Index() {
           spacing={5}
           templateColumns="repeat(auto-fill, minmax(300px, 1fr))"
         >
-          <Card color="gray.300" backgroundColor="gray.800">
+          <Card color="gray.200" className="bg-blackMetal">
             <CardHeader>
               <Heading size="md">Send A Message</Heading>
             </CardHeader>
@@ -154,7 +151,7 @@ export default function Index() {
             </CardFooter>
           </Card>
 
-          <Card color="gray.300" backgroundColor="gray.800">
+          <Card color="gray.200" className="bg-blackMetal">
             <CardHeader>
               <Heading size="md">Artisanal Builds</Heading>
             </CardHeader>
@@ -166,7 +163,7 @@ export default function Index() {
             </CardFooter>
           </Card>
 
-          <Card color="gray.300" backgroundColor="gray.800">
+          <Card color="gray.200" className="bg-blackMetal">
             <CardHeader>
               <Heading size="md">Home Improvement</Heading>
             </CardHeader>
@@ -178,7 +175,7 @@ export default function Index() {
             </CardFooter>
           </Card>
 
-          <Card color="gray.300" backgroundColor="gray.800">
+          <Card color="gray.200" className="bg-blackMetal">
             <CardHeader>
               <Heading size="md">DIY</Heading>
             </CardHeader>
@@ -191,10 +188,7 @@ export default function Index() {
           </Card>
         </SimpleGrid>
       </section>
-      <Card
-        style={{ backgroundImage: "url(/blueWood.jpg)" }}
-        className="blurred-background"
-      >
+      <Card className="blurred-background bg-blueWood">
         <CardBody className="mr-4 ml-4">
           <MapApi />
         </CardBody>

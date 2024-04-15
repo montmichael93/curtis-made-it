@@ -2,17 +2,14 @@ import { useBuild } from "../Provider";
 
 import {
   Flex,
-  //Text,
   Box,
   chakra,
   SimpleGrid,
   //CardHeader,
   Card,
-  //Heading,
   CardBody,
-  //CardFooter,
-  //Button,
 } from "@chakra-ui/react";
+import { FaThumbsUp, FaEye, FaCommentDots } from "react-icons/fa";
 
 import { Link } from "react-router-dom";
 import { FaYoutube } from "react-icons/fa";
@@ -32,7 +29,7 @@ export const BuildCards = () => {
           {videoData?.map((video) => {
             return (
               <>
-                <Card id={video.videoId} backgroundColor={"transparent"}>
+                <Card id={video.videoId} className="m-12 bg-blackMetal">
                   <CardBody>
                     <Flex
                       id={video.videoId}
@@ -40,7 +37,6 @@ export const BuildCards = () => {
                       _dark={{
                         bg: "#3e3e3e",
                       }}
-                      p={50}
                       w="full"
                       alignItems="center"
                       justifyContent="center"
@@ -74,7 +70,7 @@ export const BuildCards = () => {
                             base: 56,
                             md: 64,
                           }}
-                          bg="gray.800"
+                          bg="black"
                           _dark={{
                             bg: "gray.800",
                           }}
@@ -104,7 +100,7 @@ export const BuildCards = () => {
                             justifyContent="space-between"
                             py={2}
                             px={3}
-                            bg="gray.700"
+                            bg="gray.800"
                             _dark={{
                               bg: "gray.700",
                             }}
@@ -117,24 +113,10 @@ export const BuildCards = () => {
                                 color: "gray.200",
                               }}
                             >
-                              views: {video.statistics.viewCount}
+                              <span className="flex gap-2">
+                                <FaThumbsUp /> {video.statistics.likeCount}
+                              </span>
                             </chakra.span>
-                            <Link to={`/videos/${video.videoId}`}>
-                              <chakra.span
-                                id={video.videoId}
-                                fontWeight="bold"
-                                color="gray.200"
-                                _dark={{
-                                  color: "gray.200",
-                                }}
-                                onClick={() => {
-                                  setSelectedVideo(video);
-                                  window.scrollTo(0, 0);
-                                }}
-                              >
-                                <FaYoutube size={"2rem"} className="animate" />
-                              </chakra.span>
-                            </Link>
 
                             <chakra.span
                               id={video.videoId}
@@ -144,7 +126,42 @@ export const BuildCards = () => {
                                 color: "gray.200",
                               }}
                             >
-                              Comments: {video.statistics.commentCount}
+                              <div className="flex flex-col items-center">
+                                <Link to={`/videos/${video.videoId}`}>
+                                  <chakra.span
+                                    id={video.videoId}
+                                    fontWeight="bold"
+                                    color="gray.200"
+                                    _dark={{
+                                      color: "gray.200",
+                                    }}
+                                    onClick={() => {
+                                      setSelectedVideo(video);
+                                      window.scrollTo(0, 0);
+                                    }}
+                                  >
+                                    <FaYoutube
+                                      size={"2rem"}
+                                      className="animate"
+                                    />
+                                  </chakra.span>
+                                </Link>
+                                <FaEye /> {video.statistics.viewCount}
+                              </div>
+                            </chakra.span>
+
+                            <chakra.span
+                              id={video.videoId}
+                              fontWeight="bold"
+                              color="gray.200"
+                              _dark={{
+                                color: "gray.200",
+                              }}
+                            >
+                              <span className="flex gap-2 items-center">
+                                <FaCommentDots />
+                                {video.statistics.commentCount}
+                              </span>
                             </chakra.span>
                           </Flex>
                         </Box>
@@ -152,124 +169,6 @@ export const BuildCards = () => {
                     </Flex>
                   </CardBody>
                 </Card>
-
-                {/*
-              <Flex
-                id={video.videoId}
-                bg="transparent"
-                _dark={{
-                  bg: "#3e3e3e",
-                }}
-                p={50}
-                w="full"
-                alignItems="center"
-                justifyContent="center"
-              >
-                <Flex
-                  id={video.videoId}
-                  direction="column"
-                  justifyContent="center"
-                  alignItems="center"
-                  w="sm"
-                  mx="auto"
-                >
-                  <Box
-                    zIndex={100}
-                    id={video.videoId}
-                    bg="gray.300"
-                    h={64}
-                    w="full"
-                    rounded="lg"
-                    shadow="md"
-                    bgSize="cover"
-                    bgPos="center"
-                    style={{
-                      backgroundImage: `url(${video?.thumbnails?.url})`,
-                    }}
-                  ></Box>
-
-                  <Box
-                    zIndex={100}
-                    id={video.videoId}
-                    w={{
-                      base: 56,
-                      md: 64,
-                    }}
-                    bg="gray.800"
-                    _dark={{
-                      bg: "gray.800",
-                    }}
-                    mt={-10}
-                    shadow="lg"
-                    rounded="lg"
-                    overflow="hidden"
-                  >
-                    <chakra.h3
-                      id={video.videoId}
-                      py={2}
-                      textAlign="center"
-                      fontWeight="bold"
-                      textTransform="uppercase"
-                      color="white"
-                      _dark={{
-                        color: "white",
-                      }}
-                      letterSpacing={1}
-                    >
-                      {video.title}
-                    </chakra.h3>
-
-                    <Flex
-                      id={video.videoId}
-                      alignItems="center"
-                      justifyContent="space-between"
-                      py={2}
-                      px={3}
-                      bg="gray.700"
-                      _dark={{
-                        bg: "gray.700",
-                      }}
-                    >
-                      <chakra.span
-                        id={video.videoId}
-                        fontWeight="bold"
-                        color="gray.200"
-                        _dark={{
-                          color: "gray.200",
-                        }}
-                      >
-                        views: {video.statistics.viewCount}
-                      </chakra.span>
-                      <Link to={`/videos/${video.videoId}`}>
-                        <chakra.span
-                          id={video.videoId}
-                          fontWeight="bold"
-                          color="gray.200"
-                          _dark={{
-                            color: "gray.200",
-                          }}
-                          onClick={() => {
-                            setSelectedVideo(video);
-                          }}
-                        >
-                          <FaYoutube size={"2rem"} />
-                        </chakra.span>
-                      </Link>
-
-                      <chakra.span
-                        id={video.videoId}
-                        fontWeight="bold"
-                        color="gray.200"
-                        _dark={{
-                          color: "gray.200",
-                        }}
-                      >
-                        Comments: {video.statistics.commentCount}
-                      </chakra.span>
-                    </Flex>
-                  </Box>
-                </Flex>
-                 </Flex> */}
               </>
             );
           })}

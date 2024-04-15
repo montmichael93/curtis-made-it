@@ -25,13 +25,12 @@ export const FullBuildInformation = () => {
     (build) => build.id === selectedVideo?.videoId
   );
   const cards = filteredBuild.map((entry) => entry.imageGallery);
-
   const urlRegex = /(https?:\/\/[^\s]+|\bCurtis_Made_It\b)/gi;
   const parts = vidDescriptionData?.split(urlRegex);
   return (
     <>
       <>
-        <div className="flex items-center bg-gray-800 mt-16">
+        <div className="flex items-center bg-blackMetal mt-16">
           <button
             className=" p-3"
             onClick={() => {
@@ -46,7 +45,7 @@ export const FullBuildInformation = () => {
           <span className="text-base text-gray-300">Go Back</span>
         </div>
 
-        <div className="flex justify-evenly bg-gray-800 ">
+        <div className="flex justify-evenly bg-blackMetal ">
           <span className="text-xl text-gray-300 flex flex-col items-center">
             <FaThumbsUp />{" "}
             <span> Likes: {selectedVideo?.statistics.likeCount} </span>
@@ -138,7 +137,7 @@ export const FullBuildInformation = () => {
           )}
           <Flex className="flex gap-10">
             <button
-              className="bg-gray-800 text-gray-300 p-4 z-50"
+              className="bg-blackMetal text-gray-300 p-4 z-50"
               onClick={() => {
                 setDescriptionHidden(!descriptionHidden);
                 setCommentsHidden(true);
@@ -148,7 +147,7 @@ export const FullBuildInformation = () => {
             </button>
 
             <button
-              className="bg-gray-800 text-gray-300 p-4 z-50"
+              className="bg-blackMetal text-gray-300 p-4 z-50"
               onClick={() => {
                 setCommentsHidden(!commentsHidden);
                 setDescriptionHidden(true);
@@ -165,7 +164,6 @@ export const FullBuildInformation = () => {
               bg: "#3e3e3e",
             }}
             p={50}
-            //w="min-content"
             alignItems="center"
             justifyContent="center"
           >
@@ -237,7 +235,6 @@ export const FullBuildInformation = () => {
                   {parts &&
                     parts.map((part, index) => {
                       if (part.match(urlRegex)) {
-                        // If the part is a URL, render it as a clickable link
                         if (part.startsWith("http")) {
                           return (
                             <a
@@ -251,7 +248,6 @@ export const FullBuildInformation = () => {
                             </a>
                           );
                         } else {
-                          // If the part is 'curtis_made_it', render it as a link
                           return (
                             <a
                               className="text-sky-400"
@@ -265,7 +261,6 @@ export const FullBuildInformation = () => {
                           );
                         }
                       } else {
-                        // Otherwise, render it as plain text
                         return part;
                       }
                     })}

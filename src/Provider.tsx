@@ -32,6 +32,7 @@ export const BuildProvider = ({ children }: { children: ReactNode }) => {
   const [vidDescriptionData, setVidDescriptionData] = useState<string | null>(
     null
   );
+
   const { videoId } = useParams();
 
   useEffect(() => {
@@ -43,8 +44,6 @@ export const BuildProvider = ({ children }: { children: ReactNode }) => {
         console.error("Error fetching channel data:", error);
       });
   }, []);
-
-  useEffect(() => {}, []);
 
   useEffect(() => {
     Requests.youTubeVideos()

@@ -9,8 +9,7 @@ export const AboutPage = () => {
   return (
     <>
       <Flex
-        style={{ backgroundImage: "url(/blueWood.jpg)" }}
-        className="blurred-background"
+        className="blurred-background bg-blueWood"
         p={50}
         w="full"
         alignItems="center"
@@ -19,7 +18,7 @@ export const AboutPage = () => {
       >
         <Box
           zIndex={100}
-          bg="gray.800"
+          className="bg-blackMetal"
           mx={{
             lg: 8,
           }}
@@ -87,7 +86,7 @@ export const AboutPage = () => {
               </chakra.h2>
             </div>
 
-            <chakra.p mt={4} color="gray.400">
+            <chakra.p mt={4} color="gray.200">
               <p className="text-left indent-[18px]">
                 I appreciate you taking the time to support this tiny piece of
                 the internet and I hope you have a wonderfully happy anniversary
@@ -110,21 +109,21 @@ export const AboutPage = () => {
       </Flex>
 
       <Flex
-        style={{ backgroundImage: "url(/blueWood.jpg)" }}
-        className="blurred-background"
+        className="blurred-background bg-blueWood"
         p={5}
         w="full"
         alignItems="center"
         justifyContent="center"
       >
         <Box
+          color="gray.200"
+          className="bg-blackMetal"
           zIndex={100}
           w="full"
           maxW="lg"
           mx="auto"
           px={4}
           py={3}
-          bg="gray.800"
           shadow="md"
           rounded="md"
           onClick={() => {
@@ -141,7 +140,7 @@ export const AboutPage = () => {
           >
             <FaHandshake size={"4rem"} className="text-white" />
             <Box>
-              <chakra.p fontSize="sm" mt={2} color="gray.300">
+              <chakra.p fontSize="sm" mt={2} color="gray.200">
                 <p className="text-left indent-[18px]">
                   We’ve continued to grow because of the enormous support and
                   networking experience that has been created by users from all
@@ -170,21 +169,21 @@ export const AboutPage = () => {
       </Flex>
 
       <Flex
-        style={{ backgroundImage: "url(/blueWood.jpg)" }}
-        className="blurred-background"
+        className="blurred-background bg-blueWood"
         p={50}
         w="full"
         alignItems="center"
         justifyContent="center"
       >
         <Box
+          color="gray.200"
+          className="bg-blackMetal"
           zIndex={100}
           w="full"
           maxW="lg"
           mx="auto"
           px={4}
           py={3}
-          bg="gray.800"
           shadow="md"
           rounded="md"
           onClick={() => {
