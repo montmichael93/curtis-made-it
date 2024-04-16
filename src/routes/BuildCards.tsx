@@ -15,6 +15,7 @@ import { FaYoutube } from "react-icons/fa";
 
 export const BuildCards = () => {
   const { videoData, setSelectedVideo } = useBuild();
+ // console.log(videoData?.sort((vid) => vid.statistics.viewCount))
   return (
     <>
       <div

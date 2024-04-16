@@ -69,6 +69,49 @@ export const FullBuildInformation = () => {
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
           ></iframe>
 
+          {cards.length === 0 && (
+            <Flex
+              p={50}
+              w="full"
+              alignItems="center"
+              justifyContent="center"
+              className="bg-blueWood"
+            >
+              <Box
+                w="xs"
+                bg="white"
+                _dark={{
+                  bg: "gray.800",
+                }}
+                shadow="lg"
+                rounded="lg"
+                overflow="hidden"
+                mx="auto"
+                zIndex={100}
+              >
+                <Image
+                  w="full"
+                  h={56}
+                  fit="cover"
+                  src={branding}
+                  alt="avatar"
+                />
+
+                <Box py={5} textAlign="center" className="bg-blackMetal">
+                  <chakra.span
+                    fontSize="sm"
+                    color="gray.200"
+                    _dark={{
+                      color: "gray.200",
+                    }}
+                  >
+                    Photos coming soon...
+                  </chakra.span>
+                </Box>
+              </Box>
+            </Flex>
+          )}
+
           {cards.length > 0 && (
             <>
               <Flex
@@ -101,7 +144,12 @@ export const FullBuildInformation = () => {
                     alt="avatar"
                   />
 
-                  <Box py={5} textAlign="center" zIndex={100}>
+                  <Box
+                    py={5}
+                    textAlign="center"
+                    zIndex={100}
+                    className="bg-blackMetal"
+                  >
                     <div className="flex justify-evenly">
                       <span>
                         <FaArrowCircleLeft
