@@ -5,6 +5,7 @@ import {
   birdHouseGallery,
   chaosCuttingBoardGallery,
   cornHoleLawnGameGallery,
+  customPictureFrameGallery,
   deckRebuildGallery,
   desktopChristmasTreesGallery,
   dewaltGallery,
@@ -21,6 +22,7 @@ import {
   plantingStationGallery,
   R4331Gallery,
   ringSwingGallery,
+  simpleBirdHouseGallery,
   soapSaversGallery,
   squirrelPicnicTableGallery,
   tensegrityModelGallery,
@@ -53,6 +55,12 @@ export const buildData: buildInfo[] = [
     id: "rZk3z2MdaAc",
     name: "Corn Hole Lawn Game",
     imageGallery: cornHoleLawnGameGallery,
+  },
+
+  {
+    id: "Y07Kx3jT2Bg",
+    name: "custom picture frame",
+    imageGallery: customPictureFrameGallery,
   },
   {
     id: "YpOj7Mq0y_g",
@@ -137,6 +145,12 @@ export const buildData: buildInfo[] = [
     id: "Kl0ky9VVOkU",
     name: "Ring swing battle game",
     imageGallery: ringSwingGallery,
+  },
+
+  {
+    id: "cNpHrUrit4s",
+    name: "simple birdHouse",
+    imageGallery: simpleBirdHouseGallery,
   },
 
   {

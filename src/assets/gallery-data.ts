@@ -108,6 +108,10 @@ export const cornHoleLawnGameGallery = [
   cornholeEight,
 ];
 
+import customPictureFrame from "/public/customPictureFrame.jpg";
+
+export const customPictureFrameGallery = [customPictureFrame];
+
 import deckRebuildOne from "/public/deckRebuildOne.jpg";
 import deckRebuildTwo from "/public/deckRebuildTwo.jpg";
 import deckRebuildThree from "/public/deckRebuildThree.jpg";
@@ -385,6 +389,26 @@ import ringSwing from "/public/ringSwing.jpg";
 import ringSwingOne from "/public/ringSwingOne.jpg";
 
 export const ringSwingGallery = [ringSwing, ringSwingOne];
+
+import simpleBirdHouse from "/public/simpleBirdHouse.jpg";
+import simpleBirdHouseOne from "/public/simpleBirdHouseOne.jpg";
+import simpleBirdHouseTwo from "/public/simpleBirdHouseTwo.jpg";
+import simpleBirdHouseThree from "/public/simpleBirdHouseThree.jpg";
+import simpleBirdHouseFour from "/public/simpleBirdHouseFour.jpg";
+import simpleBirdHouseFive from "/public/simpleBirdHouseFive.jpg";
+import simpleBirdHouseSix from "/public/simpleBirdHouseSix.jpg";
+import simpleBirdHouseSeven from "/public/simpleBirdHouseSeven.jpg";
+
+export const simpleBirdHouseGallery = [
+  simpleBirdHouse,
+  simpleBirdHouseOne,
+  simpleBirdHouseTwo,
+  simpleBirdHouseThree,
+  simpleBirdHouseFour,
+  simpleBirdHouseFive,
+  simpleBirdHouseSix,
+  simpleBirdHouseSeven,
+];
 
 import soapSavers from "/public/soapSavers.jpg";
 import soapSaversTwo from "/public/soapSaversTwo.jpg";
