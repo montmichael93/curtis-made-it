@@ -17,7 +17,7 @@ import beamLevel from "../../public/beamLevel.jpg";
 import starBondGlue from "../../public/starbongGlue.png";
 import clamps8Pack from "../../public/clamps8Pack.jpg";
 import R4331 from "/public/R4331.jpg";
-import fewerClamps from "../../public/Clamps6Pack.jpg";
+import clamps6Pack from "../../public/clamps6Pack.jpg";
 import titebondGlue from "../../public/titebondGlue.jpg";
 import drillBitSet from "../../public/drillBitSet.jpg";
 import angledNailer from "../../public/angledNailer.jpg";
@@ -76,7 +76,7 @@ export const affiliateLinkImages = [
   starBondGlue,
   clamps8Pack,
   R4331,
-  fewerClamps,
+  clamps6Pack,
   titebondGlue,
   drillBitSet,
   angledNailer,
