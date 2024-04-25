@@ -26,7 +26,7 @@ export const bedHeadboardGallery = [
   bedHeadBoardSix,
 ];
 
-import kingHeadboard from "/public/bedheadBoardKingSized.jpg";
+import kingHeadboard from "/public/bedHeadboardKingSized.jpg";
 
 export const kingHeadboardPic = [kingHeadboard];
 
