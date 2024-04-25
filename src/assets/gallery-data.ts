@@ -15,6 +15,7 @@ import bedHeadBoardTwo from "/public/bedheadboardTwo.jpg";
 import bedHeadBoardThree from "/public/bedheadboardThree.jpg";
 import bedHeadBoardFour from "/public/bedheadboardFour.jpg";
 import bedHeadBoardFive from "/public/bedheadboardFive.jpg";
+import bedHeadBoardSix from "/public/bedHeadBoardSix.jpg";
 
 export const bedHeadboardGallery = [
   bedHeadBoardOne,
@@ -22,7 +23,12 @@ export const bedHeadboardGallery = [
   bedHeadBoardThree,
   bedHeadBoardFour,
   bedHeadBoardFive,
+  bedHeadBoardSix,
 ];
+
+import kingHeadboard from "/public/bedHeadBoardKingSized.jpg";
+
+export const kingHeadboardPic = [kingHeadboard];
 
 import birdHouse from "/public/birdHouse.jpg";
 import birdHouseOne from "/public/birdHouseOne.jpg";
@@ -195,35 +201,63 @@ export const dogHouseGallery = [
 ];
 
 import floatingBedframeOne from "/public/FBFOne.jpg"; //queen
-import floatingBedframeTwo from "/public/FBFTwo.jpg"; //queen
+import floatingBedframeTwo from "/public/FBFTwo.jpg"; //Erin
 import floatingBedframeThree from "/public/FBFThree.jpg"; //queen
 import floatingBedframeFour from "/public/FBFFour.jpg"; //queen
-import floatingBedframeFive from "/public/FBFFive.jpg"; //ask
-import floatingBedframeSix from "/public/FBFSix.jpg"; //ask
-import floatingBedframeSeven from "/public/FBFSeven.jpg"; //ask
+import floatingBedframeFive from "/public/FBFFive.jpg"; //king
+import floatingBedframeSix from "/public/FBFSix.jpg"; //king
+import floatingBedframeSeven from "/public/FBFSeven.jpg"; //king
 import floatingBedframeEight from "/public/FBFEight.jpg"; //queen
 import floatingBedframeNine from "/public/FBFNine.jpg"; //queen
 import floatingBedframeTen from "/public/FBFTen.jpg"; //queen
 import floatingBedframeEleven from "/public/FBFEleven.jpg"; //queen
-import floatingBedframeTwelve from "/public/FBFTwelve.jpg"; //queen
-import floatingBedframeThirteen from "/public/FBFThirteen.jpg"; //queen
-import floatingBedframeFourteen from "/public/FBFFourteen.jpg"; //queen
+import floatingBedframeTwelve from "/public/FBFTwelve.jpg"; //erin
+import floatingBedframeThirteen from "/public/FBFThirteen.jpg"; //erin
+import floatingBedframeFourteen from "/public/FBFFourteen.jpg"; //erin
+import floatingBedframeKing from "/public/floatingBedframeKing.jpg";
 
 export const floatingBedFrameGallery = [
   floatingBedframeOne,
-  floatingBedframeTwo,
   floatingBedframeThree,
-  floatingBedframeFour,
   floatingBedframeFive,
   floatingBedframeSix,
-  floatingBedframeSeven,
   floatingBedframeEight,
   floatingBedframeNine,
   floatingBedframeTen,
   floatingBedframeEleven,
+];
+
+export const floatingBedFrameErinGallery = [
+  floatingBedframeTwo,
+  floatingBedframeFour,
   floatingBedframeTwelve,
   floatingBedframeThirteen,
   floatingBedframeFourteen,
+];
+
+export const floatingBedFrameKingSizeGallery = [
+  floatingBedframeSeven,
+  floatingBedframeKing,
+];
+
+import fullFBF from "/public/fullFBF.jpg";
+import fullFBFOne from "/public/fullFBFOne.jpg";
+import fullFBFTwo from "/public/fullFBFTwo.jpg";
+import fullFBFThree from "/public/fullFBFThree.jpg";
+import fullFBFFive from "/public/fullFBFFive.jpg";
+import fullFBFSix from "/public/fullFBFSix.jpg";
+import fullFBFSeven from "/public/fullFBFSeven.jpg";
+import fullFBFEight from "/public/fullFBFEight.jpg";
+
+export const fullFBFgallery = [
+  fullFBF,
+  fullFBFOne,
+  fullFBFTwo,
+  fullFBFThree,
+  fullFBFFive,
+  fullFBFSix,
+  fullFBFSeven,
+  fullFBFEight,
 ];
 
 import floatingWineHolders from "/public/floatingWineHolders.png";
@@ -387,8 +421,19 @@ export const R4331Gallery = [R4331, R4331One, R4331Two];
 
 import ringSwing from "/public/ringSwing.jpg";
 import ringSwingOne from "/public/ringSwingOne.jpg";
+import ringSwingTwo from "/public/ringSwingTwo.jpg";
+import ringSwingThree from "/public/ringSwingThree.jpg";
+import ringSwingFour from "/public/ringSwingFour.jpg";
+import ringSwingFive from "/public/ringSwingFive.jpg";
 
-export const ringSwingGallery = [ringSwing, ringSwingOne];
+export const ringSwingGallery = [
+  ringSwing,
+  ringSwingOne,
+  ringSwingTwo,
+  ringSwingThree,
+  ringSwingFour,
+  ringSwingFive,
+];
 
 import simpleBirdHouse from "/public/simpleBirdHouse.jpg";
 import simpleBirdHouseOne from "/public/simpleBirdHouseOne.jpg";
@@ -442,7 +487,6 @@ export const squirrelPicnicTableGallery = [
   squirrelpicnictableTen,
 ];
 
-import tensegrityModel from "/public/tensegrity.jpg";
 import tensegrityModelOne from "/public/tensegrityOne.jpg";
 import tensegrityModelTwo from "/public/tensegrityTwo.jpg";
 import tensegrityModelThree from "/public/tensegrityThree.jpg";
@@ -452,7 +496,6 @@ import tensegrityModelSix from "/public/tensegritySix.jpg";
 import tensegrityModelSeven from "/public/tensegritySeven.jpg";
 
 export const tensegrityModelGallery = [
-  tensegrityModel,
   tensegrityModelOne,
   tensegrityModelTwo,
   tensegrityModelThree,

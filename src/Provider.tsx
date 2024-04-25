@@ -10,6 +10,7 @@ import {
 import { CommentsAndReplies, VideoData, channelData } from "../utils/types";
 import { useParams } from "react-router-dom";
 import { Requests } from "../utils/requests";
+import { linksToRemove } from "./assets/affiliateLinkImages";
 
 type TypeBuildsProvider = {
   channelData: channelData[] | null;
@@ -17,6 +18,7 @@ type TypeBuildsProvider = {
   selectedVideo: VideoData | null;
   commentData: CommentsAndReplies[] | [];
   vidDescriptionData: string | null;
+  affiliateLinks: string[] | [];
   setSelectedVideo: Dispatch<SetStateAction<VideoData | null>>;
 };
 
@@ -29,12 +31,10 @@ export const BuildProvider = ({ children }: { children: ReactNode }) => {
   const [videoData, setVideoData] = useState<VideoData[] | null>(null);
   const [selectedVideo, setSelectedVideo] = useState<VideoData | null>(null);
   const [commentData, setCommentData] = useState<CommentsAndReplies[] | []>([]);
+  const [affiliateLinks, setAffiliateLinks] = useState<string[] | []>([]);
   const [vidDescriptionData, setVidDescriptionData] = useState<string | null>(
     null
   );
-
-  console.log(videoData);
-
   const { videoId } = useParams();
 
   useEffect(() => {
@@ -50,12 +50,49 @@ export const BuildProvider = ({ children }: { children: ReactNode }) => {
   useEffect(() => {
     Requests.youTubeVideos()
       .then((videos) => {
-        const API_KEY = "AIzaSyDHZZogp5RCcjTOrZe_pYvzukZAByew0P8";
+        const API_KEY = "AIzaSyDBQO59MuGO-ShK5NKRmW8SI9yo1-TuEHM";
         const fetchStatsWithIDs = videos.map((vid: VideoData) =>
           fetch(
             `https://www.googleapis.com/youtube/v3/videos?key=${API_KEY}&id=${vid.videoId}&part=statistics`
           )
         );
+
+        const allVideosDescription = videos.map(
+          (vid: VideoData) => vid.description
+        );
+        const urlRegex = /(https?:\/\/[^\s]+)/gi;
+
+        const getAllDescriptions = allVideosDescription.map(
+          (description: string) => {
+            return description?.split(urlRegex);
+          }
+        );
+
+        const flattenDescriptionsIntoOne = getAllDescriptions.flatMap(
+          (text: string[]) => {
+            return text;
+          }
+        );
+
+        const getAllAffiliateLinks = flattenDescriptionsIntoOne.filter(
+          (text: string) => {
+            if (text.match(urlRegex)) {
+              return text;
+            }
+          }
+        );
+
+        const removeDuplicateLinks = getAllAffiliateLinks.filter(
+          (value: string, index: number) =>
+            getAllAffiliateLinks.indexOf(value) === index
+        );
+
+        setAffiliateLinks(
+          removeDuplicateLinks.filter(
+            (link: string) => !linksToRemove.includes(link)
+          )
+        );
+
         return Requests.videoStats(videos, fetchStatsWithIDs);
       })
       .then((vidsAndStatistics) => {
@@ -64,7 +101,7 @@ export const BuildProvider = ({ children }: { children: ReactNode }) => {
       .catch((error) => {
         console.error("Error fetching channel data:", error);
       });
-  }, []);
+  }, [vidDescriptionData]);
 
   useEffect(() => {
     const videoSelectedBeforeReload = videoData?.filter(
@@ -75,7 +112,7 @@ export const BuildProvider = ({ children }: { children: ReactNode }) => {
   }, [selectedVideo, vidDescriptionData, videoData, videoId]);
 
   useEffect(() => {
-    const API_KEY = "AIzaSyDHZZogp5RCcjTOrZe_pYvzukZAByew0P8";
+    const API_KEY = "AIzaSyDBQO59MuGO-ShK5NKRmW8SI9yo1-TuEHM";
     function fetchCommentsAndReplies(
       pageToken: string
     ): Promise<CommentsAndReplies> {
@@ -127,33 +164,33 @@ export const BuildProvider = ({ children }: { children: ReactNode }) => {
           (thread) => ({
             // @ts-expect-error/ will figure out later
             videoId: thread.comment.videoId,
-            // @ts-expect-error/ will figure out later
+            // @ts-expect-error/ will add types later
             commenterName: thread.comment.authorDisplayName,
-            // @ts-expect-error/ will figure out later
+            // @ts-expect-error/ will add types later
             commenterImage: thread.comment.authorProfileImageUrl,
-            // @ts-expect-error/ will figure out later
+            // @ts-expect-error/ will add types later
             commenterLikes: thread.comment.likeCount,
-            // @ts-expect-error/ will figure out later
+            // @ts-expect-error/  will add types later
             commenterDate: thread.comment.publishedAt,
-            // @ts-expect-error/ will figure out later
+            // @ts-expect-error/ will add types later
             comment: thread.comment.textOriginal,
-            // @ts-expect-error/ will figure out later
+            // @ts-expect-error/ will add types later
             replierName: thread.replies[0]
-              ? // @ts-expect-error/ will figure out later
+              ? // @ts-expect-error/ will add types later
                 thread.replies[0].authorDisplayName
               : "",
-            // @ts-expect-error/ will figure out later
+            // @ts-expect-error/  will add types later
             replierImage: thread.replies[0]
-              ? // @ts-expect-error/ will figure out later
+              ? // @ts-expect-error/  will add types later
                 thread.replies[0].authorProfileImageUrl
               : "",
-            // @ts-expect-error/ will figure out later
+            // @ts-expect-error/  will add types later
             replierLikes: thread.replies[0] ? thread.replies[0].likeCount : 0,
-            // @ts-expect-error/ will figure out later
+            // @ts-expect-error/ will add types later
             replierDate: thread.replies[0] ? thread.replies[0].publishedAt : "",
-            // @ts-expect-error/ will figure out later
+            // @ts-expect-error/  will add types later
             replierResponse: thread.replies[0]
-              ? // @ts-expect-error/ will figure out later
+              ? // @ts-expect-error/ will add types later
                 thread.replies[0].textOriginal
               : "Not replied yet",
           })
@@ -173,6 +210,7 @@ export const BuildProvider = ({ children }: { children: ReactNode }) => {
         selectedVideo,
         commentData,
         vidDescriptionData,
+        affiliateLinks,
         setSelectedVideo,
       }}
     >

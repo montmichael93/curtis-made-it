@@ -10,12 +10,16 @@ import {
   desktopChristmasTreesGallery,
   dewaltGallery,
   dogHouseGallery,
+  floatingBedFrameErinGallery,
   floatingBedFrameGallery,
+  floatingBedFrameKingSizeGallery,
   floatingWineHoldersGallery,
+  fullFBFgallery,
   giantDominoGallery,
   giantJengaGallery,
   hardwoodEarringsGallery,
   heartShapedVineMountGallery,
+  kingHeadboardPic,
   patioChairsGallery,
   patioTablesGallery,
   petFoodDispenserGallery,
@@ -37,10 +41,16 @@ export const buildData: buildInfo[] = [
     imageGallery: ballInCageGallery,
   },
   {
-    id: "7UGHJCWxci0",
-    name: "Bed Headboard",
+    id: "qjrNnWpHkGE",
+    name: "Bed Headboard queen size",
     imageGallery: bedHeadboardGallery,
   },
+  {
+    id: "7UGHJCWxci0",
+    name: "bed head board king sized",
+    imageGallery: kingHeadboardPic,
+  },
+
   {
     id: "TOMa-dLfkWg",
     name: "Bird House",
@@ -90,6 +100,21 @@ export const buildData: buildInfo[] = [
     imageGallery: floatingBedFrameGallery,
   },
   {
+    id: "kAn6IISTbXw",
+    name: "floating bedframe erin",
+    imageGallery: floatingBedFrameErinGallery,
+  },
+  {
+    id: "f4yLBTJxJ_4",
+    name: "floating bedframe King",
+    imageGallery: floatingBedFrameKingSizeGallery,
+  },
+  {
+    id: "Yz1-eA2UID0",
+    name: "floating bedframe full sized",
+    imageGallery: fullFBFgallery,
+  },
+  {
     id: "ELxkCLKPEs0",
     name: "Floating Wine Holders",
     imageGallery: floatingWineHoldersGallery,
@@ -130,7 +155,7 @@ export const buildData: buildInfo[] = [
     imageGallery: petFoodDispenserGallery,
   },
   {
-    id: "hZV0mW659pc",
+    id: "REGoSRb8Z_g",
     name: "Planting Station",
     imageGallery: plantingStationGallery,
   },

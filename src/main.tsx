@@ -12,6 +12,7 @@ import { BuildCards } from "./routes/BuildCards";
 import { FullBuildInformation } from "./routes/FullbuildInfo";
 import Index from "./routes/Index";
 import React from "react";
+import { AffiliatePage } from "./routes/AffiliateProducts";
 
 const router = createBrowserRouter([
   {
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
           {
             path: "videos/:videoId",
             element: <FullBuildInformation />,
+          },
+          {
+            path: "affiliates",
+            element: <AffiliatePage />,
           },
         ],
       },

@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-const API_KEY = "AIzaSyDHZZogp5RCcjTOrZe_pYvzukZAByew0P8";
+const API_KEY = "AIzaSyDBQO59MuGO-ShK5NKRmW8SI9yo1-TuEHM";
 const fetchChannelData = () => {
   return fetch(
     `https://www.googleapis.com/youtube/v3/channels?key=${API_KEY}&id=UC68FCHckiX-U3NZcj_O_c5w&part=statistics`

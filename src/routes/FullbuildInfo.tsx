@@ -27,6 +27,7 @@ export const FullBuildInformation = () => {
   const cards = filteredBuild.map((entry) => entry.imageGallery);
   const urlRegex = /(https?:\/\/[^\s]+|\bCurtis_Made_It\b)/gi;
   const parts = vidDescriptionData?.split(urlRegex);
+
   return (
     <>
       <>

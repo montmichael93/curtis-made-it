@@ -14,7 +14,12 @@ import {
   chakra,
   useDisclosure,
 } from "@chakra-ui/react";
-import { AiFillHome, AiOutlineMenu, AiFillMail } from "react-icons/ai";
+import {
+  AiFillHome,
+  AiOutlineMenu,
+  AiFillMail,
+  AiOutlineLink,
+} from "react-icons/ai";
 import { BsFillCameraVideoFill, BsPersonFill } from "react-icons/bs";
 import Branding from "../public/branding.jpg";
 import { Link, useLocation, useParams } from "react-router-dom";
@@ -24,7 +29,7 @@ export const UpperSection = () => {
   const location = useLocation();
   const path = location.pathname;
   const { videoId } = useParams();
-  console.log(videoId);
+
   const pageTab = () => {
     if (path === "/") {
       return 0;
@@ -32,8 +37,10 @@ export const UpperSection = () => {
       return 1;
     } else if (path === "/videos" || videoId) {
       return 2;
-    } else if (path === "/message") {
+    } else if (path === "/affiliates") {
       return 3;
+    } else if (path === "/message") {
+      return 4;
     }
   };
 
@@ -145,6 +152,21 @@ export const UpperSection = () => {
                     </Button>
                   </Link>
 
+                  <Link to={`/affiliates`} className="w-full">
+                    <Button
+                      w="full"
+                      style={{ backgroundImage: "url(/blackMetal.jpg)" }}
+                      color="gray.200"
+                      leftIcon={<AiOutlineLink />}
+                      onClick={() => {
+                        mobileNav.onClose();
+                        window.scrollTo(0, 0);
+                      }}
+                    >
+                      affiliates
+                    </Button>
+                  </Link>
+
                   <Link to={`/message`} className="w-full">
                     <Button
                       w="full"
@@ -239,6 +261,22 @@ export const UpperSection = () => {
                       }}
                     >
                       Videos
+                    </Tab>
+                  </Link>
+                  <Link
+                    to={`/affiliates`}
+                    onClick={() => {
+                      window.scrollTo(0, 0);
+                    }}
+                  >
+                    <Tab
+                      py={4}
+                      m={0}
+                      _focus={{
+                        boxShadow: "none",
+                      }}
+                    >
+                      affiliates
                     </Tab>
                   </Link>
                   <Link
