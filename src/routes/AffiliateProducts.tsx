@@ -42,9 +42,7 @@ export const AffiliatePage = () => {
                         color: "gray.400",
                       }}
                     >
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Modi quos quidem sequi illum facere recusandae
-                      voluptatibus
+                      {affiliateLinkImages[index].name}
                     </chakra.p>
                   </Box>
 
@@ -53,7 +51,7 @@ export const AffiliatePage = () => {
                     w="full"
                     fit="cover"
                     mt={2}
-                    src={affiliateLinkImages[index]}
+                    src={affiliateLinkImages[index].image}
                     alt="affiliate"
                   />
 

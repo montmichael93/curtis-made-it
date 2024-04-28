@@ -71,7 +71,7 @@ export default function Index() {
                 color: "white",
               }}
             >
-              C Love
+              Curtis Love
             </chakra.h1>
 
             <chakra.p
@@ -81,7 +81,7 @@ export default function Index() {
                 color: "gray.400",
               }}
             >
-              Artisanal Wood Crafter / Friend , let me know what you need built
+              Creative Wood Worker / YouTube Producer , Design advisor
             </chakra.p>
 
             <Flex
@@ -144,7 +144,10 @@ export default function Index() {
               <Heading size="md">Send A Message</Heading>
             </CardHeader>
             <CardBody>
-              <Text>Need Something Built? Shoot Me A Message</Text>
+              <Text>
+                Need Something Built? Feel free to send me a Message and I'll
+                reply as quickly as possible
+              </Text>
             </CardBody>
             <CardFooter className="self-center">
               <BiMessage size={"4rem"} />

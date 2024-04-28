@@ -98,10 +98,10 @@ export const AboutPage = () => {
               <p className="text-left indent-[18px]">
                 {" "}
                 Through encouraging, inspiring, motivating, learning, and
-                helping one another while we create simple woodworking projects
-                and other novel creations. This community was born in the month
-                of October in the year of our Christ 2019 through an extreme
-                stroke of luck and a blessing straight from Him.{" "}
+                helping one another, we create simple woodworking projects and
+                other novel creations. This community was born in the month of
+                October in the year of our Christ 2019 through an extreme stroke
+                of luck and a blessing straight from Him.{" "}
               </p>
             </chakra.p>
           </Box>
