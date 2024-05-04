@@ -56,3 +56,10 @@ const CommentsAndRepliesSchema = z.object({
 });
 
 export type CommentsAndReplies = z.infer<typeof CommentsAndRepliesSchema>;
+
+const AffiliateLinksImageAndNameSchema = z.object({
+  name: z.string(),
+  image: z.string(),
+});
+
+export type AffiliateLinks = z.infer<typeof AffiliateLinksImageAndNameSchema>;

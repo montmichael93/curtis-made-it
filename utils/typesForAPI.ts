@@ -1,9 +1,10 @@
-type ThumbNailsKeyValues =
-  | "default"
-  | "medium"
-  | "high"
-  | "standard"
-  | "maxres";
+type ThumbNailsKey = "default" | "medium" | "high" | "standard" | "maxres";
+
+type ThumbNailValue = {
+  url: string;
+  width: number;
+  height: number;
+};
 
 type LocalizationKeyValues = "title" | "description";
 
@@ -16,13 +17,7 @@ export type ChannelsTypes = {
     description: string;
     customUrl: string;
     publishedAt: string;
-    thumbnails: {
-      (key: ThumbNailsKeyValues): {
-        url: string;
-        width: string;
-        height: string;
-      };
-    };
+    thumbnails: Record<ThumbNailsKey, ThumbNailValue>;
     defaultLanguage: string;
     localized: {
       title: string;
@@ -98,7 +93,7 @@ export type playListTypes = {
     title: string;
     description: string;
     thumbnails: {
-      (key: ThumbNailsKeyValues): {
+      (key: ThumbNailsKey): {
         url: string;
         width: string;
         height: string;

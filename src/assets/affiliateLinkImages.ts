@@ -55,11 +55,7 @@ import chisel from "../../public/chisel.jpg";
 import shopLights from "../../public/shopLights.jpg";
 import powerToolKit from "../../public/powerToolKit.jpg";
 import dewaltNine from "/public/dewaltNine.jpg";
-
-type AffiliateLinks = {
-  name: string;
-  image: string;
-};
+import { AffiliateLinks } from "../../utils/types";
 
 export const affiliateLinkImages: AffiliateLinks[] = [
   {
@@ -303,7 +299,7 @@ export const linksToRemove = [
   "https://amzn.to/3FHJzC7",
   "https://paypal.me/clove832?country.x=US&locale.x=en_US",
   "https://www.instagram.com/Curtis_Made_It/",
-  "https://amzn.to/3Rr2cSl",
+  //"https://amzn.to/3Rr2cSl",
   "https://www.amazon.com/gp/product/B07K7S5WVF/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B07K7S5WVF&linkCode=as2&tag=clove1-20&linkId=d9bff680823af0776c1dcf3571c08fc8",
   "https://amzn.to/3QHmmVW",
   "https://youtube.com/channel/UCFlTTFPcZg3MFej8DYe6-Rg",

@@ -1,11 +1,11 @@
-import { Box, Flex, Image, SimpleGrid, chakra } from "@chakra-ui/react";
+import { Box, Button, Image, Link, SimpleGrid, chakra } from "@chakra-ui/react";
 import { useBuild } from "../Provider";
 import { affiliateLinkImages } from "../assets/affiliateLinkImages";
-import { FaArrowRight } from "react-icons/fa";
 
 export const AffiliatePage = () => {
   const { affiliateLinks } = useBuild();
-  console.table(affiliateLinks);
+
+  //console.table(affiliateLinks);
 
   return (
     <>
@@ -19,77 +19,57 @@ export const AffiliatePage = () => {
           spacing={4}
           templateColumns="repeat(auto-fill, minmax(400px, 1fr))"
         >
-          {affiliateLinks.length > 0 &&
-            affiliateLinks.map((link, index) => (
-              <>
-                <Box
-                  maxW="xs"
-                  mx="auto"
-                  bg="white"
-                  _dark={{
-                    bg: "gray.800",
-                  }}
-                  shadow="lg"
-                  rounded="lg"
-                  zIndex={100}
-                >
-                  <Box px={4} py={2}>
-                    <chakra.p
-                      mt={1}
-                      fontSize="sm"
-                      color="gray.600"
-                      _dark={{
-                        color: "gray.400",
-                      }}
-                    >
-                      {affiliateLinkImages[index].name}
-                    </chakra.p>
-                  </Box>
+          {affiliateLinkImages.map((link, index) => (
+            <>
+              {console.log(affiliateLinkImages[index].name === undefined)}
+              <Box
+                w="xs"
+                bg="gray.800"
+                _dark={{
+                  bg: "gray.800",
+                }}
+                shadow="lg"
+                rounded="lg"
+                overflow="hidden"
+                mx="auto"
+                zIndex={100}
+              >
+                <Image
+                  w="full"
+                  h={56}
+                  fit="cover"
+                  src={link.image}
+                  alt="avatar"
+                />
 
-                  <Image
-                    h={48}
-                    w="full"
-                    fit="cover"
-                    mt={2}
-                    src={affiliateLinkImages[index].image}
-                    alt="affiliate"
-                  />
-
-                  <Flex
-                    alignItems="center"
-                    justifyContent="space-between"
-                    px={4}
-                    py={2}
-                    bg="gray.900"
-                    roundedBottom="lg"
+                <Box py={5} textAlign="center">
+                  <chakra.span
+                    fontSize="sm"
+                    color="gray.200"
+                    _dark={{
+                      color: "gray.200",
+                    }}
                   >
-                    <chakra.h1 color="white" fontWeight="bold" fontSize="lg">
-                      <FaArrowRight />
-                    </chakra.h1>
-                    <a href={link} target="blank">
-                      <chakra.button
-                        px={2}
-                        py={1}
-                        bg="white"
-                        fontSize="xs"
-                        color="gray.900"
-                        fontWeight="bold"
-                        rounded="lg"
-                        textTransform="uppercase"
-                        _hover={{
-                          bg: "gray.200",
-                        }}
-                        _focus={{
-                          bg: "gray.400",
-                        }}
-                      >
-                        shop now
-                      </chakra.button>
-                    </a>
-                  </Flex>
+                    <div> {index + 1}</div>
+
+                    {link.name}
+                  </chakra.span>
+                  <Link
+                    display="block"
+                    fontSize="2xl"
+                    color="gray.800"
+                    _dark={{
+                      color: "white",
+                    }}
+                    fontWeight="bold"
+                    href={affiliateLinks[index]}
+                  >
+                    <Button>Buy Now</Button>
+                  </Link>
                 </Box>
-              </>
-            ))}
+              </Box>
+            </>
+          ))}
         </SimpleGrid>
       </div>
     </>
