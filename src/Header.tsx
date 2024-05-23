@@ -39,8 +39,10 @@ export const UpperSection = () => {
       return 2;
     } else if (path === "/affiliates") {
       return 3;
-    } else if (path === "/message") {
+    } else if (path === "/shop") {
       return 4;
+    } else if (path === "/messages") {
+      return 5;
     }
   };
 
@@ -163,7 +165,22 @@ export const UpperSection = () => {
                         window.scrollTo(0, 0);
                       }}
                     >
-                      affiliates
+                      Affiliates
+                    </Button>
+                  </Link>
+
+                  <Link to={`/shop`} className="w-full">
+                    <Button
+                      w="full"
+                      style={{ backgroundImage: "url(/blackMetal.jpg)" }}
+                      color="gray.200"
+                      leftIcon={<AiOutlineLink />}
+                      onClick={() => {
+                        mobileNav.onClose();
+                        window.scrollTo(0, 0);
+                      }}
+                    >
+                      Shop
                     </Button>
                   </Link>
 
@@ -276,7 +293,23 @@ export const UpperSection = () => {
                         boxShadow: "none",
                       }}
                     >
-                      affiliates
+                      Affiliates
+                    </Tab>
+                  </Link>
+                  <Link
+                    to={`/shop`}
+                    onClick={() => {
+                      window.scrollTo(0, 0);
+                    }}
+                  >
+                    <Tab
+                      py={4}
+                      m={0}
+                      _focus={{
+                        boxShadow: "none",
+                      }}
+                    >
+                      Shop
                     </Tab>
                   </Link>
                   <Link

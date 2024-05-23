@@ -1,9 +1,9 @@
-import aboutMePageImage from "../../public/CLoveOnTopOfDogHouse.jpg";
 import { FaChurch, FaHandshake, FaYoutubeSquare } from "react-icons/fa";
 import toast from "react-hot-toast";
 import { Card, CardBody, Flex, chakra } from "@chakra-ui/react";
 import { Box } from "@chakra-ui/react";
 import { MapApi } from "../MapApi";
+import curtisAboutPage from "../../public/curtisAboutPage.png";
 
 export const AboutPage = () => {
   return (
@@ -56,7 +56,7 @@ export const AboutPage = () => {
               }}
               bgSize="cover"
               style={{
-                backgroundImage: `url(${aboutMePageImage})`,
+                backgroundImage: `url(${curtisAboutPage})`,
               }}
             ></Box>
           </Box>

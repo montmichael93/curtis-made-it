@@ -13,6 +13,7 @@ import { FullBuildInformation } from "./routes/FullbuildInfo";
 import Index from "./routes/Index";
 import React from "react";
 import { AffiliatePage } from "./routes/AffiliateProducts";
+import { Shopping } from "./routes/Shop";
 
 const router = createBrowserRouter([
   {
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
           {
             path: "affiliates",
             element: <AffiliatePage />,
+          },
+          {
+            path: "Shop",
+            element: <Shopping />,
           },
         ],
       },

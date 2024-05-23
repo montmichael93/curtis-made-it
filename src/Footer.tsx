@@ -74,45 +74,25 @@ export const FooterSection = () => {
             </chakra.a>
 
             <chakra.a
-              href="#"
+              href="https://www.youtube.com/@CurtisMadeIt"
               mx="2"
-              color="gray.600"
-              _dark={{
-                color: "gray.300",
-                _hover: {
-                  color: "gray.400",
-                },
-              }}
+              color="gray.300"
               _hover={{
-                color: "gray.500",
+                color: "gray.400",
               }}
-              aria-label="Facebook"
             >
-              <FaYoutube
-                size={"2rem"}
-                href="https://www.youtube.com/@CurtisMadeIt"
-              />
+              <FaYoutube size={"2rem"} />
             </chakra.a>
 
             <chakra.a
-              href="#"
+              href="https://www.instagram.com/curtis_made_it/"
               mx="2"
-              color="gray.600"
-              _dark={{
-                color: "gray.300",
-                _hover: {
-                  color: "gray.400",
-                },
-              }}
+              color="gray.300"
               _hover={{
-                color: "gray.500",
+                color: "gray.400",
               }}
-              aria-label="Github"
             >
-              <FaInstagram
-                href="https://www.instagram.com/curtis_made_it/"
-                size={"2rem"}
-              />
+              <FaInstagram size={"2rem"} />
             </chakra.a>
           </Flex>
         </Flex>

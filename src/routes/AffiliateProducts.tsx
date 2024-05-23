@@ -21,7 +21,6 @@ export const AffiliatePage = () => {
         >
           {affiliateLinkImages.map((link, index) => (
             <>
-              {console.log(affiliateLinkImages[index].name === undefined)}
               <Box
                 w="xs"
                 bg="gray.800"
