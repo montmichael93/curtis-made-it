@@ -4,10 +4,8 @@ import { Card, CardBody, Flex, chakra } from "@chakra-ui/react";
 import { Box } from "@chakra-ui/react";
 import { MapApi } from "../MapApi";
 import curtisAboutPage from "../../public/curtisAboutPage.png";
-//import "dotenv/config";
 
 export const AboutPage = () => {
-  console.log(process.env.API_KEY);
   return (
     <>
       <Flex

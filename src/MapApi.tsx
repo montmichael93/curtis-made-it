@@ -14,7 +14,7 @@ export const MapApi = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <APIProvider apiKey="AIzaSyBHEJozl10vu9xgUYD6_72mBief_qd0VrI">
+    <APIProvider apiKey={process.env.MAP_KEY!}>
       <div
         style={{
           height: "500px",
