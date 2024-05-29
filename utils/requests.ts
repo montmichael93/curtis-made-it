@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-const API_KEY = "AIzaSyDBQO59MuGO-ShK5NKRmW8SI9yo1-TuEHM";
+
 const fetchChannelData = () => {
   return fetch(
-    `https://www.googleapis.com/youtube/v3/channels?key=${API_KEY}&id=UC68FCHckiX-U3NZcj_O_c5w&part=statistics`
+    `https://www.googleapis.com/youtube/v3/channels?key=${process.env.API_KEY}&id=UC68FCHckiX-U3NZcj_O_c5w&part=statistics`
   )
     .then((response) => response.json())
     .then((data) => {
@@ -27,7 +27,7 @@ const fetchChannelData = () => {
 
 const youTubeVideos = () => {
   return fetch(
-    `https://www.googleapis.com/youtube/v3/playlistItems?key=${API_KEY}&playlistId=UU68FCHckiX-U3NZcj_O_c5w&part=snippet&maxResults=50`
+    `https://www.googleapis.com/youtube/v3/playlistItems?key=${process.env.API_KEY}&playlistId=UU68FCHckiX-U3NZcj_O_c5w&part=snippet&maxResults=50`
   )
     .then((response) => response.json())
     .then((data) => {

@@ -17,11 +17,23 @@ import { BiHome, BiMessage, BiChair } from "react-icons/bi";
 import { Image } from "@chakra-ui/react";
 import { BsTools, BsEye } from "react-icons/bs";
 import { MdLocationOn, MdSubscriptions } from "react-icons/md";
-import { useBuild } from "../Provider";
 import { MapApi } from "../MapApi";
+import { useEffect, useState } from "react";
+import { Requests } from "../../utils/requests";
+import { channelData } from "../../utils/types";
 
 export default function Index() {
-  const { channelData } = useBuild();
+  const [channelData, setChannelData] = useState<channelData[] | null>(null);
+
+  useEffect(() => {
+    Requests.fetchChannelData()
+      .then((channelData) => {
+        setChannelData(channelData);
+      })
+      .catch((error) => {
+        console.error("Error fetching channel data:", error);
+      });
+  }, []);
 
   return (
     <>

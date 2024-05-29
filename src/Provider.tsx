@@ -4,21 +4,20 @@ import {
   SetStateAction,
   createContext,
   useContext,
-  useEffect,
+  //useEffect,
   useState,
 } from "react";
-import { CommentsAndReplies, VideoData, channelData } from "../utils/types";
-import { useParams } from "react-router-dom";
-import { Requests } from "../utils/requests";
-import { linksToRemove } from "./assets/affiliateLinkImages";
+import { VideoData } from "../utils/types";
+//import { useParams } from "react-router-dom";
+//import { Requests } from "../utils/requests";
+//import { linksToRemove } from "./assets/affiliateLinkImages";
 
 type TypeBuildsProvider = {
-  channelData: channelData[] | null;
-  videoData: VideoData[] | null;
+  //videoData: VideoData[] | null;
   selectedVideo: VideoData | null;
-  commentData: CommentsAndReplies[] | [];
-  vidDescriptionData: string | null;
-  affiliateLinks: string[] | [];
+  //commentData: CommentsAndReplies[] | [];
+  //vidDescriptionData: string | null;
+  //affiliateLinks: string[] | [];
   setSelectedVideo: Dispatch<SetStateAction<VideoData | null>>;
 };
 
@@ -27,30 +26,21 @@ const buildsContext = createContext<TypeBuildsProvider>(
 );
 
 export const BuildProvider = ({ children }: { children: ReactNode }) => {
-  const [channelData, setChannelData] = useState<channelData[] | null>(null);
-  const [videoData, setVideoData] = useState<VideoData[] | null>(null);
+  //const [videoData, setVideoData] = useState<VideoData[] | null>(null);
   const [selectedVideo, setSelectedVideo] = useState<VideoData | null>(null);
-  const [commentData, setCommentData] = useState<CommentsAndReplies[] | []>([]);
-  const [affiliateLinks, setAffiliateLinks] = useState<string[] | []>([]);
-  const [vidDescriptionData, setVidDescriptionData] = useState<string | null>(
-    null
-  );
-  const { videoId } = useParams();
+  //const [commentData, setCommentData] = useState<CommentsAndReplies[] | []>([]);
+  // const [affiliateLinks, setAffiliateLinks] = useState<string[] | []>([]);
+  //const [vidDescriptionData, setVidDescriptionData] = useState<string | null>(
+  //null
+  //);
+  //const { videoId } = useParams();
 
-  useEffect(() => {
-    Requests.fetchChannelData()
-      .then((channelData) => {
-        setChannelData(channelData);
-      })
-      .catch((error) => {
-        console.error("Error fetching channel data:", error);
-      });
-  }, []);
-
+  //const path = location.pathname;
+  /*
   useEffect(() => {
     Requests.youTubeVideos()
       .then((videos) => {
-        const API_KEY = "AIzaSyDBQO59MuGO-ShK5NKRmW8SI9yo1-TuEHM";
+        const API_KEY = "AIzaSyBhi_xeQRFKdBMcnQTEir7Wrvl02LaSCLQ";
         const fetchStatsWithIDs = videos.map((vid: VideoData) =>
           fetch(
             `https://www.googleapis.com/youtube/v3/videos?key=${API_KEY}&id=${vid.videoId}&part=statistics`
@@ -112,7 +102,7 @@ export const BuildProvider = ({ children }: { children: ReactNode }) => {
   }, [selectedVideo, vidDescriptionData, videoData, videoId]);
 
   useEffect(() => {
-    const API_KEY = "AIzaSyDBQO59MuGO-ShK5NKRmW8SI9yo1-TuEHM";
+    const API_KEY = "AIzaSyBhi_xeQRFKdBMcnQTEir7Wrvl02LaSCLQ";
     function fetchCommentsAndReplies(
       pageToken: string
     ): Promise<CommentsAndReplies> {
@@ -200,17 +190,16 @@ export const BuildProvider = ({ children }: { children: ReactNode }) => {
       .catch((error) => {
         console.error("Error fetching comments and replies:", error);
       });
-  }, [videoId]);
+  }, [videoId]);*/
 
   return (
     <buildsContext.Provider
       value={{
-        channelData,
-        videoData,
+        // videoData,
         selectedVideo,
-        commentData,
-        vidDescriptionData,
-        affiliateLinks,
+        //commentData,
+        //vidDescriptionData,
+        //affiliateLinks,
         setSelectedVideo,
       }}
     >

@@ -10,23 +10,149 @@ import {
 
 import { buildData } from "../assets/buildData";
 import { Box, Flex, chakra, Link } from "@chakra-ui/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Image } from "@chakra-ui/react";
 import branding from "../../public/branding.jpg";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import { Requests } from "../../utils/requests";
+import { CommentsAndReplies, VideoData } from "../../utils/types";
 
 export const FullBuildInformation = () => {
-  const { selectedVideo, commentData, vidDescriptionData } = useBuild();
+  const { selectedVideo, setSelectedVideo } = useBuild();
   const [currentImage, setCurrentImage] = useState(0);
+  const [videoData, setVideoData] = useState<VideoData[] | null>(null);
   const [descriptionHidden, setDescriptionHidden] = useState(true);
+  const [commentData, setCommentData] = useState<CommentsAndReplies[] | []>([]);
   const [commentsHidden, setCommentsHidden] = useState(true);
+  const [vidDescriptionData, setVidDescriptionData] = useState<string | null>(
+    null
+  );
   const navigate = useNavigate();
+  const { videoId } = useParams();
+
   const filteredBuild = buildData.filter(
     (build) => build.id === selectedVideo?.videoId
   );
   const cards = filteredBuild.map((entry) => entry.imageGallery);
   const urlRegex = /(https?:\/\/[^\s]+|\bCurtis_Made_It\b)/gi;
   const parts = vidDescriptionData?.split(urlRegex);
+
+  useEffect(() => {
+    const videoSelectedBeforeReload = videoData?.filter(
+      (video) => video.videoId === videoId
+    );
+    videoSelectedBeforeReload && setSelectedVideo(videoSelectedBeforeReload[0]);
+    selectedVideo && setVidDescriptionData(selectedVideo?.description);
+  }, [selectedVideo, setSelectedVideo, vidDescriptionData, videoData, videoId]);
+
+  useEffect(() => {
+    Requests.youTubeVideos()
+      .then((videos) => {
+        const fetchStatsWithIDs = videos.map((vid: VideoData) =>
+          fetch(
+            `https://www.googleapis.com/youtube/v3/videos?key=${process.env.API_KEY}&id=${vid.videoId}&part=statistics`
+          )
+        );
+
+        return Requests.videoStats(videos, fetchStatsWithIDs);
+      })
+      .then((vidsAndStatistics) => {
+        setVideoData(vidsAndStatistics);
+      })
+      .catch((error) => {
+        console.error("Error fetching channel data:", error);
+      });
+  }, [selectedVideo?.description, vidDescriptionData]);
+
+  useEffect(() => {
+    function fetchCommentsAndReplies(
+      pageToken: string
+    ): Promise<CommentsAndReplies> {
+      return fetch(
+        `https://www.googleapis.com/youtube/v3/commentThreads?videoId=${videoId}&key=${process.env.API_KEY}&part=snippet,replies&pageToken=${pageToken}`
+      ).then((response) => response.json());
+    }
+
+    // Function to recursively fetch all comments and replies
+    function getAllCommentsAndReplies() {
+      let allCommentsAndReplies: CommentsAndReplies[] | [] = [];
+      let nextPageToken = "";
+      function fetchNextPage(): Promise<CommentsAndReplies[] | []> {
+        return fetchCommentsAndReplies(nextPageToken).then((response) => {
+          // @ts-expect-error/ will figure out later
+          const commentThreads = response.items;
+          const commentsAndReplies = commentThreads.map(
+            (thread: {
+              snippet: { topLevelComment: { snippet: unknown } };
+              replies: { comments: unknown[] };
+            }) => {
+              const comment = thread.snippet.topLevelComment.snippet;
+              const replies = thread.replies
+                ? // @ts-expect-error/ will figure out later
+                  thread.replies.comments.map((reply) => reply.snippet)
+                : [];
+              return { comment, replies };
+            }
+          );
+
+          allCommentsAndReplies =
+            allCommentsAndReplies.concat(commentsAndReplies);
+          // @ts-expect-error/ will figure out later
+          nextPageToken = response.nextPageToken;
+          if (nextPageToken) {
+            return fetchNextPage(); // Recursive call to fetch next page
+          }
+          return allCommentsAndReplies;
+        });
+      }
+
+      return fetchNextPage();
+    }
+
+    getAllCommentsAndReplies()
+      .then((commentsAndReplies) => {
+        const commentThread = commentsAndReplies.flatMap((thread) => thread);
+        const commentThreadData: CommentsAndReplies[] = commentThread.map(
+          (thread) => ({
+            // @ts-expect-error/ will figure out later
+            videoId: thread.comment.videoId,
+            // @ts-expect-error/ will add types later
+            commenterName: thread.comment.authorDisplayName,
+            // @ts-expect-error/ will add types later
+            commenterImage: thread.comment.authorProfileImageUrl,
+            // @ts-expect-error/ will add types later
+            commenterLikes: thread.comment.likeCount,
+            // @ts-expect-error/  will add types later
+            commenterDate: thread.comment.publishedAt,
+            // @ts-expect-error/ will add types later
+            comment: thread.comment.textOriginal,
+            // @ts-expect-error/ will add types later
+            replierName: thread.replies[0]
+              ? // @ts-expect-error/ will add types later
+                thread.replies[0].authorDisplayName
+              : "",
+            // @ts-expect-error/  will add types later
+            replierImage: thread.replies[0]
+              ? // @ts-expect-error/  will add types later
+                thread.replies[0].authorProfileImageUrl
+              : "",
+            // @ts-expect-error/  will add types later
+            replierLikes: thread.replies[0] ? thread.replies[0].likeCount : 0,
+            // @ts-expect-error/ will add types later
+            replierDate: thread.replies[0] ? thread.replies[0].publishedAt : "",
+            // @ts-expect-error/  will add types later
+            replierResponse: thread.replies[0]
+              ? // @ts-expect-error/ will add types later
+                thread.replies[0].textOriginal
+              : "Not replied yet",
+          })
+        );
+        setCommentData(commentThreadData);
+      })
+      .catch((error) => {
+        console.error("Error fetching comments and replies:", error);
+      });
+  }, [selectedVideo?.videoId, videoId]);
 
   return (
     <>
