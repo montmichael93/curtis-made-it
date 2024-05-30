@@ -12,11 +12,11 @@ export const Shopping = () => {
       //className="cut-wood-blurred-background  mt-10"
       >
         <Flex
-          bg="#3e3e3e"
           p={50}
           w="full"
           alignItems="center"
           justifyContent="center"
+          className="cut-wood-blurred-background bg-blueWood"
         >
           <Box
             zIndex={100}
@@ -96,11 +96,12 @@ export const Shopping = () => {
         </Flex>
 
         <Flex
-          bg="#3e3e3e"
+          //bg="#3e3e3e"
           p={50}
           w="full"
           alignItems="center"
           justifyContent="center"
+          className="cut-wood-blurred-background bg-blueWood"
         >
           <Box
             zIndex={100}
@@ -180,11 +181,11 @@ export const Shopping = () => {
         </Flex>
 
         <Flex
-          bg="#3e3e3e"
           p={50}
           w="full"
           alignItems="center"
           justifyContent="center"
+          className="cut-wood-blurred-background bg-blueWood"
         >
           <Box
             zIndex={100}
