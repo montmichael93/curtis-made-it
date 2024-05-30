@@ -163,8 +163,8 @@ export const Shopping = () => {
                 Small Builds
               </chakra.h2>
               <chakra.p mt={4} color="gray.400">
-                sample text sample text sample text sample text sample text
-                sample text sample text sample text
+                need something that looks nice for your home and makes a great
+                conversation starter? I got just the thing!
               </chakra.p>
 
               <Box mt={8}>

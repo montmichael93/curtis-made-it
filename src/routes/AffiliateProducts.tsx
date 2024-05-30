@@ -1,5 +1,4 @@
 import { Box, Button, Image, Link, SimpleGrid, chakra } from "@chakra-ui/react";
-//import { useBuild } from "../Provider";
 import {
   affiliateLinkImages,
   linksToRemove,
@@ -10,9 +9,6 @@ import { VideoData } from "../../utils/types";
 
 export const AffiliatePage = () => {
   const [affiliateLinks, setAffiliateLinks] = useState<string[] | []>([]);
-  //const { affiliateLinks } = useBuild();
-
-  //console.table(affiliateLinks);
 
   useEffect(() => {
     Requests.youTubeVideos()
@@ -69,6 +65,11 @@ export const AffiliatePage = () => {
       >
         <br />
         <br />
+        <h1 className="text-white">
+          Some or all of the following links may commissioned based on your
+          purchase(s)
+        </h1>
+
         <SimpleGrid
           spacing={4}
           templateColumns="repeat(auto-fill, minmax(400px, 1fr))"
