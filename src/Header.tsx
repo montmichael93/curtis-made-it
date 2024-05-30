@@ -19,6 +19,7 @@ import {
   AiOutlineMenu,
   AiFillMail,
   AiOutlineLink,
+  AiOutlineShoppingCart,
 } from "react-icons/ai";
 import { BsFillCameraVideoFill, BsPersonFill } from "react-icons/bs";
 import Branding from "../public/branding.jpg";
@@ -174,7 +175,7 @@ export const UpperSection = () => {
                       w="full"
                       style={{ backgroundImage: "url(/blackMetal.jpg)" }}
                       color="gray.200"
-                      leftIcon={<AiOutlineLink />}
+                      leftIcon={<AiOutlineShoppingCart />}
                       onClick={() => {
                         mobileNav.onClose();
                         window.scrollTo(0, 0);
