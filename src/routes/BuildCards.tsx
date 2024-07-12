@@ -15,17 +15,10 @@ import { FaYoutube } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import { Requests } from "../../utils/requests";
 import { VideoData } from "../../utils/types";
-//import { linksToRemove } from "../assets/affiliateLinkImages";
 
 export const BuildCards = () => {
   const { setSelectedVideo } = useBuild();
   const [videoData, setVideoData] = useState<VideoData[] | null>(null);
-  //const [videoData, setVideoData] = useState<VideoData[] | null>(null);
-  //const [affiliateLinks, setAffiliateLinks] = useState<string[] | []>([]);
-  //const [vidDescriptionData, setVidDescriptionData] = useState<string | null>(
-  //null
-  //);
-  // console.log(videoData?.sort((vid) => vid.statistics.viewCount))
 
   useEffect(() => {
     Requests.youTubeVideos()

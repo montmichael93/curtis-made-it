@@ -63,3 +63,20 @@ const AffiliateLinksImageAndNameSchema = z.object({
 });
 
 export type AffiliateLinks = z.infer<typeof AffiliateLinksImageAndNameSchema>;
+
+/*
+const buildsForSaleSchema = z.object({
+  name: z.string(),
+  image: z.string(),
+  price: z.number() | z.string(),
+  description: z.string(),
+});
+
+export type BuildsForSale = z.infer<typeof buildsForSaleSchema>;*/
+
+export type BuildsForSale = {
+  name: string;
+  image: string;
+  price: number | number[];
+  description: string | [string];
+};

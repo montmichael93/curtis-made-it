@@ -12,8 +12,6 @@ import { BiWifiOff } from "react-icons/bi";
 
 export default function ErrorPage() {
   const error = useRouteError();
-  console.error(error);
-
   return (
     <>
       <div id="error-page" className="flex flex-col items-center">
