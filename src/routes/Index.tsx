@@ -1,4 +1,4 @@
-import CLoveSittingDown from "../../public/CloveSittingDown.jpg";
+import CLoveSittingDown from "../../public/CloveSittingDown-2.png";
 import { FaTools } from "react-icons/fa";
 import {
   Card,
@@ -59,7 +59,7 @@ export default function Index() {
         >
           <Image
             w="full"
-            h={56}
+            h={60}
             fit="cover"
             objectPosition="center"
             src={CLoveSittingDown}

@@ -90,8 +90,8 @@ export const AboutPage = () => {
               <p className="text-left indent-[18px]">
                 I appreciate you taking the time to support this tiny piece of
                 the internet and I hope you have a wonderfully happy anniversary
-                or birthday if you have one of those today.In this space, we are
-                a passion-driven company and community of woodworkers and
+                or birthday if you have one of those today. In this space, we
+                are a passion-driven company and community of woodworkers and
                 creators looking to continually self develop.
               </p>
               <br />
